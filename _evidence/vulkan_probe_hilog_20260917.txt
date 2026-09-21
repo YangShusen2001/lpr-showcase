@@ -1,0 +1,20 @@
+=== hilog clear ===
+Log type core,app,only_prerelease buffer clear successfully
+start server at tcp:5037
+
+=== aa start ===
+start ability successfully.
+
+=== vulkan probe lines ===
+09-17 18:27:09.600 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE len=1831
+09-17 18:27:09.600 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE [0] {"probe":"vulkan-app-level","date":"2026-09-17","loader":{"ok":true,"lib":"libvulkan.so"},"instanceExtensions":["VK_KHR_get_physical_device_properties2","VK_KHR_external_semaphore_capabilities","VK_KHR_external_fence_capabilities","VK_KHR_external_memory_capabilities","VK_KHR_device_group_creation","VK_EXT_debug_utils","VK_EXT_debug_report","VK_KHR_portability_enumeration","VK_LUNARG_direct_driver
+09-17 18:27:09.600 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE [1] _loading","VK_KHR_surface","VK_OHOS_surface","VK_EXT_swapchain_colorspace","VK_KHR_get_surface_capabilities2"],"createInstance":{"result":0},"devices":{"result":0,"count":1},"deviceList":[{"name":"Maleoon 920C","vendorID":0x19e5,"deviceID":0x20011000,"deviceType":"integrated","apiVersion":"1.3.275","driverVersion":"29.368.428","queueFamilies":1,"graphicsOnlyQueues":0,"computeOnlyQueues":0,"graphic
+09-17 18:27:09.600 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE [2] sComputeQueues":2,"deviceExtensions":["VK_KHR_driver_properties","VK_KHR_draw_indirect_count","VK_EXT_sample_locations","VK_EXT_index_type_uint8","VK_EXT_conditional_rendering","VK_EXT_depth_clip_enable","VK_KHR_16bit_storage","VK_KHR_8bit_storage","VK_KHR_image_format_list","VK_KHR_sampler_mirror_clamp_to_edge","VK_EXT_sampler_filter_minmax","VK_EXT_astc_decode_mode","VK_EXT_texture_compression_a
+09-17 18:27:09.600 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE [3] stc_hdr","VK_KHR_shader_float16_int8","VK_KHR_shader_float_controls","VK_KHR_spirv_1_4","VK_KHR_uniform_buffer_standard_layout","VK_KHR_shader_draw_parameters","VK_KHR_storage_buffer_storage_class","VK_KHR_relaxed_block_layout","VK_EXT_scalar_block_layout","VK_KHR_variable_pointers","VK_KHR_vulkan_memory_model","VK_KHR_maintenance1","VK_KHR_maintenance2","VK_KHR_maintenance3","VK_KHR_maintenance4"
+09-17 18:27:09.601 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: VULKAN PROBE [4] ,"VK_KHR_maintenance5","VK_EXT_descriptor_indexing","VK_EXT_inline_uniform_block","VK_KHR_imageless_framebuffer","VK_KHR_create_renderpass2"],"deviceExtensionsCount":97,"deviceExtensionsResult":0}],"verdict":"GPU_COMPUTE_FEASIBLE"}
+
+=== selftest sanity ===
+09-17 18:27:09.622 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE LENS count=2
+
+=== pipeline sanity ===
+09-17 18:27:10.628 44416 44416 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE PIPE code=苏ED5172 colour=蓝牌 count=1 total=128.1280 stages=92.5263|13.1019|9.9214|4.7623 cropSum=2773473

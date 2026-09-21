@@ -1,0 +1,54 @@
+[
+  {
+    "name": "hlpr-test.jpg",
+    "stem": "hlpr-test",
+    "srcW": 1920,
+    "srcH": 1080,
+    "scale": 0.16666666666666666,
+    "scaleExpr": "1920->320",
+    "total": 307200,
+    "nDiff": 0,
+    "nPos": 0,
+    "nNeg": 0,
+    "maxAbs": 0,
+    "paramsOk": true,
+    "hist": {
+      "0": 307200
+    }
+  },
+  {
+    "name": "hlpr-1.jpg",
+    "stem": "hlpr-1",
+    "srcW": 320,
+    "srcH": 320,
+    "scale": 1,
+    "scaleExpr": "320->320",
+    "total": 307200,
+    "nDiff": 0,
+    "nPos": 0,
+    "nNeg": 0,
+    "maxAbs": 0,
+    "paramsOk": true,
+    "hist": {
+      "0": 307200
+    }
+  },
+  {
+    "name": "scene-2.jpg",
+    "stem": "scene-2",
+    "srcW": 1140,
+    "srcH": 456,
+    "scale": 0.2807017543859649,
+    "scaleExpr": "1140->320",
+    "total": 307200,
+    "nDiff": 11753,
+    "nPos": 11753,
+    "nNeg": 0,
+    "maxAbs": 0.003921598196029663,
+    "paramsOk": true,
+    "hist": {
+      "0": 295447,
+      "1": 11753
+    }
+  }
+]

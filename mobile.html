@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>手机端实时演示 · 基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别</title>
+<meta name="description" content="竖屏端侧演示：在手机浏览器里实时运行车牌识别 —— 检测、透视矫正、CRNN-CTC 识别、颜色分类。模型本地自托管，零网络请求。" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="assets/css/site.css" />
+<link rel="stylesheet" href="assets/css/mobile.css" />
+<script>
+  // Applied before first paint so embed mode never flashes the page chrome.
+  if (new URLSearchParams(location.search).has('embed')) {
+    document.documentElement.classList.add('m-embed');
+  }
+</script>
+</head>
+<body class="m-page">
+
+<header class="m-top">
+  <div class="m-top-in">
+    <div class="brand"><span class="dot"></span>车牌识别 <small>手机端演示</small></div>
+    <span class="m-chip" id="mChip">status <b id="rtState">idle</b></span>
+  </div>
+  <div class="m-sub"><span id="rtTitle">hyperlpr3 · browser-runtime · wasm/simd · fp32</span></div>
+</header>
+
+<main class="m-main">
+
+  <div class="m-hero">
+    <h1>拍一张车牌，本机算完</h1>
+    <p>
+      检测框、关键点、矫正裁剪、逐字符置信度、分级耗时 —— 下面每个数字都来自这台手机浏览器里的真实推理，
+      没有预置结果，也没有网络请求。
+    </p>
+  </div>
+
+  <!-- demo.js observes .demo-shell to prefetch the models; it is only an anchor here. -->
+  <div class="demo-shell m-shell">
+
+    <section class="m-card m-input">
+      <div class="m-card-h"><span class="m-n">IN</span> 输入</div>
+      <div class="drop" id="drop">
+        <div class="m-ic">&#8679;</div>
+        <strong>选择照片</strong>
+        相册图片或相机拍摄
+        <div class="hint">下方内置样本可直接点选</div>
+      </div>
+      <div class="m-card-h"><span class="m-n">06</span> 内置样本</div>
+      <div class="samples" id="samples"></div>
+    </section>
+
+    <section class="m-card m-cam" id="camCard" hidden>
+      <div class="m-card-h"><span class="m-n">LIVE</span> 摄像头 <span class="ms" id="camInfo"></span></div>
+      <div class="cam-holder"><video id="camVideo" playsinline muted></video></div>
+      <div class="cam-ctl">
+        <button class="m-btn" id="camShoot" type="button">抓帧识别</button>
+        <button class="m-btn primary" id="camAuto" type="button">连续识别</button>
+      </div>
+    </section>
+
+    <section class="m-card m-result">
+      <div class="m-card-h"><span class="m-n">03</span> 识别结果</div>
+      <div class="plate-frame" id="plateFrame">
+        <div class="plate-text" id="plateText">—</div>
+      </div>
+      <div class="plate-meta" id="plateMeta"></div>
+
+      <div class="m-total"><span>端到端</span><b id="msTotal">—</b></div>
+      <div class="m-strip">
+        <div class="m-st"><b id="msDet">—</b><span>检测</span></div>
+        <div class="m-st"><b id="msRect">—</b><span>矫正</span></div>
+        <div class="m-st"><b id="msRec">—</b><span>识别</span></div>
+        <div class="m-st"><b id="msCls">—</b><span>分类</span></div>
+      </div>
+    </section>
+
+    <section class="m-card">
+      <div class="m-card-h"><span class="m-n">01</span> 检测框 · 关键点</div>
+      <div class="cv-holder"><canvas id="cvSrc" width="1" height="1"></canvas></div>
+    </section>
+
+    <details class="m-fold">
+      <summary>02 矫正 · 透视裁剪</summary>
+      <div class="m-body">
+        <div class="cv-holder"><canvas id="cvCrop" width="1" height="1"></canvas></div>
+      </div>
+    </details>
+
+    <details class="m-fold">
+      <summary>逐字符置信度</summary>
+      <div class="m-body"><div class="bars" id="charBars"></div></div>
+    </details>
+
+    <details class="m-fold">
+      <summary>颜色分类 · 单层 / 双层</summary>
+      <div class="m-body"><div class="bars" id="clsBars"></div></div>
+    </details>
+
+    <details class="m-fold">
+      <summary>运行日志</summary>
+      <div class="m-body"><div class="console-log" id="log"></div></div>
+    </details>
+
+    <div id="demoEmpty" hidden></div>
+  </div>
+
+  <div class="m-foot">
+    <b>需要 HTTP 环境。</b>浏览器在 <code class="mono">file://</code> 下会拒绝读取
+    <code class="mono">.onnx</code> 与 <code class="mono">.wasm</code>。本机执行
+    <code class="mono">node tools/serve.mjs . 8099</code> 后访问
+    <code class="mono">/mobile.html</code>。
+    推理线程数自适应：鸿蒙壳注入 COOP/COEP 后，同一份代码在 12 核上自动启用多线程（见 ADR-004）。
+  </div>
+
+</main>
+
+<div class="m-actions">
+  <button class="m-btn primary" id="btnCam" type="button"><span class="g">&#9678;</span>相机</button>
+  <button class="m-btn" id="btnPick" type="button"><span class="g">&#9636;</span>相册</button>
+  <button class="m-btn" id="btnSamples" type="button"><span class="g">&#9639;</span>样本</button>
+</div>
+
+<input type="file" id="file" accept="image/*" hidden />
+<input type="file" id="cam" accept="image/*" capture="environment" hidden />
+
+<script type="module" src="assets/js/demo.js"></script>
+<script type="module" src="assets/js/mobile.js"></script>
+<script type="module">
+  // Headless verification hook, same contract as demo.html: web_check.mjs waits
+  // for window[key].done === true.
+  if (new URLSearchParams(location.search).has('auto')) {
+    const t = setInterval(() => {
+      const d = window.__DEMO;
+      if (!d || !d.autoDone) return;
+      clearInterval(t);
+      window.__PAGE = {
+        done: true,
+        ready: d.ready,
+        threads: d.threads,
+        isolated: d.isolated,
+        modelLoadMs: d.modelLoadMs,
+        sampleCount: d.samples,
+        results: d.results,
+        errors: d.errors,
+        demoState: (document.getElementById('rtState') || {}).textContent,
+        plate: (document.getElementById('plateText') || {}).textContent,
+        meta: (document.getElementById('plateMeta') || {}).textContent,
+        plateColour: (document.getElementById('plateFrame') || { dataset: {} }).dataset.plate || null,
+        total: (document.getElementById('msTotal') || {}).textContent,
+        charBars: document.querySelectorAll('#charBars .bar').length,
+        clsBars: document.querySelectorAll('#clsBars .bar').length,
+        // stage strip: the fixed action bar overlays it in a full-page screenshot,
+        // so read it from the DOM rather than trusting the image.
+        stages: [...document.querySelectorAll('.m-st')].map((s) => s.textContent.trim()),
+        cvSrcW: document.getElementById('cvSrc').width,
+        cvCropW: document.getElementById('cvCrop').width,
+      };
+    }, 200);
+  }
+</script>
+</body>
+</html>

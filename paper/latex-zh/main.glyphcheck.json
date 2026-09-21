@@ -1,0 +1,35 @@
+{
+  "pdf": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-zh\\main.pdf",
+  "size_bytes": 1160050,
+  "pages": 15,
+  "text_backend": "fitz",
+  "text_chars": 16560,
+  "expected": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "present": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "absent": [],
+  "verdict": "PASS",
+  "rendered_page": 9,
+  "rendered_png": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-zh\\main_p9.png",
+  "find": "90.9",
+  "find_hits": [
+    "多线程收益为1.5×。12 逻辑核桌面机上的无头Chromium 对照为90.9 ms →81.2 ms（1.12×），"
+  ]
+}

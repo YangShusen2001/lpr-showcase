@@ -1,0 +1,47 @@
+{
+  "url": "http://127.0.0.1:8134/index.html",
+  "result": {
+    "error": "timeout waiting for __NOPE",
+    "detail": "TimeoutError: page.waitForFunction: Timeout 3500ms exceeded."
+  },
+  "layout": {
+    "docHeight": 4311,
+    "viewport": 844,
+    "screens": 5.11,
+    "overflowX": false,
+    "sections": [
+      {
+        "tag": "header",
+        "top": 187,
+        "h": 63
+      },
+      {
+        "tag": "section",
+        "top": 63,
+        "h": 953
+      },
+      {
+        "tag": "pipeline",
+        "top": 1016,
+        "h": 608
+      },
+      {
+        "tag": "demo",
+        "top": 1624,
+        "h": 1919
+      },
+      {
+        "tag": "results",
+        "top": 3543,
+        "h": 452
+      },
+      {
+        "tag": "footer",
+        "top": 3995,
+        "h": 316
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "screenshot": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_index_html_390x844.png"
+}

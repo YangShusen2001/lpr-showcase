@@ -1,0 +1,55 @@
+$ C:\Users\26671\AppData\Local\tectonic\tectonic.exe C:\Users\26671\Desktop\车牌识别\paper\latex-zh\_probe.tex --outdir C:\Users\26671\Desktop\车牌识别\paper\latex-zh --keep-logs
+
+--- stdout ---
+note: Running TeX ...
+note: downloading SHA256SUM
+note: downloading ctexart.cls
+note: downloading ctexbackend.cfg
+note: downloading expl3.sty
+note: downloading xparse.sty
+note: downloading l3keys2e.sty
+note: downloading ctex-engine-xetex.def
+note: downloading ctexhook.sty
+note: downloading ctexpatch.sty
+note: downloading fix-cm.sty
+note: downloading ctexopts.cfg
+note: downloading article.cls
+note: downloading size10.clo
+note: downloading xeCJK.sty
+note: downloading CJKfntef.sty
+note: downloading xeCJKfntef.sty
+note: downloading xtemplate.sty
+note: downloading fontspec.sty
+note: downloading fontspec-xetex.sty
+note: downloading fontenc.sty
+note: downloading fontspec.cfg
+note: downloading lmroman10-bold.otf
+note: downloading xeCJK.cfg
+note: downloading hyperref.sty
+note: downloading zhnumber.sty
+note: downloading zhnumber-utf8.cfg
+note: downloading ctex-scheme-chinese-article.def
+note: downloading ctex-name-utf8.cfg
+note: downloading ctex-c5size.clo
+note: downloading ctex-fontset-fandol.def
+note: downloading FandolSong-Regular.otf
+note: downloading FandolSong-Bold.otf
+note: downloading FandolKai-Regular.otf
+note: downloading ctex.cfg
+note: downloading lmroman6-regular.otf
+note: downloading cmmi12.tfm
+note: downloading cmmi8.tfm
+note: downloading cmsy8.tfm
+note: downloading cmex8.tfm
+note: downloading cmr12.tfm
+note: downloading cmr8.tfm
+note: downloading lmroman12-bold.otf
+note: Rerunning TeX because "_probe.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `C:\Users\26671\Desktop\车牌识别\paper\latex-zh\_probe.log` (13.80 KiB)
+note: Writing `C:\Users\26671\Desktop\车牌识别\paper\latex-zh\_probe.pdf` (16.92 KiB)
+note: Skipped writing 1 intermediate files (use --keep-intermediates to keep them)
+
+--- stderr ---
+Fontconfig error: Cannot load default config file: No such file: (null)
+

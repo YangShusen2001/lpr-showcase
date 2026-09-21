@@ -1,0 +1,11 @@
+=== hilog clear ===
+Log type core,app,only_prerelease buffer clear successfully
+start server at tcp:5037
+
+=== aa start ===
+start ability successfully.
+
+=== load + bench + pipe ===
+09-17 19:08:37.478 11032 11032 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE LOAD ok det=CPU  rec=NNRT:NPU_ohos.boot.hardware.kirin8020_v2_0  cls=CPU
+09-17 19:08:37.749 11032 11032 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE PIPE code=苏ED5172 colour=蓝牌 count=1 total=102.6166 stages=68.8803|12.4177|8.5847|3.5009 cropSum=2773473
+09-17 19:08:38.036 11032 11032 I A0D001/com.shusen.lprdemo/LprNativeUI: DET BENCH ok=1;backend=CPU;warmup=3;repeat=10;meanMs=18.3223;p50Ms=14.2745;p95Ms=40.1116;minMs=9.9159;maxMs=40.1116;checksum=1042.6634;checksumAsFp16=nan;maxAbs=18.0232;outputDtype=43;outputElems=72000;error=

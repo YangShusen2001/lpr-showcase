@@ -1,0 +1,166 @@
+{
+ "det_head": {
+  "file": "y5fu_320x_head.onnx",
+  "bytes": 1795172,
+  "nodes": 313,
+  "conv": 85,
+  "conv16x16": 60,
+  "util_pct": 70.6,
+  "conv_lt16": 22,
+  "ops": {
+   "Conv": 85,
+   "Sigmoid": 63,
+   "Mul": 63,
+   "Reshape": 32,
+   "Slice": 26,
+   "Concat": 25,
+   "Transpose": 16,
+   "Resize": 2,
+   "MaxPool": 1
+  },
+  "risk_ops": {
+   "Mul": 63,
+   "Concat": 25,
+   "Reshape": 32,
+   "Transpose": 16,
+   "Slice": 26
+  }
+ },
+ "rec_rpv3": {
+  "file": "rpv3_mdict_160_r3.onnx",
+  "bytes": 10258843,
+  "nodes": 444,
+  "conv": 36,
+  "conv16x16": 20,
+  "util_pct": 55.6,
+  "conv_lt16": 14,
+  "ops": {
+   "Constant": 141,
+   "Add": 52,
+   "Mul": 43,
+   "Conv": 36,
+   "Div": 34,
+   "Relu": 31,
+   "Clip": 29,
+   "MatMul": 13,
+   "ReduceMean": 10,
+   "Transpose": 9,
+   "Sigmoid": 7,
+   "Reshape": 6,
+   "Gather": 6,
+   "Sub": 5,
+   "Pow": 5,
+   "Sqrt": 5,
+   "Softmax": 3,
+   "GlobalAveragePool": 2,
+   "Concat": 2,
+   "Pad": 1,
+   "AveragePool": 1,
+   "Shape": 1,
+   "Slice": 1,
+   "Squeeze": 1
+  },
+  "risk_ops": {
+   "Add": 52,
+   "Mul": 43,
+   "Div": 34,
+   "Pad": 1,
+   "AveragePool": 1,
+   "Slice": 1,
+   "Concat": 2,
+   "Reshape": 6,
+   "Transpose": 9,
+   "ReduceMean": 10,
+   "Sub": 5,
+   "Pow": 5,
+   "Sqrt": 5,
+   "Gather": 6,
+   "Softmax": 3
+  }
+ },
+ "cls_litemodel": {
+  "file": "litemodel_cls_96x_r1.onnx",
+  "bytes": 1604473,
+  "nodes": 103,
+  "conv": 52,
+  "conv16x16": 10,
+  "util_pct": 19.2,
+  "conv_lt16": 30,
+  "ops": {
+   "Conv": 52,
+   "Relu": 35,
+   "Add": 10,
+   "Gemm": 2,
+   "AveragePool": 1,
+   "Reshape": 1,
+   "PRelu": 1,
+   "Softmax": 1
+  },
+  "risk_ops": {
+   "Add": 10,
+   "AveragePool": 1,
+   "Reshape": 1,
+   "Softmax": 1
+  }
+ },
+ "lprnet": {
+  "file": "lprnet.onnx",
+  "bytes": 1785792,
+  "nodes": 63,
+  "conv": 16,
+  "conv16x16": 13,
+  "util_pct": 81.2,
+  "conv_lt16": 1,
+  "ops": {
+   "Conv": 16,
+   "Relu": 15,
+   "MaxPool": 6,
+   "Transpose": 6,
+   "ReduceMean": 5,
+   "Pow": 4,
+   "Div": 4,
+   "Pad": 3,
+   "AveragePool": 3,
+   "Concat": 1
+  },
+  "risk_ops": {
+   "Transpose": 6,
+   "Pad": 3,
+   "AveragePool": 3,
+   "Pow": 4,
+   "ReduceMean": 5,
+   "Div": 4,
+   "Concat": 1
+  }
+ },
+ "lprnet_npufix": {
+  "file": "lprnet_npufix.onnx",
+  "bytes": 1785538,
+  "nodes": 56,
+  "conv": 16,
+  "conv16x16": 13,
+  "util_pct": 81.2,
+  "conv_lt16": 1,
+  "ops": {
+   "Conv": 16,
+   "Relu": 15,
+   "ReduceMean": 5,
+   "Pow": 4,
+   "Div": 4,
+   "MaxPool": 3,
+   "Pad": 3,
+   "AveragePool": 3,
+   "Gather": 2,
+   "Concat": 1
+  },
+  "risk_ops": {
+   "Pad": 3,
+   "AveragePool": 3,
+   "Pow": 4,
+   "ReduceMean": 5,
+   "Div": 4,
+   "Concat": 1,
+   "Gather": 2
+  }
+ }
+}

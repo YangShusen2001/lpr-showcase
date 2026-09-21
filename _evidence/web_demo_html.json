@@ -1,0 +1,27 @@
+{
+  "url": "http://127.0.0.1:8133/demo.html",
+  "result": {
+    "error": "timeout waiting for __NOPE",
+    "detail": "TimeoutError: page.waitForFunction: Timeout 3500ms exceeded."
+  },
+  "layout": {
+    "docHeight": 1374,
+    "viewport": 900,
+    "screens": 1.53,
+    "overflowX": false,
+    "sections": [
+      {
+        "tag": "header",
+        "top": 0,
+        "h": 63
+      },
+      {
+        "tag": "footer",
+        "top": 1285,
+        "h": 88
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "screenshot": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_demo_html.png"
+}

@@ -1,0 +1,92 @@
+[serve] serving C:\Users\26671\Desktop\车牌识别 at http://127.0.0.1:8123/
+[serve] 2026-09-17T08:39:41.215Z 200 GET /mobile.html 6427B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.270Z 200 GET /assets/css/site.css 31548B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.274Z 200 GET /assets/css/mobile.css 10225B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.274Z 200 GET /assets/js/demo.js 19625B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.275Z 200 GET /assets/js/mobile.js 3452B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.401Z 200 GET /assets/js/pipeline.js 22816B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.419Z 200 GET /assets/ort/ort.min.js 367933B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.428Z 200 GET /assets/samples/scene-2.jpg 2079574B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.431Z 200 GET /assets/samples/hlpr-test.jpg 394396B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.433Z 200 GET /assets/samples/crop-1-皖KD01833.jpg 7287B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.434Z 200 GET /assets/samples/crop-0-津B6H920.jpg 5234B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.435Z 200 GET /assets/samples/crop-6-蒙B023H6.jpg 3605B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.435Z 200 GET /assets/samples/crop-8-冀D5L690.jpg 4531B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.457Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.463Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.465Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.469Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.471Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.475Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.478Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.481Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.484Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.486Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.489Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.492Z 200 GET /assets/ort/ort-wasm-simd-threaded.js 24218B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+2026-09-17T08:39:41.494Z 200 GET /assets/ort/ort-wasm-simd-threaded.wasm 13961845B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.731Z 200 GET /assets/models/y5fu_320x_sim.onnx.json 2343161B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:41.999Z 200 GET /assets/models/rpv3_mdict_160_r3.onnx.json 10258843B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:42.241Z 200 GET /assets/models/litemodel_cls_96x_r1.onnx.json 1604473B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+[serve] 2026-09-17T08:39:42.298Z 200 GET /assets/samples/scene-2.jpg 2079574B ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.7922.34 Safari/537.36"
+{
+  "url": "http://127.0.0.1:8123/mobile.html?auto=1",
+  "result": {
+    "done": true,
+    "ready": true,
+    "threads": 12,
+    "isolated": true,
+    "modelLoadMs": 874,
+    "sampleCount": 6,
+    "results": [
+      {
+        "label": "整车 · 黄牌",
+        "plates": 1,
+        "code": "藏DT5022",
+        "ms": 167.5
+      }
+    ],
+    "errors": [],
+    "demoState": "藏DT5022 · 167 ms",
+    "plate": "藏DT5022",
+    "meta": "黄牌 100.0% 单层 det 89.0% 340×122 px",
+    "plateColour": "yellow",
+    "total": "162.9 ms",
+    "charBars": 7,
+    "clsBars": 3,
+    "stages": [
+      "70.2 ms检测",
+      "53.3 ms矫正",
+      "39.4 ms识别",
+      "2.5 ms分类"
+    ],
+    "cvSrcW": 520,
+    "cvCropW": 340
+  },
+  "layout": {
+    "docHeight": 1451,
+    "viewport": 844,
+    "screens": 1.72,
+    "overflowX": false,
+    "sections": [
+      {
+        "tag": "section",
+        "top": 215,
+        "h": 313
+      },
+      {
+        "tag": "section",
+        "top": 527,
+        "h": 334
+      },
+      {
+        "tag": "section",
+        "top": 861,
+        "h": 195
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "screenshot": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_mobile_html_auto_1_390x844.png",
+  "json": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_mobile_html_auto_1_390x844.json"
+}

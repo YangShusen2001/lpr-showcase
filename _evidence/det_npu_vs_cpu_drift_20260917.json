@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-17",
+  "device": "HUAWEI nova 14 Pro (MIA-AL00), Kirin 8020, HarmonyOS 6.1.0.135",
+  "protocol": "CPU-diff: x[j]=((j*2654435761)%1000)/1000, output[0] [1,45,40,40] of y5fu_320x_head",
+  "measurements": [
+    {"landed": "NNRT:NPU_ohos.boot.hardware.kirin8020_v2_0", "checksum": 1043.4696,
+     "maxAbs": 18.0, "meanMs": 6.6276, "p50Ms": 6.688, "outputDtype": 43, "outputElems": 72000,
+     "pipelineCode": "苏E05172", "note": "plate code WRONG (baseline 苏ED5172)"},
+    {"landed": "CPU", "checksum": 1042.6634, "maxAbs": 18.0232,
+     "meanMs": 18.3223, "p50Ms": 14.2745, "minMs": 9.9159, "maxMs": 40.1116,
+     "outputDtype": 43, "outputElems": 72000,
+     "pipelineCode": "苏ED5172", "cropSum": 2773473, "note": "plate code CORRECT"}
+  ],
+  "pcOnnxReference": {"checksum": 1144.4541, "maxAbs": 21.77408, "layout": "NCHW fill",
+     "note": "NOT comparable to device numbers: device fills NHWC. Layout mismatch explains the 8.8%% gap, not NPU precision."},
+  "conclusion": {
+    "npuVsDeviceCpuL2Delta": "0.08%",
+    "npuVsDeviceCpuMaxAbsDelta": 0.0232,
+    "whyItBreaksThePlate": "kpt = logit * anchor + grid_px; anchors up to 433 => 0.023 logit drift is ~10 px",
+    "decision": "detector stays on CPU (bare head + C++ decode); recogniser keeps the NPU",
+    "lesson": "cross-device L2 comparison requires identical input layout (NHWC vs NCHW)"
+  },
+  "rawCapture": "_evidence/det_npu_vs_cpu_drift_20260917.txt"
+}

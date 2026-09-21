@@ -1,0 +1,136 @@
+{
+  "recognizer_on_labelled_crops": [
+    {
+      "file": "crop-0-津B6H920.jpg",
+      "gt": "津B6H920",
+      "pred": "津B6H920",
+      "conf": 0.9984,
+      "match": true
+    },
+    {
+      "file": "crop-1-皖KD01833.jpg",
+      "gt": "皖KD01833",
+      "pred": "皖KD01833",
+      "conf": 0.9616,
+      "match": true
+    },
+    {
+      "file": "crop-6-蒙B023H6.jpg",
+      "gt": "蒙B023H6",
+      "pred": "蒙B023H6",
+      "conf": 1.0,
+      "match": true
+    },
+    {
+      "file": "crop-8-冀D5L690.jpg",
+      "gt": "冀D5L690",
+      "pred": "冀D5L690",
+      "conf": 0.9761,
+      "match": true
+    }
+  ],
+  "full_images": [
+    {
+      "file": "hlpr-1.jpg",
+      "size": [
+        320,
+        320
+      ],
+      "plates": [
+        {
+          "rect": [
+            154,
+            216,
+            176,
+            229
+          ],
+          "det_score": 0.863,
+          "marks": [
+            [
+              154,
+              216
+            ],
+            [
+              176,
+              216
+            ],
+            [
+              176,
+              229
+            ],
+            [
+              154,
+              228
+            ]
+          ],
+          "layer": 1,
+          "code": "MU4158",
+          "rec_conf": 0.7931,
+          "crop_shape": [
+            13,
+            22
+          ],
+          "cls": [
+            0.0004,
+            0.0022,
+            0.9974
+          ],
+          "t_detect_ms": 22.66,
+          "t_rectify_ms": 26.49,
+          "t_recog_ms": 25.61
+        }
+      ]
+    },
+    {
+      "file": "hlpr-test.jpg",
+      "size": [
+        1080,
+        1920
+      ],
+      "plates": [
+        {
+          "rect": [
+            1751,
+            747,
+            1879,
+            855
+          ],
+          "det_score": 0.7413,
+          "marks": [
+            [
+              1755,
+              777
+            ],
+            [
+              1875,
+              747
+            ],
+            [
+              1875,
+              824
+            ],
+            [
+              1756,
+              855
+            ]
+          ],
+          "layer": 0,
+          "code": "苏ED5172",
+          "rec_conf": 0.7312,
+          "crop_shape": [
+            78,
+            123
+          ],
+          "cls": [
+            0.0001,
+            0.9998,
+            0.0001
+          ],
+          "t_detect_ms": 12.73,
+          "t_rectify_ms": 0.42,
+          "t_recog_ms": 44.39
+        }
+      ]
+    }
+  ]
+}

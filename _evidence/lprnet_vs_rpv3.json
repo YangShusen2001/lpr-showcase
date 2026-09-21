@@ -1,0 +1,115 @@
+{
+  "expected": "苏ED5172",
+  "rows": [
+    {
+      "tag": "crop-0-津B6H920.jpg",
+      "gt": "津B6H920",
+      "rpv3": "津B6H920",
+      "rpv3_conf": 0.9984,
+      "lprnet": "津B6H920",
+      "rpv3_ms": 17.46,
+      "lprnet_ms": 5.03,
+      "rpv3_ok": true,
+      "lprnet_ok": true,
+      "crop_shape": [
+        54,
+        104
+      ]
+    },
+    {
+      "tag": "crop-1-皖KD01833.jpg",
+      "gt": "皖KD01833",
+      "rpv3": "皖KD01833",
+      "rpv3_conf": 0.9616,
+      "lprnet": "皖KD01833",
+      "rpv3_ms": 11.93,
+      "lprnet_ms": 5.63,
+      "rpv3_ok": true,
+      "lprnet_ok": true,
+      "crop_shape": [
+        69,
+        247
+      ]
+    },
+    {
+      "tag": "crop-6-蒙B023H6.jpg",
+      "gt": "蒙B023H6",
+      "rpv3": "蒙B023H6",
+      "rpv3_conf": 1.0,
+      "lprnet": "蒙B023H6",
+      "rpv3_ms": 16.96,
+      "lprnet_ms": 6.24,
+      "rpv3_ok": true,
+      "lprnet_ok": true,
+      "crop_shape": [
+        47,
+        114
+      ]
+    },
+    {
+      "tag": "crop-8-冀D5L690.jpg",
+      "gt": "冀D5L690",
+      "rpv3": "冀D5L690",
+      "rpv3_conf": 0.9761,
+      "lprnet": "BD5L6",
+      "rpv3_ms": 23.69,
+      "lprnet_ms": 9.39,
+      "rpv3_ok": true,
+      "lprnet_ok": false,
+      "crop_shape": [
+        51,
+        153
+      ]
+    },
+    {
+      "tag": "hlpr-test.jpg#0",
+      "gt": "苏ED5172",
+      "rpv3": "苏ED5172",
+      "rpv3_conf": 0.7312,
+      "lprnet": "苏ED51712",
+      "rpv3_ms": 9.48,
+      "lprnet_ms": 10.13,
+      "rpv3_ok": true,
+      "lprnet_ok": false,
+      "crop_shape": [
+        78,
+        123
+      ]
+    },
+    {
+      "tag": "hlpr-1.jpg#0",
+      "gt": null,
+      "rpv3": "京AJ12",
+      "rpv3_conf": 0.6867,
+      "lprnet": "冀AL3",
+      "rpv3_ms": 18.19,
+      "lprnet_ms": 12.15,
+      "rpv3_ok": null,
+      "lprnet_ok": null,
+      "crop_shape": [
+        13,
+        22
+      ]
+    },
+    {
+      "tag": "plate-3.jpg#0",
+      "gt": null,
+      "rpv3": "京A3W501",
+      "rpv3_conf": 0.9621,
+      "lprnet": "皖A3V5C",
+      "rpv3_ms": 20.13,
+      "lprnet_ms": 25.12,
+      "rpv3_ok": null,
+      "lprnet_ok": null,
+      "crop_shape": [
+        113,
+        479
+      ]
+    }
+  ],
+  "summary": {
+    "labelled": 5,
+    "rpv3_ok": 5,
+    "lprnet_ok": 3
+  }
+}

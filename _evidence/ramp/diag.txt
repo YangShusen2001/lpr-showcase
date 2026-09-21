@@ -1,0 +1,16 @@
+--- 70x72 (src 256x144)
+  port - cv2 : n=15120 diff=1303 mean=+0.0860 min=-1 max=1
+  port - exact: n=15120 diff=417 mean=+0.0065 min=-1 max=1
+  cv2  - exact: n=15120 diff=1536 mean=-0.0795 min=-1 max=1
+--- 200x72 (src 256x144)
+  port - cv2 : n=43200 diff=3471 mean=+0.0803 min=0 max=1
+  port - exact: n=43200 diff=1394 mean=-0.0003 min=-1 max=1
+  cv2  - exact: n=43200 diff=4327 mean=-0.0806 min=-1 max=1
+--- 70x144 (src 256x144)
+  port - cv2 : n=30240 diff=29 mean=+0.0001 min=-1 max=1
+  port - exact: n=30240 diff=848 mean=-0.0288 min=-187 max=172
+  cv2  - exact: n=30240 diff=865 mean=-0.0289 min=-187 max=172
+--- 300x216 (src 256x144)
+  port - cv2 : n=194400 diff=21849 mean=+0.1124 min=-1 max=1
+  port - exact: n=194400 diff=6333 mean=+0.0630 min=-201 max=191
+  cv2  - exact: n=194400 diff=24479 mean=-0.0494 min=-201 max=191

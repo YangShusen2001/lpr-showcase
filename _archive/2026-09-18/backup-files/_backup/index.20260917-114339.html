@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="sL2Fd61ussOTFHnySqnf9E" class="anim" data-dm-ref="1"><head data-page-node-id="YdYO7ClVqTlCex404VJgHO">
+<meta charset="utf-8" data-page-node-id="oVPxS1r3CS0l49FNy7fWcY">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="J9YHLZuKTGK6nMAiqkUeY4">
+<title>基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别 · 检测 / 透视矫正 / 序列识别 / 颜色分类</title>
+<meta name="description" content="基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别。照片进，车牌字符串出；四级流水线全在浏览器内运行，三模型 14.2 MB 自托管零请求，与 Python 参考实现逐像素对齐。" data-page-node-id="KB2ciA80FGe30T3hl5APdC">
+<link rel="icon" href="data:," data-page-node-id="0V2WhDOjJt7tgHEzHjZYbJ">
+<link rel="stylesheet" href="assets/css/site.css" data-page-node-id="hpQgLYPmGjGYZd60Qcn1WZ">
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="wyODw7yfOZtXB5DRw5FPdh" style="">
+
+<!-- ============================================================ nav -->
+<header class="nav" data-page-node-id="ZZMlAkSAAD5JKy7mzo8qAb">
+  <div class="wrap nav-in" data-page-node-id="Y7zCHn8Q0dN60C876ZDCZN">
+    <div class="brand" data-page-node-id="0m9ke6H3a7xiyF66YKW6iH" style="">
+      <span class="dot" data-page-node-id="ODBZIMEFp9FJ6KlVsNMv7V" style=""></span>
+      纯前端端到端车牌识别
+      <small data-page-node-id="oDL5lxjdFkDK083rWi6yCq">YOLOv5 + CRNN-CTC · ONNX Runtime Web</small>
+    </div>
+    <nav class="nav-links" data-page-node-id="BU9EjcAxGY7a173v9Rk8VK">
+      <a href="#pipeline" data-page-node-id="VdrQ8ueZihGnj1nPfJ9zc9">流水线</a>
+      <a href="#results" data-page-node-id="7cPqnyCQpyehjZAqcjLldU">保真度</a>
+      <a href="paper/ieee-lpr-paper.md" data-page-node-id="Lnn9WHUr9uzeDDIn2Cnrag">论文</a>
+      <a class="cta" href="demo.html" data-page-node-id="Lq51N7cFXpdNFJQF0CLB7Y">打开实时 Demo</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================ hero -->
+
+
+<!-- ============================================================ 01 pipeline -->
+<section class="hero compact" data-page-node-id="5lZI2KV8NzqSXZSk8VdcBE">
+  
+<div class="wrap" data-page-node-id="EUZvuHvV2NKQG6UUNXqZ2o">
+    <span class="eyebrow" data-page-node-id="yaz5pwPV73IUXDrxOeW2iy" style="">麒麟 8020 端侧实测​</span>
+    <h1 data-page-node-id="zzjOnLtaxRUCY8C4k1Eqtn" style="">基于 YOLOv5 与 CRNN-CTC 的<em data-page-node-id="FHKQ96tzFl0wTpgb4AYttV" style="">端到端​</em>车牌识别</h1>
+    <p class="lede" data-page-node-id="IAO2LEnp2e4KrQJ0WCgQee" style="text-decoration-line: line-through;">
+      四级流水线全部在本机浏览器内运行 —— 三个 ONNX 模型合计 14.2&nbsp;MB，自托管、零网络请求。
+      同一套代码与 Python 参考实现逐像素对齐，并给出麒麟 8020 的端侧实测数据。
+    </p>
+
+    <div class="hero-actions" data-page-node-id="LhK4EREOdeQlD6yzS5w4Cu">
+      
+      
+      
+    </div>
+
+    <div class="metrics" data-page-node-id="bdUBgP4rIlQHHAVBO2l9DH">
+      
+      
+      
+      
+    </div>
+  </div></section><section id="pipeline" class="slim" data-page-node-id="lWPTjITuvX3847Y7FHh55S">
+  <div class="wrap" data-page-node-id="XHHqpHeE14uLvbmUKQ1GUw">
+    <div class="sec-head tight reveal in" data-page-node-id="tm9HX7pNgC2cNDmjG22XAd">
+      
+      <h2 data-page-node-id="B4P5ELdHzgNP3cxhKEGcdD" style="white-space: pre-wrap; cursor: text; text-decoration-line: none;">车牌识别流程</h2>
+      
+    </div>
+
+    <div class="strip reveal in" data-page-node-id="5WD58u2XbxWHzFfvRiEzMK">
+      <div class="st" data-page-node-id="mNPGsL1Gcy6nFjBzsZBhCW">
+        
+        <h3 data-page-node-id="3VyIroqTgqQjegKTCviphx">车牌检测</h3>
+        <div class="m" data-page-node-id="gOC1KZb6GJkrhvjKLM2nvT" style="">y5fu_320x_sim.onnx<br data-page-node-id="7j1lsiWklF6QSPW4w8ORKI">2.23 MB · YOLOv5 系单类头</div>
+        
+      </div>
+      <div class="st" data-page-node-id="DK7AlcKnjBHZRz81BU6VyG">
+        
+        <h3 data-page-node-id="Cmj3iPV57gGhjIFlza15CJ">透视矫正</h3>
+        <div class="m" data-page-node-id="4Jx01fwnv9FzLGSig1BiqP">无模型<br data-page-node-id="YUGlRgbrWev9OTYL4ADqBB">纯几何 · 双三次重采样</div>
+        
+      </div>
+      <div class="st" data-page-node-id="2Wdm8uszl7XHQQLKPIJPwn">
+        
+        <h3 data-page-node-id="mG4LuLZci7C3dqzHw8tjIl">序列识别</h3>
+        <div class="m" data-page-node-id="b1Nfrzlg0gfITRs4kqcDVj">rpv3_mdict_160_r3.onnx<br data-page-node-id="MMZ4HYV9nVgykiwUOEPuPx">9.78 MB · CRNN + CTC</div>
+        
+      </div>
+      <div class="st" data-page-node-id="luaSFcbCGk2itFq6gNKIuP">
+        
+        <h3 data-page-node-id="0waIKduBRsegBE4eWwoo7n">颜色分类</h3>
+        <div class="m" data-page-node-id="yTKOyg7swOeibeY9XtKcTS">litemodel_cls_96x_r1.onnx<br data-page-node-id="QLCJ01nJZ0uEHfsouK1UVN">1.53 MB · 96×96 分类头</div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 02 demo -->
+<section id="demo" class="slim" data-page-node-id="7piw9sd56QSBW8iqZJtCHF">
+  <div class="wrap" data-page-node-id="a7ABEy16zMoi5RY9F0Uhm9">
+    <div class="sec-head tight reveal in" data-page-node-id="DSf0OwswR5sAgmGOd3ZxYA">
+      
+      <h2 data-page-node-id="l26d76RE2ArTAjtWJVKGbK" style="">Demo 演示​​​</h2>
+    </div><div class="teaser reveal in" data-page-node-id="WsMCvBGUa58mXAC0qybfVt">
+      <div class="shot" data-page-node-id="TVREA5hfvQy34yKwCCg6BF">
+        
+      </div>
+      
+    </div>
+
+    
+  </div>
+</section>
+
+<!-- ============================================================ 03 results -->
+<section id="results" class="alt slim" data-page-node-id="rRkdigiZp03ZzAdXl4EoVs">
+  <div class="wrap" data-page-node-id="GqTRdiCmsAhHxDoH7PrcUE">
+    
+  </div>
+</section>
+
+<!-- ============================================================ footer -->
+<footer data-page-node-id="vHj5TpoWlWv62SFWbB7q7u">
+  <div class="wrap" data-page-node-id="FJXyYT13ChbL4c58m0KQAH">
+    <div class="links-row" data-page-node-id="smdD4W353V89fiVqSqYxhU">
+      
+      
+      
+      
+      
+      
+    </div>
+    <div class="foot-in" data-page-node-id="CwWVcNCEN5sGtMc0lZNWAi">
+      <span data-page-node-id="ynQNoAEazA8V1KVVnuAfTT">基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别</span>
+      <span class="mono" data-page-node-id="nEAgdFH4cPTpaF9AOFW9ue">HyperLPR (Apache-2.0) · onnxruntime-web (MIT)</span>
+      <span class="mono" style="margin-left:auto" data-page-node-id="oJazWxbEXKRd92Mh6dHM3b">本地运行：node tools/serve.mjs . 8099</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  // Reveal animations are gated behind html.anim so a JS failure leaves the page
+  // fully visible instead of blank.
+  const targets = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && targets.length) {
+    document.documentElement.classList.add('anim');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }
+    }, { rootMargin: '-6% 0px -6% 0px' });
+    targets.forEach((n) => io.observe(n));
+    setTimeout(() => targets.forEach((n) => n.classList.add('in')), 3000);
+  }
+</script>
+
+
+</body></html>

@@ -1,0 +1,74 @@
+=== hlpr-1.jpg ===
+  letterbox: py r=1.0 left=0 top=0  |  js r=1 left=0 top=0
+  input tensor sum: max Δabs=1.754e-03 @[0]
+      py=75094.109375  js=75094.107621
+  input tensor head: exact
+  input tensor mid: exact
+  detector raw row: max Δabs=4.000e-06 @[2]
+      py=22.372076  js=22.37208
+  rect     : py=[154, 216, 176, 229]  js=[154, 216, 176, 229]  OK
+  marks    : py=[[154, 216], [176, 216], [176, 229], [154, 228]]  js=[[154, 216], [176, 216], [176, 229], [154, 228]]  OK
+  cropShape: py=[13, 22]  js=[13, 22]  OK
+  cropSum  : py=105080  js=105080  OK
+  code     : py='MU4158'  js='MU4158'  OK
+  recConf  : Δabs=1.630e-02  Δrel=2.06e-02
+  detScore : exact
+  cls: exact
+
+=== hlpr-test.jpg ===
+  letterbox: py r=0.16666666666666666 left=0 top=70  |  js r=0.16666666666666666 left=0 top=70
+  input tensor sum: max Δabs=2.035e-03 @[0]
+      py=88579.953125  js=88579.95109
+  input tensor head: exact
+  input tensor mid: exact
+  detector raw row: max Δabs=1.500e-05 @[10]
+      py=206.384445  js=206.38446
+  rect     : py=[1751, 747, 1879, 855]  js=[1751, 747, 1879, 855]  OK
+  marks    : py=[[1755, 777], [1875, 747], [1875, 824], [1756, 855]]  js=[[1755, 777], [1875, 747], [1875, 824], [1756, 855]]  OK
+  cropShape: py=[78, 123]  js=[78, 123]  OK
+  cropSum  : py=2772794  js=2772798  DIFF
+  code     : py='苏ED5172'  js='苏ED5172'  OK
+  recConf  : Δabs=7.000e-04  Δrel=9.56e-04
+  detScore : exact
+  cls: exact
+
+=== scene-2.jpg ===
+  letterbox: py r=0.2807017543859649 left=0 top=96  |  js r=0.2807017543859649 left=0 top=96
+  input tensor sum: max Δabs=5.154e+02 @[0]
+      py=34188.34375  js=33672.910563
+  input tensor head: exact
+  input tensor mid: max Δabs=3.922e-03 @[2]
+      py=0.32156864  js=0.31764707
+  detector raw row: max Δabs=1.638e-01 @[3]
+      py=48.090725  js=48.254532
+  rect     : py=[217, 157, 563, 328]  js=[217, 157, 563, 329]  DIFF
+  marks    : py=[[216, 156], [552, 207], [563, 329], [228, 274]]  js=[[216, 156], [552, 207], [564, 329], [228, 274]]  DIFF
+  cropShape: py=[122, 339]  js=[122, 340]  DIFF
+  cropSum  : py=5281904  js=5343214  DIFF
+  code     : py='藏DT5022'  js='藏DT5022'  OK
+  recConf  : Δabs=1.430e-02  Δrel=1.49e-02
+  detScore : exact
+  cls: exact
+
+=== plate-yellow-320x48.jpg ===
+  letterbox: py r=1.0 left=0 top=136  |  js r=1 left=0 top=136
+  input tensor sum: max Δabs=5.870e-04 @[0]
+      py=21810.789062  js=21810.788475
+  input tensor head: exact
+  input tensor mid: exact
+  detector raw row: max Δabs=4.000e-06 @[5]
+      py=2.561443  js=2.561447
+  rect     : py=[0, 6, 139, 50]  js=[0, 6, 139, 50]  OK
+  marks    : py=[[2, 8], [137, 6], [135, 48], [2, 50]]  js=[[2, 8], [137, 6], [135, 48], [2, 50]]  OK
+  cropShape: py=[42, 135]  js=[42, 135]  OK
+  cropSum  : py=1694093  js=1694092  DIFF
+  code     : py='粤ZP560港'  js='粤ZP560港'  OK
+  recConf  : Δabs=5.000e-04  Δrel=5.16e-04
+  detScore : exact
+  cls: exact
+
+=== recogniser on labelled crops ===
+  津B6H920      py=— js=津B6H920      conf=0.9983 match=True
+  皖KD01833     py=— js=皖KD01833     conf=0.9612 match=True
+  蒙B023H6      py=— js=蒙B023H6      conf=1 match=True
+  冀D5L690      py=— js=冀D5L690      conf=0.9753 match=True

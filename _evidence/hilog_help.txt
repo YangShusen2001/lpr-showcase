@@ -1,0 +1,160 @@
+﻿Usage:
+-h --help
+  Show all help information.
+  Show single help information with option: 
+  query/clear/buffer/stats/persist/private/kmsg/flowcontrol/baselevel/domain/combo
+Querying logs options:
+  No option performs a blocking read and keeps printing.
+  -x --exit
+    Performs a non-blocking read and exits when all logs in buffer are printed.
+  -a <n>, --head=<n>
+    Show n lines logs on head of buffer.
+  -z <n>, --tail=<n>
+    Show n lines logs on tail of buffer.
+  -t <type>, --type=<type>
+    Show specific type/types logs with format: type1,type2,type3
+    Don't show specific type/types logs with format: ^type1,type2,type3
+    Type coule be: app/core/init/kmsg/only_prerelease, kmsg can't combine with others.
+    Default types are: app,core,init,only_prerelease.
+  -L <level>, --level=<level>
+    Show specific level/levels logs with format: level1,level2,level3
+    Don't show specific level/levels logs with format: ^level1,level2,level3
+    Long and short level string are both accepted
+    Long level string coule be: DEBUG/INFO/WARN/ERROR/FATAL.
+    Short level string coule be: D/I/W/E/F.
+    Default levels are all levels.
+  -D <domain>, --domain=<domain>
+    Show specific domain/domains logs with format: domain1,domain2,doman3
+    Don't show specific domain/domains logs with format: ^domain1,domain2,doman3
+    Max domain count is 5.
+    See domain description at the end of this message.
+  -T <tag>, --tag=<tag>
+    Show specific tag/tags logs with format: tag1,tag2,tag3
+    Don't show specific tag/tags logs with format: ^tag1,tag2,tag3
+    Max tag count is 10.
+  -P <pid>, --pid=<pid>
+    Show specific pid/pids logs with format: pid1,pid2,pid3
+    Don't show specific domain/domains logs with format: ^pid1,pid2,pid3
+    Max pid count is 5.
+  -e <expr>, --regex=<expr>
+    Show the logs which match the regular expression <expr>.
+  -v <format>, --format=<format>
+    Show logs in different formats, options are:
+      color or colour      display colorful logs by log level.i.e.
+        [38;5;75mDEBUG        [38;5;40mINFO        [38;5;166mWARN        [38;5;196mERROR       [38;5;226mFATAL[0m
+      time format options are(single accepted):
+        time       display local time, this is default.
+        epoch      display the time from 1970/1/1.
+        monotonic  display the cpu time from bootup.
+      time accuracy format options are(single accepted):
+        msec       display time by millisecond, this is default.
+        usec       display time by microsecond.
+        nsec       display time by nanosecond.
+      year       display the year when -v time is specified.
+      zone       display the time zone when -v time is specified.
+      wrap       display the log without prefix when a log line is wrapped.
+      long       display all metadata fields, separate messages with blank lines.
+    Different types of formats can be combined, such as:
+    -v color -v time -v msec -v year -v zone.
+-r
+  Remove all logs in hilogd buffer, advanced option:
+  -t <type>, --type=<type>
+    Remove specific type/types logs in buffer with format: type1,type2,type3
+    Type coule be: app/core/init/kmsg/only_prerelease.
+    Default types are: app,core,only_prerelease
+-g
+  Query hilogd buffer size, advanced option:
+  -t <type>, --type=<type>
+    Query specific type/types buffer size with format: type1,type2,type3
+    Type coule be: app/core/init/kmsg/only_prerelease.
+    Default types are: app,core,only_prerelease
+-G <size>, --buffer-size=<size>
+  Set hilogd buffer size, <size> could be number or number with unit.
+  Unit could be: B/K/M/G which represents Byte/Kilobyte/Megabyte/Gigabyte.
+  <size> range: [64.0K,16.0M].
+  Advanced option:
+  -t <type>, --type=<type>
+    Set specific type/types log buffer size with format: type1,type2,type3
+    Type coule be: app/core/init/kmsg/only_prerelease.
+    Default types are: app,core,only_prerelease
+  **It's a persistant configuration**
+-s, --statistics
+  Query log statistic information.
+  Set param persist.sys.hilog.stats true to enable statistic.
+  Set param persist.sys.hilog.stats.tag true to enable statistic of log tag.
+-S
+  Clear hilogd statistic information.
+-w <control>,--write=<control>
+  Log persistance task control, options are:
+    query      query tasks informations
+    stop       stop all tasks
+    start      start one task
+    refresh    refresh buffer content to file
+    clear      clear /data/log/hilog/hilog*.gz
+  Persistance task is used for saving logs in files.
+  The files are saved in directory: /data/log/hilog/
+  Advanced options:
+  -f <filename>, --filename=<filename>
+    Set log file name, name should be valid of Linux FS.
+  -l <length>, --length=<length>
+    Set single log file size. <length> could be number or number with unit.
+    Unit could be: B/K/M/G which represents Byte/Kilobyte/Megabyte/Gigabyte.
+    <length> range: [64.0K, 512.0M].
+  -n <number>, --number<number>
+    Set max log file numbers, log file rotate when files count over this number.
+    <number> range: [2, 1000].
+  -m <compress algorithm>,--stream=<compress algorithm>
+    Set log file compressed algorithm, options are:
+      none       write file with non-compressed logs.
+      zlib       write file with zlib compressed logs.
+  -j <jobid>, --jobid<jobid>
+    Start/stop specific task of <jobid>.
+    <jobid> range: [10, 0xffffffff).
+  User can start task with options (t/L/D/T/P/e/v) as if using them when "Query logs" too.
+  **It's a persistant configuration**
+-k <on/off>, --kmsg <on/off>
+  Set hilogd storing kmsg log feature on or off
+  **It's a persistant configuration**
+-Q <control-type>
+  Set log flow-control feature on or off, options are:
+    pidon     process flow control on
+    pidoff    process flow control off
+    domainon  domain flow control on
+    domainoff domain flow control off
+    domainverifyon enable non whitelist domain
+    domainverifyoff disable non whitelist domain
+  **It's a temporary configuration, will be lost after reboot**
+-b <loglevel>, --baselevel=<loglevel>
+  Set global loggable level to <loglevel>
+  Long and short level string are both accepted.
+  Long level string coule be: DEBUG/INFO/WARN/ERROR/FATAL/X.
+  Short level string coule be: D/I/W/E/F/X.
+  X means that loggable level is higher than the max level, no log could be printed.
+  Advanced options:
+  -D <domain>, --domain=<domain>
+    Set specific domain loggable level.
+    See domain description at the end of this message.
+  -T <tag>, --tag=<tag>
+    Set specific tag loggable level.
+    The priority is: tag level > domain level > global level.
+  **It's a temporary configuration, will be lost after reboot**
+  --persist
+    Set persist configuration
+    The priority is: tag level > persist tag level > domain level > persist domain level > global level > persist global level.
+The first layer options can't be used in combination, ILLEGAL expamples:
+    hilog -S -s; hilog -w start -r; hilog -p on -k on -b D
+
+
+Domain description:
+  Log type "core" & "init" & "only_prerelease" are used for OS subsystems, the range is  [0xd000000,  0xd0fffff]
+  Log type "app" is used for applications, the range is [0x0,  0xffff]
+  To reduce redundant info when printing logs, only last five hex numbers of domain are printed
+  So if user wants to use -D option to filter OS logs, user should add 0xD0 as prefix to the printed domain:
+  Exapmle: hilog -D 0xD0xxxxx
+  The xxxxx is the domain string printed in logs.
+
+
+Dictionary description:
+-d <path>, --dictionary=<path>
+  Set elf file path, name should be valid of Linux FS.
+  Rescan the elf file in the system to generate a full data dictionary file

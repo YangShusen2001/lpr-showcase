@@ -1,0 +1,400 @@
+{
+  "n": 1000,
+  "exact": 906,
+  "by_colour": {
+    "blue": {
+      "n": 860,
+      "exact": 777,
+      "short": 5,
+      "long": 4,
+      "same": 74
+    },
+    "green": {
+      "n": 86,
+      "exact": 80,
+      "short": 1,
+      "long": 0,
+      "same": 5
+    },
+    "other": {
+      "n": 54,
+      "exact": 49,
+      "short": 0,
+      "long": 0,
+      "same": 5
+    }
+  },
+  "gt_len_by_colour": {
+    "blue": {
+      "7": 860
+    },
+    "green": {
+      "7": 86
+    },
+    "other": {
+      "7": 54
+    }
+  },
+  "misses": [
+    {
+      "file": "皖A05279.jpg",
+      "gt": "皖A05279",
+      "pred": "豫A05279",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.923
+    },
+    {
+      "file": "皖A09N61.jpg",
+      "gt": "皖A09N61",
+      "pred": "苏A09N31",
+      "colour": "green",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.682
+    },
+    {
+      "file": "皖A0H627.jpg",
+      "gt": "皖A0H627",
+      "pred": "京A0H627",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.982
+    },
+    {
+      "file": "皖A0V790.jpg",
+      "gt": "皖A0V790",
+      "pred": "皖A0N790",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.921
+    },
+    {
+      "file": "皖A0Y000.jpg",
+      "gt": "皖A0Y000",
+      "pred": "粤A0Y000",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.851
+    },
+    {
+      "file": "皖A15C18.jpg",
+      "gt": "皖A15C18",
+      "pred": "京A15C18",
+      "colour": "other",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.911
+    },
+    {
+      "file": "皖A18145.jpg",
+      "gt": "皖A18145",
+      "pred": "沪AJ8145",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.773
+    },
+    {
+      "file": "皖A25654.jpg",
+      "gt": "皖A25654",
+      "pred": "陕A25654",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.886
+    },
+    {
+      "file": "皖A267A8.jpg",
+      "gt": "皖A267A8",
+      "pred": "桂A267A8",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.875
+    },
+    {
+      "file": "皖A29C52.jpg",
+      "gt": "皖A29C52",
+      "pred": "浙A29C52",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.827
+    },
+    {
+      "file": "皖A2U448.jpg",
+      "gt": "皖A2U448",
+      "pred": "粤A2J448",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.934
+    },
+    {
+      "file": "皖A34V88.jpg",
+      "gt": "皖A34V88",
+      "pred": "粤A34V88",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.965
+    },
+    {
+      "file": "皖A49P06.jpg",
+      "gt": "皖A49P06",
+      "pred": "京5A9P06",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.758
+    },
+    {
+      "file": "皖A4M405.jpg",
+      "gt": "皖A4M405",
+      "pred": "京A4M405",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.865
+    },
+    {
+      "file": "皖A586H7.jpg",
+      "gt": "皖A586H7",
+      "pred": "粤A586H7",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.892
+    },
+    {
+      "file": "皖A596C7.jpg",
+      "gt": "皖A596C7",
+      "pred": "云A596C7",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.916
+    },
+    {
+      "file": "皖A5G895.jpg",
+      "gt": "皖A5G895",
+      "pred": "粤A5G422",
+      "colour": "green",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.677
+    },
+    {
+      "file": "皖A5T949.jpg",
+      "gt": "皖A5T949",
+      "pred": "粤BA5T949",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 8,
+      "conf": 0.877
+    },
+    {
+      "file": "皖A625X0.jpg",
+      "gt": "皖A625X0",
+      "pred": "粤A625X0",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.875
+    },
+    {
+      "file": "皖A6V359.jpg",
+      "gt": "皖A6V359",
+      "pred": "桂A6V359",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.908
+    },
+    {
+      "file": "皖A75556.jpg",
+      "gt": "皖A75556",
+      "pred": "粤A75556",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.956
+    },
+    {
+      "file": "皖A77Q40.jpg",
+      "gt": "皖A77Q40",
+      "pred": "粤A77Q40",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.905
+    },
+    {
+      "file": "皖A84V80.jpg",
+      "gt": "皖A84V80",
+      "pred": "粤A84V80",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.932
+    },
+    {
+      "file": "皖A884B0.jpg",
+      "gt": "皖A884B0",
+      "pred": "冀A884B0",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.942
+    },
+    {
+      "file": "皖A88G02.jpg",
+      "gt": "皖A88G02",
+      "pred": "A86603",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 6,
+      "conf": 0.573
+    },
+    {
+      "file": "皖A906G2.jpg",
+      "gt": "皖A906G2",
+      "pred": "桂A906G2",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.896
+    },
+    {
+      "file": "皖AA1R81.jpg",
+      "gt": "皖AA1R81",
+      "pred": "苏AA1R81",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.774
+    },
+    {
+      "file": "皖AA603W.jpg",
+      "gt": "皖AA603W",
+      "pred": "京AA603K",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.77
+    },
+    {
+      "file": "皖AB166M.jpg",
+      "gt": "皖AB166M",
+      "pred": "沪A3A656",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.453
+    },
+    {
+      "file": "皖AB7182.jpg",
+      "gt": "皖AB7182",
+      "pred": "粤AB7182",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.984
+    },
+    {
+      "file": "皖AC8J48.jpg",
+      "gt": "皖AC8J48",
+      "pred": "粤AD8J48",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.791
+    },
+    {
+      "file": "皖AD168D.jpg",
+      "gt": "皖AD168D",
+      "pred": "粤ADU680",
+      "colour": "other",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.523
+    },
+    {
+      "file": "皖ADE783.jpg",
+      "gt": "皖ADE783",
+      "pred": "皖A0E783",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.932
+    },
+    {
+      "file": "皖AE920X.jpg",
+      "gt": "皖AE920X",
+      "pred": "藏AE920X",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.903
+    },
+    {
+      "file": "皖AE955B.jpg",
+      "gt": "皖AE955B",
+      "pred": "粤AE955B",
+      "colour": "green",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.906
+    },
+    {
+      "file": "皖AEL010.jpg",
+      "gt": "皖AEL010",
+      "pred": "京AEL010",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.931
+    },
+    {
+      "file": "皖AF823X.jpg",
+      "gt": "皖AF823X",
+      "pred": "赣AF823X",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.931
+    },
+    {
+      "file": "皖AGG512.jpg",
+      "gt": "皖AGG512",
+      "pred": "陕AGG512",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.884
+    },
+    {
+      "file": "皖AH0V77.jpg",
+      "gt": "皖AH0V77",
+      "pred": "粤AH0V77",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.785
+    },
+    {
+      "file": "皖AH8642.jpg",
+      "gt": "皖AH8642",
+      "pred": "苏AH8642",
+      "colour": "blue",
+      "len_gt": 7,
+      "len_pred": 7,
+      "conf": 0.926
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "ort_version": "1.27.0",
+  "models": {
+    "y5fu_320x_sim": {
+      "path": "C:\\Users\\26671\\Desktop\\车牌识别\\assets\\models\\y5fu_320x_sim.onnx.json",
+      "size": 2343161,
+      "inputs": [
+        {
+          "name": "input",
+          "shape": [
+            1,
+            3,
+            320,
+            320
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "shape": [
+            1,
+            6300,
+            15
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "ok": true
+    },
+    "rpv3_mdict_160_r3": {
+      "path": "C:\\Users\\26671\\Desktop\\车牌识别\\assets\\models\\rpv3_mdict_160_r3.onnx.json",
+      "size": 10258843,
+      "inputs": [
+        {
+          "name": "data",
+          "shape": [
+            1,
+            3,
+            48,
+            160
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "shape": [
+            1,
+            20,
+            78
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "ok": true
+    },
+    "litemodel_cls_96x_r1": {
+      "path": "C:\\Users\\26671\\Desktop\\车牌识别\\assets\\models\\litemodel_cls_96x_r1.onnx.json",
+      "size": 1604473,
+      "inputs": [
+        {
+          "name": "data",
+          "shape": [
+            1,
+            3,
+            96,
+            96
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "shape": [
+            1,
+            3
+          ],
+          "type": "tensor(float)"
+        }
+      ],
+      "ok": true
+    }
+  }
+}

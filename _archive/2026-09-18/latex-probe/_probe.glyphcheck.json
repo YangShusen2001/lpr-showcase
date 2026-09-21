@@ -1,0 +1,32 @@
+{
+  "pdf": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-zh\\_probe.pdf",
+  "size_bytes": 17321,
+  "text_backend": "fitz",
+  "text_chars": 53,
+  "expected": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "present": [],
+  "absent": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "verdict": "FAIL",
+  "rendered_page": 1,
+  "rendered_png": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-zh\\_probe_p1.png",
+  "find": "ZP560",
+  "find_hits": []
+}

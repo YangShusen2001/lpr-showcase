@@ -1,0 +1,18 @@
+[
+  {
+    "step": "a3_hap_build",
+    "returncode": 0
+  },
+  {
+    "step": "a3_install",
+    "returncode": 0
+  },
+  {
+    "step": "a3_stop",
+    "returncode": 0
+  },
+  {
+    "step": "a3_start",
+    "returncode": 0
+  }
+]

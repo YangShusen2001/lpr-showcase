@@ -1,0 +1,42 @@
+{
+  "image": "hlpr-test.jpg",
+  "preprocess": "letterbox 320, NCHW RGB /255",
+  "r": 0.166667,
+  "left": 0,
+  "top": 70,
+  "outputs": [
+    {
+      "output": 0,
+      "shape": [
+        1,
+        45,
+        40,
+        40
+      ],
+      "l2": 1077.1619,
+      "maxAbs": 23.6179
+    },
+    {
+      "output": 1,
+      "shape": [
+        1,
+        45,
+        20,
+        20
+      ],
+      "l2": 479.868,
+      "maxAbs": 18.1462
+    },
+    {
+      "output": 2,
+      "shape": [
+        1,
+        45,
+        10,
+        10
+      ],
+      "l2": 232.7599,
+      "maxAbs": 15.207
+    }
+  ]
+}

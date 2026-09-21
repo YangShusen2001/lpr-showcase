@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="O0xTYgQ1z20KO3Y3Apm0NW">
+<head data-page-node-id="QxyvzvCVkBF76jGi5n3Iuu">
+<meta charset="utf-8" data-page-node-id="th3FFk5Cfr662Oree7Ey7W" />
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="xbiisUbkKhVC0oK015hMFg" />
+<title>实时演示 · 基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别</title>
+<meta name="description" content="在浏览器里实时运行车牌识别：检测、透视矫正、CRNN-CTC 识别、颜色分类。模型本地自托管，零网络请求。" data-page-node-id="ltFDZhE65QLxgC9rHnz7Uw" />
+<link rel="icon" href="data:," data-page-node-id="Dyo4nyWnGPn0smlaEf6qUt" />
+<link rel="stylesheet" href="assets/css/site.css" data-page-node-id="t9o90wA3InKuCxB6pwxY8r" />
+</head>
+<body data-page-node-id="rU98LU0LO4UGNA1fOAqBdm">
+
+<header class="nav" data-page-node-id="x316h6OrDbihf4AjQRAFHY">
+  <div class="wrap nav-in" data-page-node-id="6szijiofIrOYpJ7j1VTlI3">
+    <div class="brand" data-page-node-id="RNgopjlbiEojS8ZHMCbx4U">
+      <span class="dot" data-page-node-id="ZXAPx8wFZzXHMRZrFTAscZ"></span>
+      纯前端端到端车牌识别
+      <small data-page-node-id="nxiywXEX2PSiA1Q0oJYz8t">实时演示</small>
+    </div>
+    <nav class="nav-links" data-page-node-id="C6ed6AooZNbSc6YQwf7TA4">
+      <a href="index.html" data-page-node-id="Bs2FAqBz5X0xKSw3URd4gk">← 返回介绍</a>
+      <a href="index.html#results" data-page-node-id="ajGT5hlwFvzGwXopufxNyh">保真度</a>
+      <a href="paper/ieee-lpr-paper.md" data-page-node-id="mp8VQnAUSGSBF8MBiF7S8m">论文</a>
+      <a class="cta" href="https://github.com/szad670401/HyperLPR" target="_blank" rel="noreferrer" data-page-node-id="4yHED7ne3AdDVYcN567LqW">模型来源</a>
+    </nav>
+  </div>
+</header>
+
+<main class="demo-page" data-page-node-id="19zfjX7FASHLiuhfXOO3hA">
+  <div class="wrap" data-page-node-id="QxDgRfzpzPUAaC3KeZUfnz">
+    <div class="dp-head" data-page-node-id="iBdYeF8KGK4LLrPqPiZi1q">
+      <h1 data-page-node-id="udm9zpcsinFPEyBo3dSAan">实时演示</h1>
+      <p data-page-node-id="wM1EDh59IGNDFUEDyMEcwT">
+        选一张内置样本、拖入照片，或直接 <b data-page-node-id="IFPFeFDF5KSyn10qD05jAw">Ctrl+V</b> 粘贴剪贴板图片。下面每一个数字 ——
+        检测框、关键点、矫正裁剪、逐字符置信度、分级耗时 —— 都来自你本机浏览器里的真实推理，
+        没有任何预置结果。
+      </p>
+    </div>
+
+    <div class="demo-shell" data-page-node-id="eayEura6xqptBIN0bwdsjC">
+      <div class="demo-bar" data-page-node-id="jlBVQVSffRcKxJ4pGCrUUb">
+        <span class="lamp" data-page-node-id="8IqMTBhtjtrQjzJZBqF4cZ"></span><span class="lamp" data-page-node-id="EbzBDwKLoDfEtnMQmYUadV"></span><span class="lamp" data-page-node-id="PR0xrFYz133LZ5KWraOzCu"></span>
+        <span class="title" id="rtTitle" data-page-node-id="cQEtM4m6JqRUZqEgqY6vlM">hyperlpr3 · browser-runtime · wasm/simd · fp32</span>
+        <span class="rt" data-page-node-id="a70L8W7dIQRfCcExBhpAd5">status <b id="rtState" data-page-node-id="LkE70Sjcxrnyc14x05tEo7">idle</b></span>
+      </div>
+
+      <div class="demo-grid" data-page-node-id="FvxNYk37Kc2fruKZ4PThKB">
+        <aside class="demo-side" data-page-node-id="jhXyEiGgPBSMsTtrEhBEzg">
+          <h4 data-page-node-id="M2edIhK3xiqtvxlxNouUH9">输入</h4>
+          <div class="drop" id="drop" data-page-node-id="PSQDyQDComCBFup7QuqHhT">
+            <strong data-page-node-id="JWVok8zYZSdPGxs1xny1Vr">拖入 / 点击 / 粘贴</strong>
+            支持 JPG · PNG · WebP
+            <div class="hint" data-page-node-id="VI6utfTbs8Zz7OhYvRdAx1">Ctrl+V 直接粘贴截图</div>
+          </div>
+          <input type="file" id="file" accept="image/*" hidden data-page-node-id="iEmahU2nUUEHS4hd7Gt5rh" />
+          <h4 data-page-node-id="jmORfgJ3xLaMGWocmwaxLA">内置样本</h4>
+          <div class="samples" id="samples" data-page-node-id="TU0u8HccZEYqBkIdxdDTIR"></div>
+        </aside>
+
+        <div class="demo-main" data-page-node-id="fVJRHikLAigYGa5ppRWZjU">
+          <div class="dm-row" data-page-node-id="ocAzgt4U2kQOXfRlVbbzlN">
+            <div class="pane" data-page-node-id="YFquKXn8ALZduFsHlSzm9H">
+              <div class="ph" data-page-node-id="SPCj8Iy5x9x8cATaKwzjcG"><span class="step" data-page-node-id="hJXImDe7ycc288WPJL3EN9">01</span> 检测 · DETECTION
+                <span class="ms" id="msDet" data-page-node-id="NQrFH09bHKDvyNGwr3Yc4Y">—</span>
+              </div>
+              <div class="cv-holder" data-page-node-id="WovGgF38UEaMHITGclIEzT"><canvas id="cvSrc" width="1" height="1" data-page-node-id="0lEywBw9aaTrbsjJHAcizU"></canvas></div>
+            </div>
+            <div class="pane" data-page-node-id="4WGqGcjEXhKOSVk22Ma7AU">
+              <div class="ph" data-page-node-id="jU9e85xsZo2LASczIVlPTc"><span class="step" data-page-node-id="vKr7zslU4oluY06bvZoDMB">02</span> 矫正 · RECTIFY
+                <span class="ms" id="msRect" data-page-node-id="gb9FFQta5QKZp0pnV1hHZA">—</span>
+              </div>
+              <div class="cv-holder" data-page-node-id="AtJYsVTr7eMZFyDOYdGpv6"><canvas id="cvCrop" width="1" height="1" data-page-node-id="TVDYC9b47w2layB4LshTLp"></canvas></div>
+            </div>
+          </div>
+
+          <div class="pane" data-page-node-id="6ClsgtySYnjw7PKfOabHSO">
+            <div class="ph" data-page-node-id="yCLv2BBG46yHoMV518dr6t"><span class="step" data-page-node-id="5VORI6mazxAdhY7yTZK2qO">03</span> 识别 · RECOGNITION
+              <span class="ms" id="msRec" data-page-node-id="atIhjNYAQNlAtZLZeoy2tE">—</span>
+            </div>
+            <div class="plate-out" data-page-node-id="NgCeejYcTIc8vuToM9P3g6">
+              <div class="plate-text" id="plateText" data-page-node-id="KkHdM5Piy8XokuPp6msETk">—</div>
+              <div class="plate-meta" id="plateMeta" data-page-node-id="7QOpZPSwymcirJ4VWmkJjC"></div>
+            </div>
+            <h4 style="margin-top:16px" data-page-node-id="Z8qsuEckXmvemnqGEDXAG3">颜色分类 · CLASSIFICATION <span id="msCls" style="font-weight:400" data-page-node-id="bLefiCb1uQiuFbTdlABreg">—</span></h4>
+            <div class="bars" id="clsBars" data-page-node-id="lVGJaHYgagMVPxKqZS1yfV"></div>
+            <h4 style="margin-top:16px" data-page-node-id="pSQeAAHoI4x1SBHKCAAmfG">逐字符置信度</h4>
+            <div class="bars" id="charBars" data-page-node-id="jONv4h2NJoO3yl542QrLEb"></div>
+          </div>
+
+          <div class="pane" data-page-node-id="xImGskwXigAVFqzsyfgU7E">
+            <div class="ph" data-page-node-id="vUADyZBc6P0UDSYFjvGoKv">耗时分解 · LATENCY <span class="ms" data-page-node-id="21T0P6C1H86UbaJ4Fm339P">本机实测</span></div>
+            <div class="plate-out" data-page-node-id="c0HlRJBYxx4lwNEBeaAVo7">
+              <div class="plate-text" id="msTotal" style="font-size:22px" data-page-node-id="qiVwxwdDWkQuKfaf4Z8LPY">—</div>
+              <div class="plate-meta" data-page-node-id="YOYmu4J6kwIalyYlOPsNtf">检测 + 矫正 + 识别 + 分类（不含图片解码）</div>
+            </div>
+          </div>
+
+          <div class="console-log" id="log" data-page-node-id="4QiojGrVQEDx1dqyygkXNE"></div>
+          <div id="demoEmpty" hidden data-page-node-id="t4HwsY0pzEU0XMEoDeU1zV"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-note" style="margin-top:18px" data-page-node-id="6vtPi6rYr0vI9Puk7tp4SG">
+      <div data-page-node-id="HuEOr5oV4PA7XjFmipydi0">
+        <b data-page-node-id="TTjnNAJ3FNiGfazpnXyBok">需要 HTTP 环境。</b>
+        浏览器在 <code class="mono" data-page-node-id="5WFGhJigtD1qI3y26ClOkb">file://</code> 下会拒绝读取 <code class="mono" data-page-node-id="bi4sdZxCEPtd8iEX99UiVr">.onnx</code> 与
+        <code class="mono" data-page-node-id="EhWDf1nHyHT9tTUVMtUfQT">.wasm</code>。在项目根目录执行
+        <code class="mono" data-page-node-id="JIF1mryREtuMzrjfsZ9iy2">node tools/serve.mjs . 8099</code>，再打开
+        <code class="mono" data-page-node-id="1Y1lhQ7C0KFV2pBrOWTax2">http://127.0.0.1:8099/demo.html</code>。
+        推理线程数自适应：多线程 WASM 依赖 SharedArrayBuffer，需要 COOP/COEP 响应头，
+        静态托管通常不提供，因此这里自动退回单线程 —— 用单线程换取「任何静态服务器都能跑」；
+        鸿蒙壳自行注入 COOP/COEP，同一份代码在 12 核上即自动启用多线程（见 ADR-004）。
+      </div>
+    </div>
+
+    <div class="links-row" style="margin-top:26px" data-page-node-id="HDDK2h7ECIkrtAcpiXZufk">
+      <a href="index.html" data-page-node-id="ljAFBIH0mOuBpUcS4pGUXZ">← 返回介绍页</a>
+      <a href="paper/ieee-lpr-paper.md" data-page-node-id="boBnKLHvxqkd5wzO6iG7gQ">IEEE 论文 <span class="mono" data-page-node-id="BrYwKosNzMg5XmrDlRHV8D">.md</span></a>
+      <a href="docs/adr/ADR-002-port-fidelity.md" data-page-node-id="dhFDcYBsAQuC1MZXffCCvL">保真度报告 <span class="mono" data-page-node-id="uc4THWSydINRXLhGkYHjPh">ADR-002</span></a>
+      <a href="docs/adr/ADR-003-on-device-deployment.md" data-page-node-id="5orY1pXUIdMmigPAZZNVGF">端侧部署 <span class="mono" data-page-node-id="IRnN3iN17h7Bb9TRDAomTc">ADR-003</span></a>
+    </div>
+  </div>
+</main>
+
+<footer data-page-node-id="uxQVLIHZ27CvxZ07R3A0G2">
+  <div class="wrap foot-in" data-page-node-id="Aznrb3ouCY9br64LNSEBJL">
+    <span data-page-node-id="mhdfmbzSzajLGYeH3oPwMA">基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别 · 实时演示</span>
+    <span class="mono" data-page-node-id="K8SiMiGz2jQ54buDwTPWZd">HyperLPR (Apache-2.0) · onnxruntime-web (MIT)</span>
+    <span class="mono" style="margin-left:auto" data-page-node-id="dicWPNOjZMevFtrxigjnPV">全部推理在本机浏览器完成</span>
+  </div>
+</footer>
+
+<script type="module" src="assets/js/demo.js"></script>
+<script type="module">
+  // Headless verification hook: web_check.mjs waits for window[key].done === true.
+  // The demo publishes __DEMO.autoDone once ?auto=1 has finished, so mirror it.
+  if (new URLSearchParams(location.search).has('auto')) {
+    const t = setInterval(() => {
+      const d = window.__DEMO;
+      if (!d || !d.autoDone) return;
+      clearInterval(t);
+      const st = document.getElementById('rtState');
+      window.__PAGE = {
+        done: true,
+        ready: d.ready,
+        modelLoadMs: d.modelLoadMs,
+        sampleCount: d.samples,
+        results: d.results,
+        errors: d.errors,
+        demoState: st ? st.textContent : null,
+        plate: (document.getElementById('plateText') || {}).textContent,
+        meta: (document.getElementById('plateMeta') || {}).textContent,
+        total: (document.getElementById('msTotal') || {}).textContent,
+        charBars: document.querySelectorAll('#charBars .bar').length,
+        clsBars: document.querySelectorAll('#clsBars .bar').length,
+      };
+    }, 200);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+{
+  "GOLDEN hlpr-test": {
+    "paint": [
+      100.0,
+      139.0,
+      63.0
+    ],
+    "paint_gb": 39.0,
+    "glyph": [
+      165.0,
+      171.0,
+      167.0
+    ],
+    "glyph_gb": 6.0,
+    "neutral": "YES"
+  },
+  "皖AK5D11.jpg": {
+    "paint": [
+      151.0,
+      160.0,
+      44.0
+    ],
+    "paint_gb": 9.0,
+    "glyph": [
+      244.0,
+      249.0,
+      240.0
+    ],
+    "glyph_gb": 5.0,
+    "neutral": "YES"
+  },
+  "皖AA4790.jpg": {
+    "paint": [
+      230.0,
+      215.0,
+      47.0
+    ],
+    "paint_gb": -15.0,
+    "glyph": [
+      247.0,
+      248.5,
+      206.0
+    ],
+    "glyph_gb": 1.5,
+    "neutral": "YES"
+  },
+  "皖ACD429.jpg": {
+    "paint": [
+      31.0,
+      78.0,
+      30.0
+    ],
+    "paint_gb": 47.0,
+    "glyph": null
+  },
+  "皖AT582T.jpg": {
+    "paint": [
+      216.0,
+      199.0,
+      49.0
+    ],
+    "paint_gb": -17.0,
+    "glyph": [
+      250.0,
+      255.0,
+      216.0
+    ],
+    "glyph_gb": 5.0,
+    "neutral": "YES"
+  },
+  "皖A87BB7.jpg": {
+    "paint": [
+      108.0,
+      114.0,
+      43.0
+    ],
+    "paint_gb": 6.0,
+    "glyph": null
+  },
+  "皖AX823M.jpg": {
+    "paint": [
+      44.0,
+      88.5,
+      50.0
+    ],
+    "paint_gb": 44.5,
+    "glyph": null
+  },
+  "京PL3N67.jpg": {
+    "paint": [
+      190.0,
+      109.0,
+      27.0
+    ],
+    "paint_gb": -81.0,
+    "glyph": [
+      246.0,
+      246.0,
+      203.0
+    ],
+    "glyph_gb": 0.0,
+    "neutral": "YES"
+  },
+  "川JK0707.jpg": {
+    "paint": [
+      117.0,
+      86.0,
+      22.0
+    ],
+    "paint_gb": -31.0,
+    "glyph": [
+      229.0,
+      245.0,
+      213.0
+    ],
+    "glyph_gb": 16.0,
+    "neutral": "green-tinted"
+  },
+  "川X90621.jpg": {
+    "paint": [
+      218.0,
+      151.0,
+      88.0
+    ],
+    "paint_gb": -67.0,
+    "glyph": [
+      250.0,
+      241.0,
+      212.0
+    ],
+    "glyph_gb": -9.0,
+    "neutral": "YES"
+  },
+  "沪AMS087.jpg": {
+    "paint": [
+      216.0,
+      105.0,
+      64.0
+    ],
+    "paint_gb": -111.0,
+    "glyph": [
+      191.0,
+      176.0,
+      159.0
+    ],
+    "glyph_gb": -15.0,
+    "neutral": "YES"
+  }
+}

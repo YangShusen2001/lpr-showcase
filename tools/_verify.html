@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>pipeline verification</title>
+  <style>
+    body { font: 13px/1.6 ui-monospace, Consolas, monospace; margin: 16px; color: #1c1917; }
+    canvas { border: 1px solid #ddd; max-width: 900px; }
+    h2 { font-size: 14px; margin: 18px 0 6px; }
+  </style>
+</head>
+<body>
+  <pre id="log">running…</pre>
+  <div id="out"></div>
+  <script type="module">
+    import * as P from '/assets/js/pipeline.js';
+
+    const logEl = document.getElementById('log');
+    const log = (m) => { logEl.textContent += '\n' + m; };
+    window.__RESULT = { done: false, ok: false, images: [], errors: [] };
+
+    const SAMPLES = [
+      'hlpr-1.jpg',
+      'hlpr-test.jpg',
+      'scene-2.jpg',
+      'plate-yellow-320x48.jpg',
+      'crop-0-津B6H920.jpg',
+      'crop-1-皖KD01833.jpg',
+      'crop-6-蒙B023H6.jpg',
+      'crop-8-冀D5L690.jpg',
+    ];
+
+    async function loadImageData(name) {
+      const url = '/assets/samples/' + encodeURIComponent(name);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('fetch ' + name + ' -> ' + res.status);
+      const bmp = await createImageBitmap(await res.blob());
+      const cv = document.createElement('canvas');
+      cv.width = bmp.width;
+      cv.height = bmp.height;
+      const ctx = cv.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(bmp, 0, 0);
+      return { img: ctx.getImageData(0, 0, cv.width, cv.height), canvas: cv };
+    }
+
+    function renderPanel(srcCanvas, cropImg, title) {
+      const h = 320;
+      const sw = Math.round((srcCanvas.width * h) / srcCanvas.height);
+      const cw = cropImg ? Math.min(520, cropImg.width * 3) : 0;
+      const canvas = document.createElement('canvas');
+      canvas.width = sw + 16 + cw;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#f5f5f4';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(srcCanvas, 0, 0, sw, h);
+      if (cropImg) {
+        const tmp = document.createElement('canvas');
+        tmp.width = cropImg.width;
+        tmp.height = cropImg.height;
+        tmp.getContext('2d').putImageData(new ImageData(cropImg.data, cropImg.width, cropImg.height), 0, 0);
+        const ch = Math.min(h - 20, cropImg.height * 3);
+        const cwd = (cropImg.width * ch) / cropImg.height;
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(tmp, sw + 16, (h - ch) / 2, cwd, ch);
+      }
+      const div = document.createElement('div');
+      div.innerHTML = '<h2>' + title + '</h2>';
+      div.appendChild(canvas);
+      document.getElementById('out').appendChild(div);
+    }
+
+    /** Raw detector row carrying the strongest objectness, for numeric diffing vs Python. */
+    function topRawRow(raw, rows) {
+      let best = -1;
+      let bi = 0;
+      for (let i = 0; i < rows; i++) {
+        if (raw[i * 15 + 4] > best) { best = raw[i * 15 + 4]; bi = i; }
+      }
+      return Array.from(raw.subarray(bi * 15, bi * 15 + 15)).map((v) => Number(v.toFixed(6)));
+    }
+
+    /** Summary statistics of the detector input tensor, to isolate resize fidelity. */
+    function tensorStats(t) {
+      let sum = 0;
+      let min = Infinity;
+      let max = -Infinity;
+      for (let i = 0; i < t.length; i++) {
+        sum += t[i];
+        if (t[i] < min) min = t[i];
+        if (t[i] > max) max = t[i];
+      }
+      return {
+        sum: Number(sum.toFixed(6)), min: Number(min.toFixed(8)), max: Number(max.toFixed(8)),
+        head: Array.from(t.subarray(0, 24)).map((v) => Number(v.toFixed(8))),
+        mid: Array.from(t.subarray(153600, 153624)).map((v) => Number(v.toFixed(8))),
+      };
+    }
+
+    try {
+      const ort = await import('/assets/ort/ort.min.mjs');
+      ort.env.wasm.wasmPaths = '/assets/ort/';
+      ort.env.wasm.numThreads = 1;
+      ort.env.logLevel = 'error';
+      const opt = { executionProviders: ['wasm'], graphOptimizationLevel: 'all' };
+
+      const t0 = performance.now();
+      const sessions = {
+        ort,
+        det: await ort.InferenceSession.create('/assets/models/y5fu_320x_sim.onnx', opt),
+        rec: await ort.InferenceSession.create('/assets/models/rpv3_mdict_160_r3.onnx', opt),
+        cls: await ort.InferenceSession.create('/assets/models/litemodel_cls_96x_r1.onnx', opt),
+      };
+      window.__RESULT.modelLoadMs = Math.round(performance.now() - t0);
+      log('models loaded in ' + window.__RESULT.modelLoadMs + ' ms');
+
+      for (const name of SAMPLES) {
+        const rec0 = { name };
+        try {
+          const { img, canvas } = await loadImageData(name);
+
+          if (name.startsWith('crop-')) {
+            // recognition-only check against the ground truth embedded in the filename
+            const r = await P.recognise(sessions.rec, ort, img);
+            rec0.gt = name.replace(/^crop-\d+-/, '').replace(/\.jpg$/, '');
+            rec0.code = r.code;
+            rec0.conf = Number(r.conf.toFixed(4));
+            rec0.match = r.code === rec0.gt;
+            renderPanel(canvas, img, name + '  →  ' + r.code);
+          } else {
+            const debug = {};
+            const plates = await P.runPipeline(img, sessions, { detSize: 320, full: true, debug });
+            rec0.detect = {
+              size: debug.detect.size, r: debug.detect.r,
+              left: debug.detect.left, top: debug.detect.top,
+              input: tensorStats(debug.detect.input),
+              topRawRow: topRawRow(debug.detect.raw, debug.detect.rows),
+            };
+            rec0.plates = plates;
+            rec0.numDetections = plates.length;
+
+            const ctx = canvas.getContext('2d');
+            ctx.strokeStyle = '#e11d48';
+            ctx.lineWidth = 3;
+            for (const p of plates) {
+              ctx.strokeRect(p.rect[0], p.rect[1], p.rect[2] - p.rect[0], p.rect[3] - p.rect[1]);
+              ctx.fillStyle = '#059669';
+              for (const [mx, my] of p.marks) {
+                ctx.beginPath();
+                ctx.arc(mx, my, 5, 0, Math.PI * 2);
+                ctx.fill();
+              }
+            }
+            renderPanel(canvas, null, name + '  →  ' + JSON.stringify(plates));
+          }
+        } catch (e) {
+          rec0.error = String((e && e.stack) || e);
+          window.__RESULT.errors.push(name + ': ' + rec0.error);
+        }
+        window.__RESULT.images.push(rec0);
+        log(JSON.stringify(rec0));
+      }
+      window.__RESULT.ok = true;
+    } catch (e) {
+      window.__RESULT.error = String((e && e.stack) || e);
+      log('ERROR ' + e);
+    }
+    window.__RESULT.done = true;
+  </script>
+</body>
+</html>

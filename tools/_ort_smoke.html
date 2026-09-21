@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>ORT smoke</title>
+</head>
+<body>
+  <pre id="log">loading…</pre>
+  <script type="module">
+    const log = (m) => { document.getElementById('log').textContent += '\n' + m; };
+    window.__RESULT = { done: false, ok: false, steps: [] };
+    try {
+      const ort = await import('/assets/ort/ort.min.mjs');
+      ort.env.wasm.wasmPaths = '/assets/ort/';
+      ort.env.wasm.numThreads = 1;
+      ort.env.logLevel = 'error';
+      window.__RESULT.steps.push('ort imported');
+      log('ort imported');
+
+      const sess = await ort.InferenceSession.create('/assets/models/y5fu_320x_sim.onnx', {
+        executionProviders: ['wasm'],
+        graphOptimizationLevel: 'all',
+      });
+      window.__RESULT.steps.push('session created');
+      log('session created');
+      window.__RESULT.inputs = sess.inputNames;
+      window.__RESULT.outputs = sess.outputNames;
+
+      const data = new Float32Array(1 * 3 * 320 * 320);
+      for (let i = 0; i < data.length; i++) data[i] = 0.5;
+      const out = await sess.run({ [sess.inputNames[0]]: new ort.Tensor('float32', data, [1, 3, 320, 320]) });
+      const t = out[sess.outputNames[0]];
+      window.__RESULT.outDims = t.dims;
+      window.__RESULT.outLen = t.data.length;
+      window.__RESULT.outHead = Array.from(t.data.slice(0, 8));
+      window.__RESULT.ok = true;
+      log('inference ok dims=' + JSON.stringify(t.dims));
+    } catch (e) {
+      window.__RESULT.error = String((e && e.stack) || e);
+      log('ERROR ' + e);
+    }
+    window.__RESULT.done = true;
+  </script>
+</body>
+</html>

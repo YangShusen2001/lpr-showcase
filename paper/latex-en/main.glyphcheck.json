@@ -1,0 +1,35 @@
+{
+  "pdf": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-en\\main.pdf",
+  "size_bytes": 717822,
+  "pages": 9,
+  "text_backend": "fitz",
+  "text_chars": 37591,
+  "expected": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "present": [
+    "藏",
+    "苏",
+    "粤",
+    "港",
+    "津",
+    "皖",
+    "蒙",
+    "冀"
+  ],
+  "absent": [],
+  "verdict": "PASS",
+  "rendered_page": 5,
+  "rendered_png": "C:\\Users\\26671\\Desktop\\车牌识别\\paper\\latex-en\\main_p5.png",
+  "find": "90.9",
+  "find_hits": [
+    "a 12-logical-core desktop gives 90.9 ms →81.2 ms (1.12×),"
+  ]
+}

@@ -1,0 +1,22 @@
+# Python 虚拟环境 —— 187 MB，可由 requirements 重建，不入库
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 编辑器 / 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# 临时抓取产物
+_fetch_tmp/
+*.tmp
+
+# 注意：本仓库是「证据与数据集索引」层，_evidence/ _dataset/ _archive/ assets/
+# 全部**故意入库** —— 它们是不可重建的原始证据。仅排除可重生成的 .venv。

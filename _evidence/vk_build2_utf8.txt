@@ -1,0 +1,1021 @@
+[1/663] Building CXX object glslang/glslang/OSDependent/Unix/CMakeFiles/OSDependent.dir/ossource.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[2/663] Building CXX object glslang/OGLCompilersDLL/CMakeFiles/OGLCompiler.dir/InitializeDll.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[3/663] Building CXX object glslang/glslang/CMakeFiles/GenericCodeGen.dir/GenericCodeGen/CodeGen.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[4/663] Building CXX object glslang/glslang/CMakeFiles/GenericCodeGen.dir/GenericCodeGen/Link.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[5/663] Linking CXX static library glslang\glslang\libGenericCodeGen.a
+[6/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/InfoSink.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[7/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/attribute.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[8/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/IntermTraverse.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[9/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/Constant.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[10/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/PoolAlloc.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[11/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/RemoveTree.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[12/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/ParseContextBase.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[13/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/Intermediate.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[14/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/Initialize.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[15/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/iomapper.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[16/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/Scan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[17/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/SpirvIntrinsics.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[18/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/SymbolTable.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[19/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/glslang_tab.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+MachineIndependent/glslang_tab.cpp:4951:9: warning: variable 'yynerrs' set but not used [-Wunused-but-set-variable]
+
+    int yynerrs = 0;
+
+        ^
+
+1 warning generated.
+
+[20/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/Versions.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[21/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/intermOut.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[22/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/limits.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[23/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/ShaderLang.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[24/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/parseConst.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[25/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/ParseHelper.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[26/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/preprocessor/PpAtom.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[27/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/reflection.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[28/663] Linking CXX static library glslang\glslang\OSDependent\Unix\libOSDependent.a
+[29/663] Linking CXX static library glslang\OGLCompilersDLL\libOGLCompiler.a
+[30/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/preprocessor/PpContext.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[31/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/linkValidate.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[32/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/preprocessor/Pp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[33/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/preprocessor/PpScanner.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[34/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/preprocessor/PpTokens.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[35/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/InReadableOrder.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[36/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/SpvTools.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[37/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/Logger.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[38/663] Building CXX object glslang/glslang/CMakeFiles/MachineIndependent.dir/MachineIndependent/propagateNoContraction.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[39/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/doc.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[40/663] Preprocessing shader source absval.comp
+[41/663] Linking CXX static library glslang\glslang\libMachineIndependent.a
+[42/663] Preprocessing shader source batchnorm.comp
+[43/663] Preprocessing shader source batchnorm_pack4.comp
+[44/663] Preprocessing shader source binaryop.comp
+[45/663] Preprocessing shader source binaryop_broadcast.comp
+[46/663] Preprocessing shader source binaryop_broadcast_pack1to4.comp
+[47/663] Preprocessing shader source binaryop_broadcast_pack4.comp
+[48/663] Preprocessing shader source binaryop_pack4.comp
+[49/663] Preprocessing shader source cast_fp16_to_fp32.comp
+[50/663] Building CXX object glslang/glslang/CMakeFiles/glslang.dir/CInterface/glslang_c_interface.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[51/663] Preprocessing shader source cast_fp16_to_fp32_pack4.comp
+[52/663] Preprocessing shader source cast_fp32_to_fp16.comp
+[53/663] Preprocessing shader source cast_fp32_to_fp16_pack4.comp
+[54/663] Preprocessing shader source celu.comp
+[55/663] Preprocessing shader source clip.comp
+[56/663] Preprocessing shader source concat.comp
+[57/663] Preprocessing shader source concat_pack4.comp
+[58/663] Preprocessing shader source concat_pack4to1.comp
+[59/663] Preprocessing shader source convert_ycbcr.comp
+[60/663] Preprocessing shader source convolution1d_packed.comp
+[61/663] Preprocessing shader source convolution1d_1x1s1d1_cm.comp
+[62/663] Preprocessing shader source convolution1d_gemm_cm.comp
+[63/663] Preprocessing shader source convolution1d_packed_1x1s1d1.comp
+[64/663] Preprocessing shader source convolution1d_packed_gemm.comp
+[65/663] Preprocessing shader source convolution_1x1s1d1_cm.comp
+[66/663] Preprocessing shader source convolution_3x3s1d1_winograd23_transform_input.comp
+[67/663] Preprocessing shader source convolution_1x1s1d1_int8_cm.comp
+[68/663] Preprocessing shader source convolution_3x3s1d1_winograd23_transform_input_int8_cm.comp
+[69/663] Preprocessing shader source convolution_3x3s1d1_winograd23_transform_input_int8.comp
+[70/663] Preprocessing shader source convolution_3x3s1d1_winograd23_transform_output.comp
+[71/663] Preprocessing shader source convolution_3x3s1d1_winograd23_transform_output_int8.comp
+[72/663] Preprocessing shader source convolution_3x3s1d1_winograd43_transform_input_int8.comp
+[73/663] Preprocessing shader source convolution_3x3s1d1_winograd43_transform_input.comp
+[74/663] Preprocessing shader source convolution_3x3s1d1_winograd43_transform_input_int8_cm.comp
+[75/663] Preprocessing shader source convolution_3x3s1d1_winograd43_transform_output.comp
+[76/663] Preprocessing shader source convolution_3x3s1d1_winograd43_transform_output_int8.comp
+[77/663] Preprocessing shader source convolution_3x3s1d1_winograd_gemm.comp
+[78/663] Preprocessing shader source convolution_3x3s1d1_winograd_gemm_int8.comp
+[79/663] Preprocessing shader source convolution_3x3s1d1_winograd_gemm_int8_cm.comp
+[80/663] Preprocessing shader source convolution_gemm_cm.comp
+[81/663] Preprocessing shader source convolution_pack1to4_3x3s1d1_winograd_gemm.comp
+[82/663] Preprocessing shader source convolution_gemm_int8_cm.comp
+[83/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd23_transform_input.comp
+[84/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd23_transform_input_int8.comp
+[85/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd23_transform_input_int8_cm.comp
+[86/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/CInterface/spirv_c_interface.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[87/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd23_transform_output_int8.comp
+[88/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd23_transform_output.comp
+[89/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd43_transform_input.comp
+[90/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/disassemble.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[91/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd43_transform_input_int8.comp
+[92/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd43_transform_input_int8_cm.comp
+[93/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd43_transform_output.comp
+[94/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd43_transform_output_int8.comp
+[95/663] Preprocessing shader source convolution_pack4_3x3s1d1_winograd_gemm.comp
+[96/663] Preprocessing shader source convolution_pack4to1_3x3s1d1_winograd_gemm.comp
+[97/663] Preprocessing shader source convolution_packed.comp
+[98/663] Preprocessing shader source convolution_packed_1x1s1d1.comp
+[99/663] Preprocessing shader source convolution_packed_1x1s1d1_int8.comp
+[100/663] Preprocessing shader source convolution_packed_gemm.comp
+[101/663] Preprocessing shader source convolution_packed_gemm_int8.comp
+[102/663] Preprocessing shader source convolution_packed_int8.comp
+[103/663] Preprocessing shader source convolutiondepthwise.comp
+[104/663] Preprocessing shader source convolutiondepthwise_group.comp
+[105/663] Preprocessing shader source convolution_winograd_gemm_cm.comp
+[106/663] Preprocessing shader source convolutiondepthwise_group_pack1to4.comp
+[107/663] Preprocessing shader source convolutiondepthwise_group_pack4.comp
+[108/663] Preprocessing shader source convolutiondepthwise_group_pack4to1.comp
+[109/663] Preprocessing shader source convolutiondepthwise_group_packed_int8.comp
+[110/663] Preprocessing shader source convolutiondepthwise_int8.comp
+[111/663] Preprocessing shader source convolutiondepthwise_pack4.comp
+[112/663] Preprocessing shader source crop.comp
+[113/663] Preprocessing shader source convolutiondepthwise_pack4_int8.comp
+[114/663] Preprocessing shader source crop_pack4.comp
+[115/663] Preprocessing shader source crop_pack1to4.comp
+[116/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/SpvPostProcess.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[117/663] Preprocessing shader source crop_pack4to1.comp
+[118/663] Preprocessing shader source deconvolution_col2im.comp
+[119/663] Preprocessing shader source deconvolution_pack4_col2im.comp
+[120/663] Preprocessing shader source deconvolution_gemm_packed.comp
+[121/663] Preprocessing shader source deconvolutiondepthwise.comp
+[122/663] Preprocessing shader source deconvolutiondepthwise_group.comp
+[123/663] Preprocessing shader source deconvolution_packed.comp
+[124/663] Preprocessing shader source deconvolution_gemm_cm.comp
+[125/663] Preprocessing shader source deconvolutiondepthwise_group_pack1to4.comp
+[126/663] Preprocessing shader source deconvolutiondepthwise_group_pack4.comp
+[127/663] Preprocessing shader source deconvolutiondepthwise_group_pack4to1.comp
+[128/663] Preprocessing shader source deconvolutiondepthwise_pack4.comp
+[129/663] Preprocessing shader source deepcopy.comp
+[130/663] Preprocessing shader source deepcopy_pack4.comp
+[131/663] Preprocessing shader source dequantize.comp
+[132/663] Preprocessing shader source dropout.comp
+[133/663] Preprocessing shader source dequantize_pack4.comp
+[134/663] Preprocessing shader source elu.comp
+[135/663] Preprocessing shader source eltwise.comp
+[136/663] Preprocessing shader source erf.comp
+[137/663] Preprocessing shader source flatten.comp
+[138/663] Preprocessing shader source flatten_int8.comp
+[139/663] Preprocessing shader source flatten_pack1to4.comp
+[140/663] Preprocessing shader source flatten_pack1to4_int8.comp
+[141/663] Preprocessing shader source flatten_pack4.comp
+[142/663] Preprocessing shader source flatten_pack4_int8.comp
+[143/663] Preprocessing shader source gelu.comp
+[144/663] Preprocessing shader source gemm.comp
+[145/663] Preprocessing shader source gemm_int8.comp
+[146/663] Preprocessing shader source gemm_quantize_A_int8.comp
+[147/663] Preprocessing shader source gemm_quantize_A_packed_int8.comp
+[148/663] Preprocessing shader source gemm_int8_cm.comp
+[149/663] Preprocessing shader source gemm_quantize_B_absmax_int8.comp
+[150/663] Preprocessing shader source gemm_quantize_B_descale_int8.comp
+[151/663] Preprocessing shader source gemm_quantize_B_int8.comp
+[152/663] Preprocessing shader source gemm_quantize_B_packed_int8.comp
+[153/663] Preprocessing shader source groupnorm_coeffs.comp
+[154/663] Preprocessing shader source groupnorm_coeffs_pack4.comp
+[155/663] Preprocessing shader source gemm_sg.comp
+[156/663] Preprocessing shader source groupnorm_norm.comp
+[157/663] Preprocessing shader source groupnorm_norm_pack4.comp
+[158/663] Preprocessing shader source groupnorm_reduce_mean.comp
+[159/663] Preprocessing shader source groupnorm_reduce_sum4_fp16_to_fp32.comp
+[160/663] Preprocessing shader source groupnorm_reduce_mean_pack4.comp
+[161/663] Preprocessing shader source groupnorm_reduce_sum4_fp16_to_fp32_pack4.comp
+[162/663] Preprocessing shader source groupnorm_reduce_sum4_fp32.comp
+[163/663] Preprocessing shader source groupnorm_reduce_sum4_fp32_pack4.comp
+[164/663] Preprocessing shader source groupnorm_sub_mean_square.comp
+[165/663] Preprocessing shader source groupnorm_sub_mean_square_pack4.comp
+[166/663] Preprocessing shader source hardsigmoid.comp
+[167/663] Preprocessing shader source gemm_cm.comp
+[168/663] Preprocessing shader source hardswish.comp
+[169/663] Preprocessing shader source innerproduct.comp
+[170/663] Preprocessing shader source innerproduct_gemm.comp
+[171/663] Preprocessing shader source innerproduct_gemm_wp1to4.comp
+[172/663] Preprocessing shader source innerproduct_gemm_wp4to1.comp
+[173/663] Preprocessing shader source innerproduct_gemm_wp4.comp
+[174/663] Preprocessing shader source innerproduct_gemm_int8.comp
+[175/663] Preprocessing shader source innerproduct_pack1to4.comp
+[176/663] Preprocessing shader source innerproduct_int8.comp
+[177/663] Preprocessing shader source innerproduct_pack4.comp
+[178/663] Preprocessing shader source innerproduct_pack4to1.comp
+[179/663] Preprocessing shader source innerproduct_reduce_sum8.comp
+[180/663] Preprocessing shader source innerproduct_reduce_sum8_int8.comp
+[181/663] Preprocessing shader source innerproduct_reduce_sum8_pack4.comp
+[182/663] Preprocessing shader source innerproduct_sum8.comp
+[183/663] Preprocessing shader source innerproduct_sum8_int8.comp
+[184/663] Preprocessing shader source innerproduct_sum8_pack1to4.comp
+[185/663] Preprocessing shader source innerproduct_sum8_pack4.comp
+[186/663] Preprocessing shader source innerproduct_sum8_pack4to1.comp
+[187/663] Preprocessing shader source instancenorm_coeffs.comp
+[188/663] Preprocessing shader source instancenorm_coeffs_pack4.comp
+[189/663] Preprocessing shader source instancenorm_norm_pack4.comp
+[190/663] Preprocessing shader source instancenorm_reduce_mean.comp
+[191/663] Preprocessing shader source instancenorm_norm.comp
+[192/663] Preprocessing shader source instancenorm_reduce_sum4_fp16_to_fp32.comp
+[193/663] Preprocessing shader source instancenorm_reduce_mean_pack4.comp
+[194/663] Preprocessing shader source instancenorm_reduce_sum4_fp16_to_fp32_pack4.comp
+[195/663] Preprocessing shader source instancenorm_reduce_sum4_fp32.comp
+[196/663] Preprocessing shader source instancenorm_reduce_sum4_fp32_pack4.comp
+[197/663] Preprocessing shader source instancenorm_sub_mean_square_pack4.comp
+[198/663] Preprocessing shader source instancenorm_sub_mean_square.comp
+[199/663] Preprocessing shader source interp_bicubic_coeffs.comp
+[200/663] Preprocessing shader source interp.comp
+[201/663] Preprocessing shader source interp_bicubic_pack4.comp
+[202/663] Preprocessing shader source interp_bicubic.comp
+[203/663] Preprocessing shader source layernorm_coeffs.comp
+[204/663] Preprocessing shader source interp_pack4.comp
+[205/663] Preprocessing shader source layernorm_coeffs_pack4.comp
+[206/663] Preprocessing shader source layernorm_norm.comp
+[207/663] Preprocessing shader source layernorm_norm_pack4.comp
+[208/663] Preprocessing shader source layernorm_reduce_mean.comp
+[209/663] Preprocessing shader source layernorm_reduce_mean_pack4.comp
+[210/663] Preprocessing shader source layernorm_reduce_sum4_fp16_to_fp32.comp
+[211/663] Preprocessing shader source layernorm_reduce_sum4_fp16_to_fp32_pack4.comp
+[212/663] Preprocessing shader source layernorm_reduce_sum4_fp32.comp
+[213/663] Preprocessing shader source layernorm_reduce_sum4_fp32_pack4.comp
+[214/663] Preprocessing shader source layernorm_sub_mean_square.comp
+[215/663] Preprocessing shader source layernorm_sub_mean_square_pack4.comp
+[216/663] Preprocessing shader source lrn_norm.comp
+[217/663] Preprocessing shader source lrn_norm_across_channel_pack4.comp
+[218/663] Preprocessing shader source lrn_norm_within_channel_pack4.comp
+[219/663] Preprocessing shader source lrn_square_pad.comp
+[220/663] Preprocessing shader source lrn_square_pad_across_channel_pack4.comp
+[221/663] Preprocessing shader source lrn_square_pad_within_channel_pack4.comp
+[222/663] Preprocessing shader source mish.comp
+[223/663] Preprocessing shader source multiheadattention_kvcache_append.comp
+[224/663] Preprocessing shader source multiheadattention_kvcache_qk.comp
+[225/663] Preprocessing shader source multiheadattention_kvcache_copy.comp
+[226/663] Preprocessing shader source multiheadattention_kvcache_qkv.comp
+[227/663] Preprocessing shader source multiheadattention_qk_cross.comp
+[228/663] Preprocessing shader source multiheadattention_qk_cross_pack1to4.comp
+[229/663] Preprocessing shader source multiheadattention_qk_cross_pack4.comp
+[230/663] Preprocessing shader source multiheadattention_qk_cross_pack4to1.comp
+[231/663] Preprocessing shader source multiheadattention_qkv_cross.comp
+[232/663] Preprocessing shader source multiheadattention_qkv_cross_pack1to4.comp
+[233/663] Preprocessing shader source multiheadattention_qkv_cross_pack4.comp
+[234/663] Preprocessing shader source multiheadattention_qkv_cross_pack4to1.comp
+[235/663] Preprocessing shader source normalize_coeffs.comp
+[236/663] Preprocessing shader source normalize_coeffs_pack4.comp
+[237/663] Preprocessing shader source normalize_norm.comp
+[238/663] Preprocessing shader source ncnn_glsl_ext.comp
+[239/663] Preprocessing shader source normalize_norm_pack4.comp
+[240/663] Preprocessing shader source normalize_reduce_sum4_fp16_to_fp32.comp
+[241/663] Preprocessing shader source normalize_reduce_sum4_fp32.comp
+[242/663] Preprocessing shader source normalize_reduce_sum4_fp16_to_fp32_pack4.comp
+[243/663] Preprocessing shader source normalize_reduce_sum4_fp32_pack4.comp
+[244/663] Preprocessing shader source packing.comp
+[245/663] Preprocessing shader source packing_int8.comp
+[246/663] Preprocessing shader source packing_pack1to4.comp
+[247/663] Preprocessing shader source packing_pack1to4_int8.comp
+[248/663] Preprocessing shader source packing_pack4to1.comp
+[249/663] Preprocessing shader source packing_pack4to1_int8.comp
+[250/663] Preprocessing shader source padding_3d.comp
+[251/663] Preprocessing shader source padding.comp
+[252/663] Preprocessing shader source padding_3d_int8.comp
+[253/663] Preprocessing shader source padding_3d_pack4.comp
+[254/663] Preprocessing shader source padding_3d_pack4_int8.comp
+[255/663] Preprocessing shader source padding_int8.comp
+[256/663] Preprocessing shader source padding_pack1to4.comp
+[257/663] Preprocessing shader source padding_pack1to4_int8.comp
+[258/663] Preprocessing shader source padding_pack4.comp
+[259/663] Preprocessing shader source padding_pack4_int8.comp
+[260/663] Preprocessing shader source padding_pack4to1.comp
+[261/663] Preprocessing shader source padding_pack4to1_int8.comp
+[262/663] Preprocessing shader source permute_pack1to4.comp
+[263/663] Preprocessing shader source permute.comp
+[264/663] Preprocessing shader source permute_pack4.comp
+[265/663] Preprocessing shader source permute_pack4to1.comp
+[266/663] Preprocessing shader source pixelshuffle.comp
+[267/663] Preprocessing shader source pixelshuffle_pack4.comp
+[268/663] Preprocessing shader source pooling.comp
+[269/663] Preprocessing shader source pixelshuffle_pack4to1.comp
+[270/663] Preprocessing shader source pooling_adaptive.comp
+[271/663] Preprocessing shader source pooling_adaptive_pack4.comp
+[272/663] Preprocessing shader source pooling_global_reduce_max.comp
+[273/663] Preprocessing shader source pooling_global_reduce_max_first.comp
+[274/663] Preprocessing shader source pooling_global_reduce_max_first_pack4.comp
+[275/663] Preprocessing shader source pooling_global_reduce_max_last.comp
+[276/663] Preprocessing shader source pooling_global_reduce_max_last_pack4.comp
+[277/663] Preprocessing shader source pooling_global_reduce_max_pack4.comp
+[278/663] Preprocessing shader source pooling_global_reduce_sum_first.comp
+[279/663] Preprocessing shader source pooling_global_reduce_sum.comp
+[280/663] Preprocessing shader source pooling_global_reduce_sum_first_pack4.comp
+[281/663] Preprocessing shader source pooling_global_reduce_sum_last.comp
+[282/663] Preprocessing shader source pooling_global_reduce_sum_last_pack4.comp
+[283/663] Preprocessing shader source pooling_global_reduce_sum_pack4.comp
+[284/663] Preprocessing shader source pooling_pack4.comp
+[285/663] Preprocessing shader source prelu.comp
+[286/663] Preprocessing shader source prelu_pack4.comp
+[287/663] Preprocessing shader source quantize.comp
+[288/663] Preprocessing shader source priorbox.comp
+[289/663] Preprocessing shader source priorbox_mxnet.comp
+[290/663] Preprocessing shader source quantize_pack4.comp
+[291/663] Preprocessing shader source relu.comp
+[292/663] Preprocessing shader source reduction.comp
+[293/663] Preprocessing shader source reorg.comp
+[294/663] Preprocessing shader source reorg_pack4.comp
+[295/663] Preprocessing shader source reorg_pack1to4.comp
+[296/663] Preprocessing shader source requantize.comp
+[297/663] Preprocessing shader source requantize_pack4.comp
+[298/663] Preprocessing shader source reshape.comp
+[299/663] Preprocessing shader source reshape_batch_reorder.comp
+[300/663] Preprocessing shader source reshape_batch_reorder_pack4.comp
+[301/663] Preprocessing shader source reshape_batch_reorder_pack1to4.comp
+[302/663] Preprocessing shader source reshape_batch_reorder_pack4to1.comp
+[303/663] Preprocessing shader source reshape_pack1to4.comp
+[304/663] Preprocessing shader source reshape_pack4to1.comp
+[305/663] Preprocessing shader source reshape_pack4.comp
+[306/663] Preprocessing shader source rmsnorm_coeffs.comp
+[307/663] Preprocessing shader source rmsnorm_coeffs_pack4.comp
+[308/663] Preprocessing shader source rmsnorm_norm.comp
+[309/663] Preprocessing shader source rmsnorm_norm_pack4.comp
+[310/663] Preprocessing shader source rmsnorm_square.comp
+[311/663] Preprocessing shader source rotaryembed.comp
+[312/663] Preprocessing shader source rmsnorm_square_pack4.comp
+[313/663] Preprocessing shader source rotaryembed_pack4.comp
+[314/663] Preprocessing shader source scale.comp
+[315/663] Preprocessing shader source scale_pack4.comp
+[316/663] Preprocessing shader source sdpa_cross.comp
+[317/663] Preprocessing shader source sdpa_kvcache_append.comp
+[318/663] Preprocessing shader source sdpa_kvcache_copy.comp
+[319/663] Preprocessing shader source sdpa_fa.comp
+[320/663] Preprocessing shader source sdpa_fa_cm.comp
+[321/663] Preprocessing shader source selu.comp
+[322/663] Preprocessing shader source shrink.comp
+[323/663] Preprocessing shader source shufflechannel_pack4.comp
+[324/663] Preprocessing shader source shufflechannel.comp
+[325/663] Preprocessing shader source slice.comp
+[326/663] Preprocessing shader source sigmoid.comp
+[327/663] Preprocessing shader source sdpa_cross_cm.comp
+[328/663] Preprocessing shader source softmax_div_sum.comp
+[329/663] Preprocessing shader source slice_pack1to4.comp
+[330/663] Preprocessing shader source slice_pack4.comp
+[331/663] Preprocessing shader source softmax_div_sum_pack4.comp
+[332/663] Preprocessing shader source softmax_exp_sub_max.comp
+[333/663] Preprocessing shader source softmax_reduce_max.comp
+[334/663] Preprocessing shader source softmax_exp_sub_max_pack4.comp
+[335/663] Preprocessing shader source softmax_reduce_max_pack4.comp
+[336/663] Preprocessing shader source softmax_reduce_sum_pack4.comp
+[337/663] Preprocessing shader source softmax_reduce_sum.comp
+[338/663] Preprocessing shader source softplus.comp
+[339/663] Preprocessing shader source swish.comp
+[340/663] Preprocessing shader source unaryop.comp
+[341/663] Preprocessing shader source tanh.comp
+[342/663] Preprocessing shader source unfold_im2col.comp
+[343/663] Preprocessing shader source unfold_im2col_pack1to4.comp
+[344/663] Preprocessing shader source unfold_im2col_pack4.comp
+[345/663] Preprocessing shader source unfold_im2col_pack4to1.comp
+[346/663] Preprocessing shader source vulkan_activation.comp
+[347/663] Linking CXX static library glslang\glslang\libglslang.a
+[348/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/SpvBuilder.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+C:/Users/26671/lpr-harmony/third_party/ncnn/glslang/SPIRV/SpvBuilder.cpp:2073:41: warning: unused parameter 'function' [-Wunused-parameter]
+
+Id Builder::makeDebugFunction(Function* function, Id nameId, Id funcTypeId) {
+
+                                        ^
+
+1 warning generated.
+
+[349/663] Building CXX object src/CMakeFiles/ncnn.dir/blob.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[350/663] Building CXX object src/CMakeFiles/ncnn.dir/datareader.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[351/663] Building CXX object src/CMakeFiles/ncnn.dir/benchmark.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[352/663] Building CXX object src/CMakeFiles/ncnn.dir/cpu.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[353/663] Building CXX object src/CMakeFiles/ncnn.dir/c_api.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[354/663] Building CXX object src/CMakeFiles/ncnn.dir/allocator.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[355/663] Building CXX object src/CMakeFiles/ncnn.dir/command.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[356/663] Building CXX object src/CMakeFiles/ncnn.dir/expression.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[357/663] Building CXX object src/CMakeFiles/ncnn.dir/layer.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+In file included from C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer.cpp:10:
+In file included from C:/Users/26671/lpr-harmony/third_party/ncnn_build_ohos_vk/src/layer_declaration.h:311:
+C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer/vulkan/noop_vulkan.h:17:17: warning: 'ncnn::Noop_vulkan::forward_inplace' hides overloaded virtual function [-Woverloaded-virtual]
+
+    virtual int forward_inplace(std::vector<VkMat>& bottom_top_blobs, VkCompute& cmd, const Option& opt) const;
+
+                ^
+
+C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer/noop.h:16:17: note: hidden overloaded virtual function 'ncnn::Noop::forward_inplace' declared here: different number of parameters (2 vs 3)
+
+    virtual int forward_inplace(std::vector<Mat>& bottom_top_blobs, const Option& opt) const;
+
+                ^
+
+1 warning generated.
+
+[358/663] Building CXX object src/CMakeFiles/ncnn.dir/mat.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[359/663] Building CXX object src/CMakeFiles/ncnn.dir/mat_pixel.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[360/663] Building CXX object src/CMakeFiles/ncnn.dir/mat_pixel_affine.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[361/663] Building CXX object glslang/SPIRV/CMakeFiles/SPIRV.dir/GlslangToSpv.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[362/663] Building CXX object src/CMakeFiles/ncnn.dir/mat_pixel_resize.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[363/663] Linking CXX static library glslang\SPIRV\libSPIRV.a
+[364/663] Building CXX object src/CMakeFiles/ncnn.dir/mat_pixel_drawing.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[365/663] Building CXX object src/CMakeFiles/ncnn.dir/option.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[366/663] Building CXX object src/CMakeFiles/ncnn.dir/modelbin.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[367/663] Building CXX object src/CMakeFiles/ncnn.dir/pipeline.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[368/663] Building CXX object src/CMakeFiles/ncnn.dir/mat_pixel_rotate.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[369/663] Building CXX object src/CMakeFiles/ncnn.dir/simpleocv.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[370/663] Building CXX object src/CMakeFiles/ncnn.dir/simpleomp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[371/663] Building CXX object src/CMakeFiles/ncnn.dir/paramdict.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[372/663] Building CXX object src/CMakeFiles/ncnn.dir/simplestl.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[373/663] Building CXX object src/CMakeFiles/ncnn.dir/simplemath.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[374/663] Building CXX object src/CMakeFiles/ncnn.dir/pipelinecache.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[375/663] Building CXX object src/CMakeFiles/ncnn.dir/simplevk.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[376/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/absval.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[377/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/absval_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[378/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/absval_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[379/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/batchnorm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[380/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/batchnorm_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[381/663] Building CXX object src/CMakeFiles/ncnn.dir/net.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[382/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/batchnorm_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[383/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/bias.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[384/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/batchnorm_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[385/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/bias_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[386/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/bnll.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[387/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/concat.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[388/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/convolution.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[389/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/concat_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[390/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/concat_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[391/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/crop.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[392/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolution_arm_asimddp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[393/663] Building CXX object src/CMakeFiles/ncnn.dir/gpu.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[394/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolution_arm_bf16.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+In file included from C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer/arm/convolution_arm_bf16.cpp:12:
+C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer/arm/convolution_im2col_gemm_bf16s.h:1809:219: warning: unused parameter 'use_a53_a55_optimized_kernel' [-Wunused-parameter]
+static void convolution_gemm_transB_packed_tile_bf16s(const Mat& AT_tile, const Mat& BT_tile, const Mat& CT_tile, Mat& topT_tile, Mat& top_blob, int i, int max_ii, int j, int max_jj, int k, int max_kk, bool k_end, int use_a53_a55_optimized_kernel)
+
+                                                                                                                                                                                                                          ^
+
+1 warning generated.
+
+[395/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolution_arm_i8mm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[396/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/deconvolution.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[397/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/crop_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+C:/Users/26671/lpr-harmony/third_party/ncnn/src/layer/arm/crop_arm.cpp:460:9: warning: unused variable 'ref_elempack' [-Wunused-variable]
+
+    int ref_elempack = reference_blob.elempack;
+
+        ^
+
+1 warning generated.
+
+[398/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/crop_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[399/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/convolution_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[400/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/dropout.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[401/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/dropout_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[402/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolution_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[403/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/deconvolution_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[404/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/deconvolution_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[405/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/deconvolution_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[406/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/dropout_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[407/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/eltwise.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[408/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/eltwise_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[409/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/elu.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[410/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/elu_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[411/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/eltwise_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[412/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/elu_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[413/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/eltwise_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[414/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/elu_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[415/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/embed.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[416/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/exp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[417/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/flatten.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[418/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/flatten_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[419/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/flatten_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[420/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/innerproduct.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[421/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/innerproduct_arm_vfpv4.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[422/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/input.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[423/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/innerproduct_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[424/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/innerproduct_arm_bf16.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[425/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/innerproduct_arm_asimdfhm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[426/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/innerproduct_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[427/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/innerproduct_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[428/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/log.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[429/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/lrn.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[430/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/memorydata.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[431/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/lrn_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[432/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/lrn_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[433/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/memorydata_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[434/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/mvn.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[435/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/pooling.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[436/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/power.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[437/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/prelu.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[438/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/pooling_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[439/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/pooling_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[440/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/prelu_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[441/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/pooling_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[442/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/prelu_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[443/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolution_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[444/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/prelu_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[445/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/relu.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[446/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/reduction_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[447/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/proposal.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[448/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/relu_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[449/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/reduction.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[450/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/relu_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[451/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/relu_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[452/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/roipooling.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[453/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/reshape.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[454/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/scale.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[455/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/reshape_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[456/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/scale_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[457/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/reshape_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[458/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/scale_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[459/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/sigmoid.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[460/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/sigmoid_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[461/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/sigmoid_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[462/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/sigmoid_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[463/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/slice.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[464/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/softmax.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[465/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/slice_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[466/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/slice_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[467/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/softmax_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[468/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/split.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[469/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/softmax_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[470/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/split_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[471/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/softmax_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[472/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/tanh.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[473/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/tanh_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[474/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/tanh_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[475/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/threshold.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[476/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/tanh_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[477/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/tile.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[478/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/rnn_arm_vfpv4.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[479/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/rnn.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[480/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/rnn_arm_asimddp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[481/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/lstm_arm_vfpv4.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[482/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/rnn_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[483/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/rnn_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[484/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/lstm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[485/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/lstm_arm_asimddp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[486/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/lstm_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[487/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/binaryop_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[488/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/lstm_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[489/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/unaryop.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[490/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/binaryop.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[491/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/unaryop_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[492/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/convolutiondepthwise.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[493/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/unaryop_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[494/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/unaryop_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[495/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolutiondepthwise_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[496/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/binaryop_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[497/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/binaryop_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[498/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/convolutiondepthwise_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[499/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/padding.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[500/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/padding_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[501/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/padding_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[502/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/convolutiondepthwise_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[503/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/squeeze.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[504/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/normalize.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[505/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/expanddims.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[506/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/normalize_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[507/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/permute_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[508/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/permute.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[509/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/priorbox.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[510/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/priorbox_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[511/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/interp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[512/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/detectionoutput.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[513/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/deconvolutiondepthwise.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[514/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/interp_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[515/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/interp_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[516/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/deconvolutiondepthwise_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[517/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/shufflechannel.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[518/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/deconvolutiondepthwise_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[519/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/interp_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[520/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/deconvolutiondepthwise_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[521/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/shufflechannel_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[522/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/shufflechannel_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[523/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/instancenorm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[524/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/instancenorm_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[525/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/instancenorm_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[526/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/clip.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[527/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/clip_arm.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[528/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/instancenorm_vulkan.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[529/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/arm/clip_arm_asimdhp.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[530/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/reorg.cpp.o
+clang++: warning: argument unused during compilation: '--gcc-toolchain=D:/IDE/DevEco_Studio/sdk/default/openharmony/native/llvm' [-Wunused-command-line-argument]
+
+[531/663] Building CXX object src/CMakeFiles/ncnn.dir/layer/vulkan/clip_vulkan.cpp.o

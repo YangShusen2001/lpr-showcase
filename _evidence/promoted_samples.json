@@ -1,0 +1,12 @@
+[
+  {
+    "file": "scene-2.jpg",
+    "role": "full scene, yellow plate, ~8% of frame",
+    "bytes": 2079574
+  },
+  {
+    "file": "plate-yellow-320x48.jpg",
+    "role": "tight yellow plate crop",
+    "bytes": 3999
+  }
+]

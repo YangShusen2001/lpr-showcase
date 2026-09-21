@@ -1,0 +1,15 @@
+=== hilog clear ===
+Log type core,app,only_prerelease buffer clear successfully
+start server at tcp:5037
+
+=== aa start ===
+start ability successfully.
+
+=== web diag ===
+09-17 19:38:35.990 31882 31882 I A0D001/com.shusen.lprdemo/LprNativeUI: WEB DIAG BEGIN demo.html?bench=30&threads=6
+09-17 19:38:40.039 31882 31882 I A0D001/com.shusen.lprdemo/LprNativeUI: WEB DIAG "{\"done\":true,\"threads\":6,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":88.3,\"mean\":92.6,\"min\":86.9,\"max\":142.4}"
+
+=== native contrast ===
+09-17 19:38:34.383 31882 31882 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE LOAD ok det=CPU  rec=NNRT:NPU_ohos.boot.hardware.kirin8020_v2_0  cls=CPU
+09-17 19:38:34.666 31882 31882 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE PIPE code=苏ED5172 colour=蓝牌 count=1 total=115.8917 stages=79.0184|13.3589|11.3983|3.6961 cropSum=2773473
+09-17 19:38:34.939 31882 31882 I A0D001/com.shusen.lprdemo/LprNativeUI: DET BENCH ok=1;backend=CPU;warmup=3;repeat=10;meanMs=17.7992;p50Ms=18.7558;p95Ms=29.9155;minMs=9.8883;maxMs=29.9155;checksum=1042.6634;checksumAsFp16=nan;maxAbs=18.0232;outputDtype=43;outputElems=72000;error=

@@ -1,0 +1,24 @@
+=== INSTALL ===
+[Info]App install path:C:\Users\26671\lpr-harmony\LprDemo\entry\build\default\outputs\default\entry-default-signed.hap msg:install bundle successfully. 
+AppMod finish
+=== START ===
+start ability successfully.
+=== POLLS ===
+elapsed=62s done=True lines=16
+=== LOG ===
+09-17 16:08:13.910  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE MISSING-RAWFILE favicon.ico
+09-17 16:08:16.914  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: "WEBPROBE origin=https://lpr.local\nWEBPROBE protocol=https:\nWEBPROBE ua=Mozilla/5.0 (Phone; OpenHarmony 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36  ArkWeb/6.1.0.120 Mobile\nWEBPROBE hardwareConcurrency=12\nWEBPROBE deviceMemory=8\nWEBPROBE crossOriginIsolated=true\nWEBPROBE SharedArrayBuffer=true\nWEBPROBE webgl2=YES\nWEBPROBE webgl1=YES\nWEBPROBE gpu.vendor=HUAWEI\nWEBPROBE gpu.renderer=Maleoon 920C\nWEBPROBE gl.version=WebGL 2.0 (OpenGL ES 3.0 Chromium)\nWEBPROBE gl.maxTexture=16384\nWEBPROBE gl.maxVaryings=31\nWEBPROBE webgpu.navigatorGpu=true\nWEBPROBE wasm.simd=true\nWEBPROBE wasm.bulkMemory=true\nWEBPROBE wasm.truncSat=true\nWEBPROBE wasm.signExtensions=true\nWEBPROBE wasm.multiValue=true\nWEBPROBE wasm.referenceTypes=true\nWEBPROBE wasm.bigInt=true\nWEBPROBE wasm.threads.atomics=true\nWEBPROBE wasm.threads.sabTransferable=true\nWEBPROBE bench.gl2.totalMs=23.2\nWEBPROBE bench.gl2.msPerFrame=0.387\nWEBPROBE bench.gl2.gflops=6497.20\nWEBPROBE DONE=1\nWEBPROBE webgpu.adapter=NULL\n"
+09-17 16:08:16.914  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE END
+09-17 16:08:19.911  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT SWEEP BEGIN counts=1,2,4,6,8,12,1 iters=30
+09-17 16:08:20.114  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE MISSING-RAWFILE assets/samples/crop-0-%E6%B4%A5B6H920.jpg
+09-17 16:08:20.115  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE MISSING-RAWFILE assets/samples/crop-1-%E7%9A%96KD01833.jpg
+09-17 16:08:20.115  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE MISSING-RAWFILE assets/samples/crop-6-%E8%92%99B023H6.jpg
+09-17 16:08:20.115  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: WEBPROBE MISSING-RAWFILE assets/samples/crop-8-%E5%86%80D5L690.jpg
+09-17 16:08:25.500  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=1 "{\"done\":true,\"threads\":1,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":126.2,\"mean\":126.7,\"min\":124.2,\"max\":131.9}"
+09-17 16:08:30.227  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=2 "{\"done\":true,\"threads\":2,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":107.9,\"mean\":109,\"min\":106.9,\"max\":126.5}"
+09-17 16:08:34.968  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=4 "{\"done\":true,\"threads\":4,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":108.1,\"mean\":108.5,\"min\":88.2,\"max\":142.1}"
+09-17 16:08:38.924  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=6 "{\"done\":true,\"threads\":6,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":86.7,\"mean\":87.1,\"min\":86,\"max\":90.8}"
+09-17 16:08:43.968  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=8 "{\"done\":true,\"threads\":8,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":121.3,\"mean\":121.8,\"min\":109.2,\"max\":133.5}"
+09-17 16:08:50.282  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=12 "{\"done\":true,\"threads\":12,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":162.3,\"mean\":161.8,\"min\":140.9,\"max\":192.1}"
+09-17 16:08:55.607  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT threads=1 "{\"done\":true,\"threads\":1,\"isolated\":true,\"sab\":true,\"hardwareConcurrency\":12,\"n\":30,\"p50\":125,\"mean\":125.1,\"min\":122.3,\"max\":129.2}"
+09-17 16:08:55.608  4939  4939 I A0D001/com.shusen.lprdemo/LprWeb: MT SWEEP END

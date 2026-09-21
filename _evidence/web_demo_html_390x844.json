@@ -1,0 +1,27 @@
+{
+  "url": "http://127.0.0.1:8123/demo.html",
+  "result": {
+    "error": "timeout waiting for __RESULT",
+    "detail": "TimeoutError: page.waitForFunction: Timeout 8000ms exceeded."
+  },
+  "layout": {
+    "docHeight": 2460,
+    "viewport": 844,
+    "screens": 2.91,
+    "overflowX": false,
+    "sections": [
+      {
+        "tag": "header",
+        "top": 0,
+        "h": 63
+      },
+      {
+        "tag": "footer",
+        "top": 2272,
+        "h": 189
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "screenshot": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_demo_html_390x844.png"
+}

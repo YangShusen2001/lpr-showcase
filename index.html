@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="sL2Fd61ussOTFHnySqnf9E" class="anim" data-dm-ref="1"><head data-page-node-id="YdYO7ClVqTlCex404VJgHO">
+<meta charset="utf-8" data-page-node-id="oVPxS1r3CS0l49FNy7fWcY">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="J9YHLZuKTGK6nMAiqkUeY4">
+<title>基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别 · 检测 / 透视矫正 / 序列识别 / 颜色分类</title>
+<meta name="description" content="基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别。照片进，车牌字符串出；四级流水线全在浏览器内运行，三模型 14.2 MB 自托管零请求，与 Python 参考实现逐像素对齐。" data-page-node-id="KB2ciA80FGe30T3hl5APdC">
+<link rel="icon" href="data:," data-page-node-id="0V2WhDOjJt7tgHEzHjZYbJ">
+<link rel="stylesheet" href="assets/css/site.css" data-page-node-id="hpQgLYPmGjGYZd60Qcn1WZ">
+<style id="__dm_no_drag_style__">* { -webkit-user-drag: none !important; }</style><style id="__dm_bindable_badge_style__">[data-sp-bindable="database"]{outline:1px dashed #0088ff;outline-offset:2px;border-radius:4px;}[data-sp-bindable="database"] *{pointer-events:none !important;transition:none !important;animation:none !important;}[data-sp-bindable="database"]{transition:none !important;animation:none !important;}</style></head>
+<body data-page-node-id="wyODw7yfOZtXB5DRw5FPdh" style="">
+
+<!-- ============================================================ nav -->
+<header class="nav" data-page-node-id="ZZMlAkSAAD5JKy7mzo8qAb">
+  <div class="wrap nav-in" data-page-node-id="Y7zCHn8Q0dN60C876ZDCZN">
+    <div class="brand" data-page-node-id="0m9ke6H3a7xiyF66YKW6iH" style="">车牌识别
+      <small data-page-node-id="oDL5lxjdFkDK083rWi6yCq">YOLOv5 + CRNN-CTC · ONNX Runtime Web</small>
+    </div>
+    <nav class="nav-links" data-page-node-id="BU9EjcAxGY7a173v9Rk8VK">
+      <a href="#pipeline" data-page-node-id="VdrQ8ueZihGnj1nPfJ9zc9">流水线</a>
+      <a href="#results" data-page-node-id="Lnn9WHUr9uzeDDIn2Cnrag">保真度</a>
+      <a href="paper/ieee-lpr-paper.md" data-page-node-id="Lq51N7cFXpdNFJQF0CLB7Y">论文</a>
+      <a class="cta" href="#demo" data-page-node-id="7cPqnyCQpyehjZAqcjLldU">实时 Demo</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================ hero -->
+<section class="hero compact" data-page-node-id="5lZI2KV8NzqSXZSk8VdcBE">
+  <div class="wrap" data-page-node-id="EUZvuHvV2NKQG6UUNXqZ2o">
+    <span class="eyebrow" data-page-node-id="yaz5pwPV73IUXDrxOeW2iy" style="">麒麟 8020 端侧实测</span>
+    <h1 data-page-node-id="zzjOnLtaxRUCY8C4k1Eqtn" style="cursor: text;">基于 YOLOv5 与 CRNN-CTC 的<em data-page-node-id="FHKQ96tzFl0wTpgb4AYttV" style="">纯前端端到端​</em>车牌识别</h1>
+    <p class="lede" data-page-node-id="IAO2LEnp2e4KrQJ0WCgQee" style="">
+      照片进，车牌字符串出。检测 → 透视矫正 → CRNN-CTC 识别 → 颜色分类四级流水线全部在浏览器内完成，
+      三个 ONNX 模型合计 14.2&nbsp;MB 自托管、零外部请求；与 Python 参考实现逐通道对齐，8/8 样本识别结果一致。
+    </p>
+
+    <div class="hero-actions" data-page-node-id="LhK4EREOdeQlD6yzS5w4Cu">
+      <a class="btn primary" href="#demo" data-page-node-id="smPRsWh3c6EFSg8XpwRwfe">打开实时 Demo <span class="arrow" data-page-node-id="1vlNznaATPPJiQ85Nw1EOg">↓</span></a>
+      <a class="btn" href="#results" data-page-node-id="vvdjBNelEKRsQsUGdFVTmx">查看保真度证据 <span class="arrow" data-page-node-id="U1tTp4mWMnTysqP5dUP3au">→</span></a>
+      <a class="btn" href="paper/ieee-lpr-paper.md" data-page-node-id="pRaBOlmACX9mFNAdZjIYZF">IEEE 论文 <span class="arrow" data-page-node-id="oOn07xXAhcBHwbPfEWfdb3">→</span></a>
+    </div>
+
+    <div class="metrics" data-page-node-id="bdUBgP4rIlQHHAVBO2l9DH">
+      <div class="metric" data-page-node-id="hjvAwLCW3kJVSYy26QeBEW">
+        <div class="v" data-page-node-id="z1EKhv43OBkMXmYvTFWgAF">14.2<span data-page-node-id="GvMEgapyX3ZUiCCu2on4vm">MB</span></div>
+        <div class="k" data-page-node-id="i3H8eDFdQnkTIfAiDmnY5m">三模型合计 · 本地自托管</div>
+        <div class="s" data-page-node-id="XZKaLHYpASeRimkqYswZ4W">0 个外部网络请求</div>
+      </div>
+      <div class="metric" data-page-node-id="lrkXrvgTSY7HGVUFu8Srsx">
+        <div class="v" data-page-node-id="KKffC9KP7ZlLlOCF3tyJtF">85<span data-page-node-id="pjTmXog27j82O1eRD9cTDw">ms</span></div>
+        <div class="k" data-page-node-id="xqt3mF7FwZCBGwb2hPxpKj">浏览器端到端延迟</div>
+        <div class="s" data-page-node-id="IaBwF8upsozmbItQKLzoCh">1140×456 · 麒麟 8020 · 6 线程 WASM</div>
+      </div>
+      <div class="metric" data-page-node-id="Ier1lY2trCOfTbk4H51EIt">
+        <div class="v" data-page-node-id="QlPGoQ8QHYkKBpwjpoXCKp">8/8</div>
+        <div class="k" data-page-node-id="oXFwfrF9VMjOPjZkMMLfyb">识别结果与 Python 参考一致</div>
+        <div class="s" data-page-node-id="lRwGxy7rLLfdR38ROpcwAh">逐通道对齐 · 残余 ≤1 LSB</div>
+      </div>
+      <div class="metric" data-page-node-id="8AYB0loA8GbyFPBa76AGI6">
+        <div class="v" data-page-node-id="M2e6A60gxewAmOKFNoSBIr">2.2–3.0<span data-page-node-id="k9fziGoiQ5u5Qfu5dQoWHq">×</span></div>
+        <div class="k" data-page-node-id="Uw3Go5D8plma6XAIbBNahY">识别模型 NPU 加速比</div>
+        <div class="s" data-page-node-id="7azQuhc3VCLPASBAad1pr7">rpv3 · 检测未上 NPU</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 01 pipeline -->
+<section id="pipeline" class="slim" data-page-node-id="lWPTjITuvX3847Y7FHh55S">
+  <div class="wrap" data-page-node-id="XHHqpHeE14uLvbmUKQ1GUw">
+    <div class="sec-head tight reveal in" data-page-node-id="tm9HX7pNgC2cNDmjG22XAd">
+      
+      <h2 data-page-node-id="B4P5ELdHzgNP3cxhKEGcdD" style="white-space: pre-wrap; cursor: text; text-decoration-line: none;">车牌识别流程</h2>
+      
+    </div>
+
+    <div class="strip reveal in" data-page-node-id="5WD58u2XbxWHzFfvRiEzMK">
+      <div class="st" data-page-node-id="mNPGsL1Gcy6nFjBzsZBhCW">
+        <span class="n" data-page-node-id="5V1VQk1xgHV3cMW6CBxBXu">01</span>
+        <h3 data-page-node-id="3VyIroqTgqQjegKTCviphx">车牌检测</h3>
+        <div class="m" data-page-node-id="gOC1KZb6GJkrhvjKLM2nvT" style="">y5fu_320x_sim.onnx<br data-page-node-id="7j1lsiWklF6QSPW4w8ORKI">2.23 MB · YOLOv5 系单类头</div>
+        
+      </div>
+      <div class="st" data-page-node-id="DK7AlcKnjBHZRz81BU6VyG">
+        <span class="n" data-page-node-id="E1uC48sYINgxKrgLBPzgzu">02</span>
+        <h3 data-page-node-id="Cmj3iPV57gGhjIFlza15CJ">透视矫正</h3>
+        <div class="m" data-page-node-id="4Jx01fwnv9FzLGSig1BiqP">无模型<br data-page-node-id="YUGlRgbrWev9OTYL4ADqBB">纯几何 · 双三次重采样</div>
+        
+      </div>
+      <div class="st" data-page-node-id="2Wdm8uszl7XHQQLKPIJPwn">
+        <span class="n" data-page-node-id="kdPlUVpD6o6pw8NTh4THHt">03</span>
+        <h3 data-page-node-id="mG4LuLZci7C3dqzHw8tjIl">序列识别</h3>
+        <div class="m" data-page-node-id="b1Nfrzlg0gfITRs4kqcDVj">rpv3_mdict_160_r3.onnx<br data-page-node-id="MMZ4HYV9nVgykiwUOEPuPx">9.78 MB · CRNN + CTC</div>
+        
+      </div>
+      <div class="st" data-page-node-id="luaSFcbCGk2itFq6gNKIuP">
+        <span class="n" data-page-node-id="VHxn0jiQV5zGufCxrLGHWa">04</span>
+        <h3 data-page-node-id="0waIKduBRsegBE4eWwoo7n">颜色分类</h3>
+        <div class="m" data-page-node-id="yTKOyg7swOeibeY9XtKcTS">litemodel_cls_96x_r1.onnx<br data-page-node-id="QLCJ01nJZ0uEHfsouK1UVN">1.53 MB · 96×96 分类头</div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 02 demo -->
+<section id="demo" class="slim" data-page-node-id="7piw9sd56QSBW8iqZJtCHF">
+  <div class="wrap" data-page-node-id="a7ABEy16zMoi5RY9F0Uhm9">
+    <div class="sec-head tight reveal in" data-page-node-id="DSf0OwswR5sAgmGOd3ZxYA">
+      <h2 data-page-node-id="l26d76RE2ArTAjtWJVKGbK" style="">Demo 演示</h2>
+      <p data-page-node-id="kKMRwAaIXyLsQjt5FiOac4">选一张内置样本、拖入照片，或直接 Ctrl+V 粘贴截图。下面的检测框、关键点、矫正裁剪、逐字符置信度与分级耗时，全部来自你本机浏览器里的真实推理 —— 没有任何预置结果。</p>
+    </div>
+
+    <div class="demo-shell demo-embed reveal in" data-page-node-id="WsMCvBGUa58mXAC0qybfVt">
+      <div class="demo-bar" data-page-node-id="0IohvltBsmS1UmAnKX5Az1">
+        <span class="lamp" data-page-node-id="QaTVXSdOHILWXGmUiokCZK"></span><span class="lamp" data-page-node-id="90owVX0mbDwV0vj90kTBNE"></span><span class="lamp" data-page-node-id="n8Edncd7LKJvt5H4MRBwlT"></span>
+        <span class="title" id="rtTitle" data-page-node-id="LXkLCB9V0J2qflsg0aITEX">hyperlpr3 · browser-runtime · wasm/simd · fp32</span>
+        <span class="rt" data-page-node-id="bzIuCmgKJYRdIiND2KTFLC">status <b id="rtState" data-page-node-id="NQkk115ngoRuWUxnz14Kcw">idle</b></span>
+      </div>
+
+      <div class="demo-grid" data-page-node-id="7R8k6mKCKwNn8cJAQ0cnGD">
+        <aside class="demo-side" data-page-node-id="riPQZwPIbXFWrS3aZKG3Xt">
+          <h4 data-page-node-id="UgDeVcuJ871ChuYuuI3jcw">输入</h4>
+          <div class="drop" id="drop" data-page-node-id="rbxEF43Ae8NYe7EuYdPsN9">
+            <strong data-page-node-id="OSMABcdqMpRIIff1QIr29q">拖入 / 点击 / 粘贴</strong>
+            支持 JPG · PNG · WebP
+            <div class="hint" data-page-node-id="eoyEb581Fgj2xfBVQsIFud">Ctrl+V 直接粘贴截图</div>
+          </div>
+          <input type="file" id="file" accept="image/*" hidden="" data-page-node-id="muXEDnWw72CTAoNBhsv9oW">
+          <h4 data-page-node-id="iePoXjvfri7DqTBKZpCwnu">内置样本</h4>
+          <div class="samples" id="samples" data-page-node-id="uCSUmv7PEq9CrFxqlEbzLO">
+    <div class="sample" data-i="0" title="整车 · 黄牌 · 1140×456">
+      <img src="assets/samples/scene-2.jpg" alt="整车 · 黄牌" loading="lazy">
+      <span>整车 · 黄牌</span>
+    </div>
+    <div class="sample" data-i="1" title="黄金样本 · 真值 苏ED51712（8 位）。牌色两口径未裁决：cls 模型判蓝牌，牌面像素量法判真绿牌（ADR-015）· 1920×1080">
+      <img src="assets/samples/hlpr-test.jpg" alt="黄金样本 · 真值 苏ED51712" loading="lazy">
+      <span>整车 · 8 位 · 牌色两口径</span>
+    </div>
+    <div class="sample" data-i="2" title="特写 · 蓝牌 · 7 位">
+      <img src="assets/samples/crop-0-%E6%B4%A5B6H920.jpg" alt="特写 · 蓝牌" loading="lazy">
+      <span>特写 · 蓝牌</span>
+    </div>
+    <div class="sample" data-i="3" title="特写 · 绿牌 · 8 位新能源">
+      <img src="assets/samples/crop-1-%E7%9A%96KD01833.jpg" alt="特写 · 绿牌" loading="lazy">
+      <span>特写 · 绿牌</span>
+    </div>
+    <div class="sample" data-i="4" title="特写 · 蓝牌 · 7 位">
+      <img src="assets/samples/crop-6-%E8%92%99B023H6.jpg" alt="特写 · 蓝牌" loading="lazy">
+      <span>特写 · 蓝牌</span>
+    </div>
+    <div class="sample" data-i="5" title="特写 · 黄牌 · 7 位">
+      <img src="assets/samples/crop-8-%E5%86%80D5L690.jpg" alt="特写 · 黄牌" loading="lazy">
+      <span>特写 · 黄牌</span>
+    </div></div>
+        </aside>
+
+        <div class="demo-main" data-page-node-id="BnBGru3qC3FHky2Zs7T1NJ">
+          <div class="dm-row" data-page-node-id="35XE3l2OB4B4wwiQeTSUt3">
+            <div class="pane" data-page-node-id="GJUi8au5JLhAdQ18R4QXh2">
+              <div class="ph" data-page-node-id="Ax0yyo62VPWOhouCeidUco"><span class="step" data-page-node-id="yhaPhqVxTMQgA9tDG79MVp">01</span> 检测 · DETECTION
+                <span class="ms" id="msDet" data-page-node-id="3DNMdsM1qtfuwEESEfBGOw">—</span>
+              </div>
+              <div class="cv-holder" data-page-node-id="FiYXQJvheozFm8BJ2t2IHR"><canvas id="cvSrc" width="1" height="1" data-page-node-id="ytq8AIrQ14tEFzEIdOl0Xf"></canvas></div>
+            </div>
+            <div class="pane" data-page-node-id="Pi51SHCf14GIi6bv80ID2r">
+              <div class="ph" data-page-node-id="OD6NrcS8TvRhYsNawdc87s"><span class="step" data-page-node-id="R6ExJpsl85oq8yK9OpxFLn">02</span> 矫正 · RECTIFY
+                <span class="ms" id="msRect" data-page-node-id="z2yBfSEx7nc3sBvIQuO3Ua">—</span>
+              </div>
+              <div class="cv-holder" data-page-node-id="1GTX8o9GTOG8BuBkF023hL"><canvas id="cvCrop" width="1" height="1" data-page-node-id="z0sVR6Wqp69xPpydqMSN9D"></canvas></div>
+            </div>
+          </div>
+
+          <div class="pane" data-page-node-id="Cs6l4sF63EVv0JJuM4Bqfh">
+            <div class="ph" data-page-node-id="TIJPDfADVmR5qhCfqDHYBW"><span class="step" data-page-node-id="bWpUW81T750A4f4SrcaLpi">03</span> 识别 · RECOGNITION
+              <span class="ms" id="msRec" data-page-node-id="AthCx1P0E3Z2CS6sOoMlZc">—</span>
+            </div>
+            <div class="plate-out" data-page-node-id="U9x2tgOwxIvcnmFPeN00tH">
+              <div class="plate-text" id="plateText" data-page-node-id="wbqjKqCNBbNKgTIUIdCOv5">—</div>
+              <div class="plate-meta" id="plateMeta" data-page-node-id="eqtHl0kzMEN0O5nhNQUUq8"></div>
+            </div>
+            <h4 style="margin-top:16px" data-page-node-id="zzYYln7P32yXBtYxHtI9wk">颜色分类 · CLASSIFICATION <span id="msCls" style="font-weight:400" data-page-node-id="yf8zHet1KqW2mHAErb8T8d">—</span></h4>
+            <div class="bars" id="clsBars" data-page-node-id="Rt1kfdPguYODkgByZqP9t3"></div>
+            <h4 style="margin-top:16px" data-page-node-id="r8nOv3pZSDnXwTFW9bJ8zE">逐字符置信度</h4>
+            <div class="bars" id="charBars" data-page-node-id="Zam8pWn6ipsPN6JN5r4Fd4"></div>
+          </div>
+
+          <div class="pane" data-page-node-id="Vh4mfCsnetVE7LVhyvkXbD">
+            <div class="ph" data-page-node-id="RAOVXwIRLEnaNv7ZnmoOaD">耗时分解 · LATENCY <span class="ms" data-page-node-id="MSJnNDeJFx32mSqPC1aXBz">本机实测</span></div>
+            <div class="plate-out" data-page-node-id="qGgHr2NoOj15QiHF84Rq6u">
+              <div class="plate-text" id="msTotal" style="font-size:22px" data-page-node-id="xeGNQeCrFTuqqp82lvfYdW">—</div>
+              <div class="plate-meta" data-page-node-id="1XRoe98AkvZZ5u1GWKIczB">检测 + 矫正 + 识别 + 分类（不含图片解码）</div>
+            </div>
+          </div>
+
+          <div class="console-log" id="log" data-page-node-id="tZDBrdBfmroUC3iDENo6X3"><span class="dim" data-page-node-id="kCuNCl78TgdpsucDZpfIXT">[11:46:08]</span> <span class="hl" data-page-node-id="LuMLWWnBgfHhrciz0XAFCd">端到端车牌识别 · 浏览器实时推理控制台</span>
+<span class="dim" data-page-node-id="N5BCNvuxSoiFh9k1FQGROy">[11:46:08]</span> <span class="dim" data-page-node-id="rXD42FhFXvC9rIAQVK6EEL">模型：HyperLPR3 ONNX 三件套（检测 / 识别 / 颜色分类）</span>
+<span class="dim" data-page-node-id="iA1A6wJ7LLRlG6dIuPr3gM">[11:46:08]</span> <span class="dim" data-page-node-id="lslutqvTb9QyrfpYoeAJVd">选一张样本或拖入自己的照片即可开始 —— 全部推理在本机浏览器完成，无网络请求。</span>
+<span class="dim">[12:27:51]</span> <span class="hl">端到端车牌识别 · 浏览器实时推理控制台</span>
+<span class="dim">[12:27:51]</span> <span class="dim">模型：HyperLPR3 ONNX 三件套（检测 / 识别 / 颜色分类）</span>
+<span class="dim">[12:27:51]</span> <span class="dim">选一张样本或拖入自己的照片即可开始 —— 全部推理在本机浏览器完成，无网络请求。</span>
+</div>
+          <div id="demoEmpty" hidden="" data-page-node-id="d2Pm4iSxfWgdE1oWtA5XUV"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="links-row" style="margin-top:18px" data-page-node-id="KzaVVEumryGlEPqKMp8uqI">
+      <a href="demo.html" data-page-node-id="JTqI9BoL3A1cB6EFdfiLBD">独立演示页 <span class="mono" data-page-node-id="hIIAlfeyErK1doMv7BZsgm">demo.html</span></a>
+      <a href="https://github.com/szad670401/HyperLPR" target="_blank" rel="noreferrer" data-page-node-id="NeJGKsZYmGLlmzNPZ4NaNG">模型来源 <span class="mono" data-page-node-id="v0PCCn7zy5cengpkyMsvJr">HyperLPR · Apache-2.0</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ 03 results -->
+<section id="results" class="alt slim" data-page-node-id="rRkdigiZp03ZzAdXl4EoVs">
+  <div class="wrap" data-page-node-id="GqTRdiCmsAhHxDoH7PrcUE">
+    <div class="ev-band reveal in" data-page-node-id="oO3WLHoIVjlqkKUfQlRlPF">
+      <div data-page-node-id="RFcucAIRBZDenHeU9nbHaS">
+        <div class="idx" data-page-node-id="56FJKgTf4KYAPi0tAE2GHT">保真度证据 · ADR-002</div>
+        <h2 data-page-node-id="LDzEYql8X6ZBzMCpUSbHnq">8 / 8 样本<em data-page-node-id="ryJEzTqYzWGlG4LY0o4g3J">识别一致</em></h2>
+      </div>
+      <div data-page-node-id="mZryuFFbhsCkPreoBJjfmh">
+        <div class="ev-codes" data-page-node-id="hmYhsm55vB23rdv3kc6GRp">
+          <span data-page-node-id="58une12X9wSyxjw4t6X8Kp">MU4158</span><span data-page-node-id="SrKNJxe8RdcdvV7Z7dY7jt">苏ED5172</span><span data-page-node-id="buhs6gZ9vWn4USHs78Fjns">藏DT5022</span><span data-page-node-id="cMuBTSHNIEsjGiBqLctJZc">粤ZP560港</span>
+          <span data-page-node-id="27SOiTA0jRhVIBxy9sJtwG">津B6H920</span><span data-page-node-id="BpOSkPN7tHvvJHJJdxsXnh">皖KD01833</span><span data-page-node-id="yFrIaDeyvIbKLZD4tHYQVD">蒙B023H6</span><span data-page-node-id="lzCQEaGu3Tnu55RYtWiAHS">冀D5L690</span>
+        </div>
+        <ul class="ev-list" data-page-node-id="aZ0DWjjqLWPVv7q75F5Dbv">
+          <li data-page-node-id="vBe5yzZ2U1mFQbZgLsHcqE">整数缩放比：<b data-page-node-id="fbAqajTdHylB0ucfCGh5ZH">逐通道完全一致</b></li>
+          <li data-page-node-id="1er2JL8ZZX0zKT8vmm4HRG">非整数缩放比：残余 <b data-page-node-id="0BezmaQG0Jk7JdxDclmDpg">≤1 LSB</b>，由垂直缩放决定（11753 / 307200 通道，符号单一，不影响识别输出）</li>
+          <li data-page-node-id="3MJTZM45Ga0fOFpDSVF6mC">关键点未截断缺陷修复：识别结果由 <b data-page-node-id="5Zy3gIiTIwo82RPOGRzwCu">H468</b> 回到 <b data-page-node-id="0OpnwGZzVFYUtUkZ5n9sJQ">MU4158</b></li>
+        </ul>
+        <ul class="ev-list">
+          <li>⚠️ 上表比的是「两份实现是否相同」，<b>不是「读对了没有」</b> —— 参照串是 rpv3 自身的输出。
+              该样本的正确真值经独立标注集复核为 8 字符，见
+              <a href="docs/adr/ADR-015-truth-string-retraction-and-landing-evidence.md">ADR-015</a></li>
+        </ul>
+      </div>
+      <a class="btn" href="docs/adr/ADR-002-port-fidelity.md" data-page-node-id="xUaJQBgE3yVZswTFP6YKeu">完整比对表 <span class="arrow" data-page-node-id="4X4qKTMaYUHNGVaFwCoqed">→</span></a>
+    </div>
+
+    <div class="ev-band reveal in">
+      <div>
+        <div class="idx">精度证据 · A16</div>
+        <h2>1000 张<em>第三方真实集</em></h2>
+      </div>
+      <div>
+        <div class="ev-codes">
+          <span>90.6%</span><span>88.8%</span><span>p=0.1788</span><span>1.0% vs 7.0%</span>
+        </div>
+        <ul class="ev-list">
+          <li>数据：<b>sirius-ai/LPRNet_Pytorch</b> 的 <code>data/test/</code> 真实裁剪图，
+              <b>文件名即人工真值</b>（非合成），n=1000</li>
+          <li>生产识别器 rpv3 <b>906/1000 = 90.6%</b>；候选替换 LPRNet <b>888/1000 = 88.8%</b>，
+              McNemar <b>p=0.1788</b> 不显著 → <b>无替换理由</b>（且那是 LPRNet 自己的主场分布）</li>
+          <li>长度错误率：rpv3 <b>1.0%</b> vs LPRNet <b>7.0%</b> —— rpv3 的优势项</li>
+          <li>边界：该集 <b>1000 张全为 7 字符</b>，新能源 8 位牌 0 张；不外推「路况准确率」</li>
+        </ul>
+      </div>
+      <a class="btn" href="_evidence/A16-real-dataset-accuracy-20260918.md">完整错误表 <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ footer -->
+<footer data-page-node-id="vHj5TpoWlWv62SFWbB7q7u">
+  <div class="wrap" data-page-node-id="FJXyYT13ChbL4c58m0KQAH">
+    <div class="links-row" data-page-node-id="smdD4W353V89fiVqSqYxhU">
+      <a href="demo.html" data-page-node-id="8qnsexIp6vOu2Yi7CHkoY7">实时演示 <span class="mono" data-page-node-id="3AP2TJbBpO6R5KPqNjJF74">demo.html</span></a>
+      <a href="paper/ieee-lpr-paper.md" data-page-node-id="USQHgeQRB7rizEwZxFggy8">IEEE 论文 <span class="mono" data-page-node-id="tsiyEC0H5ErfPDnP7Be3yo">.md</span></a>
+      <a href="docs/adr/ADR-001-model-selection.md" data-page-node-id="hU9FrUGldtRrKGS6I1vvo2">模型选型 <span class="mono" data-page-node-id="MCr1ofZHGHpEYUJ0KdsDKd">ADR-001</span></a>
+      <a href="docs/adr/ADR-002-port-fidelity.md" data-page-node-id="SgmVycEgyMsS3CjwA27ssd">保真度 <span class="mono" data-page-node-id="NP3z2PaM23KnZtIdxOC7cj">ADR-002</span></a>
+      <a href="docs/adr/ADR-003-on-device-deployment.md" data-page-node-id="HOh5kriV24wycZzf6sYK4M">端侧部署 <span class="mono" data-page-node-id="1k5fYi7WA6PPjsGl5ZTLFK">ADR-003</span></a>
+      <a href="resume/resume-bullets.md" data-page-node-id="FNxUZ5gaIePlnHtOvENBUz">简历口径 <span class="mono" data-page-node-id="z4nAMTffn7yeXshZUWZqmN">resume</span></a>
+    </div>
+    <div class="foot-in" data-page-node-id="CwWVcNCEN5sGtMc0lZNWAi">
+      <span data-page-node-id="ynQNoAEazA8V1KVVnuAfTT">基于 YOLOv5 与 CRNN-CTC 的纯前端端到端车牌识别</span>
+      <span class="mono" data-page-node-id="nEAgdFH4cPTpaF9AOFW9ue">HyperLPR (Apache-2.0) · onnxruntime-web (MIT)</span>
+      <span class="mono" style="margin-left:auto" data-page-node-id="oJazWxbEXKRd92Mh6dHM3b">本地运行：node tools/serve.mjs . 8099</span>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  // Reveal animations are gated behind html.anim so a JS failure leaves the page
+  // fully visible instead of blank.
+  const targets = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && targets.length) {
+    document.documentElement.classList.add('anim');
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }
+    }, { rootMargin: '-6% 0px -6% 0px' });
+    targets.forEach((n) => io.observe(n));
+    setTimeout(() => targets.forEach((n) => n.classList.add('in')), 3000);
+  }
+</script>
+
+<script type="module" src="assets/js/demo.js"></script>
+<script type="module">
+  // Headless verification hook — mirrors demo.html so tools/web_check.mjs can
+  // assert the embedded demo really ran (?auto=1).
+  if (new URLSearchParams(location.search).has('auto')) {
+    const t = setInterval(() => {
+      const d = window.__DEMO;
+      if (!d || !d.autoDone) return;
+      clearInterval(t);
+      const st = document.getElementById('rtState');
+      window.__PAGE = {
+        done: true,
+        ready: d.ready,
+        modelLoadMs: d.modelLoadMs,
+        sampleCount: d.samples,
+        results: d.results,
+        errors: d.errors,
+        demoState: st ? st.textContent : null,
+        plate: (document.getElementById('plateText') || {}).textContent,
+        total: (document.getElementById('msTotal') || {}).textContent,
+        charBars: document.querySelectorAll('#charBars .bar').length,
+        clsBars: document.querySelectorAll('#clsBars .bar').length,
+      };
+    }, 200);
+  }
+</script>
+
+
+
+
+</body></html>

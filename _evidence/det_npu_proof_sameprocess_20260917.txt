@@ -1,0 +1,56 @@
+=== hilog clear ===
+Log type core,app,only_prerelease buffer clear successfully
+start server at tcp:5037
+
+=== aa start ===
+start ability successfully.
+
+=== drift lines (same process, nnrt vs cpu) ===
+09-17 19:18:13.177 16633 16633 I A0D001/com.shusen.lprdemo/LprNativeUI: DET DRIFT nnrt landed=NNRT:NPU_ohos.boot.hardware.kirin8020_v2_0 L2=1043.4696 maxAbs=18.0000 p50=5.0428 mean=5.0076 dtype=43 elems=72000
+09-17 19:18:13.356 16633 16633 I A0D001/com.shusen.lprdemo/LprNativeUI: DET DRIFT cpu landed=CPU L2=1042.6634 maxAbs=18.0232 p50=8.4367 mean=8.1052 dtype=43 elems=72000
+
+=== load + pipe ===
+09-17 19:18:12.439 16633 16633 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE LOAD ok det=CPU  rec=NNRT:NPU_ohos.boot.hardware.kirin8020_v2_0  cls=CPU
+09-17 19:18:12.750 16633 16633 I A0D001/com.shusen.lprdemo/LprNativeUI: NATIVE PIPE code=苏ED5172 colour=蓝牌 count=1 total=105.5130 stages=72.0691|12.6461|9.0553|3.1647 cropSum=2773473
+
+=== NPU compiler / delegate traces ===
+09-17 19:18:12.079 16633 16633 W C02510/com.shusen.lprdemo/load_hdi: OpenHdiServiceImpl failed to get symbol of 'HiaiHclImplRelease', do_dlsym failed: Symbol not found: HiaiHclImplRelease, version: null so=/vendor/lib64/passthrough/libhiai_hcl_service_2.0.z.so
+09-17 19:18:12.083 16633 16633 W C02510/com.shusen.lprdemo/load_hdi: OpenHdiServiceImpl failed to get symbol of 'HiaiSingleOpImplRelease', do_dlsym failed: Symbol not found: HiaiSingleOpImplRelease, version: null so=/vendor/lib64/passthrough/libhiai_single_op_service_2.0.z.so
+09-17 19:18:12.084 16633 16633 W C02510/com.shusen.lprdemo/load_hdi: OpenHdiServiceImpl failed to get symbol of 'HiaiKernelExecutorImplRelease', do_dlsym failed: Symbol not found: HiaiKernelExecutorImplRelease, version: null so=/vendor/lib64/passthrough/libhiai_kernel_executor_service_2.0.z.so
+09-17 19:18:12.089 16633 16633 W C03F07/MUSL-LDSO: load libhiai_ir_infershape.so failed, namespace=ndk no inherits, errno=2
+09-17 19:18:12.089 16633 16633 W C03F07/MUSL-LDSO: load libhiai_ir_infershape.so failed, namespace=default, errno=2
+09-17 19:18:12.089 16633 16633 W C03F07/MUSL-LDSO: dlopen_impl load library header failed for libhiai_ir_infershape.so
+09-17 19:18:12.089 16633 16633 E A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: graph_infer_initializer.cpp GraphInferInitializer(30)::"load libhiai_ir_infershape.so failed. errmsg[Error loading shared library libhiai_ir_infershape.so: No such file or directory]"
+09-17 19:18:12.090 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: hiai_foundation_dl_helper.c HIAI_Foundation_Init(65)::"init hiai foundation success."
+09-17 19:18:12.091 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: model_manager_impl.cpp CreateModelManager(525)::"DDK pipe is HCL."
+09-17 19:18:12.092 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: hiai_plugin_version.c HIAI_MR_GetVersion(116)::"version is 108.631.120.010"
+09-17 19:18:12.102 16633 16633 W C02103/com.shusen.lprdemo/MS_LITE: [nnrt_delegate.cc:638] InitNNCompilation# hiai_foundation is nullptr.
+09-17 19:18:12.103 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: model_manager_impl.cpp CreateModelManager(525)::"DDK pipe is HCL."
+09-17 19:18:12.117 16633 16633 I C02101/com.shusen.lprdemo/NNRt_HiAIAdapter: [nodict]0813 the tensorName is data
+09-17 19:18:12.119 16633 16633 D A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: graph_store.cpp GraphStore(56)::"GraphStore Construct id[1]."
+09-17 19:18:12.126 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: model.cpp BuildWeightMergedModelBuffer(220)::"Build success!"
+09-17 19:18:12.128 16633 16633 I A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: model_type_util.cpp GetModelType(57)::"model type: 7"
+09-17 19:18:12.129 16633 16633 W C03F07/MUSL-LDSO: load libhiai_hcl_model_runtime.so failed, namespace=ndk no inherits, errno=2
+09-17 19:18:12.129 16633 16633 W C03F07/MUSL-LDSO: load libhiai_hcl_model_runtime.so failed, namespace=default, errno=2
+09-17 19:18:12.129 16633 16633 W C03F07/MUSL-LDSO: dlopen_impl load library header failed for libhiai_hcl_model_runtime.so
+09-17 19:18:12.129 16633 16633 D A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: hiai_model_runtime.c HIAI_ModelRuntime_LoadSo(333)::"dlopen libhiai_hcl_model_runtime.so fail: Error loading shared library libhiai_hcl_model_runtime.so: No such file or directory."
+09-17 19:18:12.129 16633 16633 D A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: hiai_model_runtime.c HIAI_ModelRuntime_LoadFromAllSymbols(218)::"Load all symbols runtime->runtimeType:2, prefix:HIAI_HCL_."
+09-17 19:18:12.129 16633 16633 D A0FFFF/com.shusen.lprdemo/HIAI_DDK_MSG: hiai_model_runtime.c HIAI_ModelRuntime_LoadFromAllSymbols(224)::"HIAI_ModelRuntime_LoadFromAllSymbols success."
+09-17 19:18:12.134 16633 16633 I C02151/com.shusen.lprdemo/AI_NPUCL: npucl_om.cc NpuclEventListener(44)::"NpuclEventListener register."
+09-17 19:18:12.141   953  1075 I C02154/hiaiserver/AI_FMK: process_manager.cpp Add(29)::"add the record of pid : 16633, uid : 20020391"
+09-17 19:18:12.141   953  2379 I C02154/hiaiserver/AI_FMK: rpc_request_stub.cpp SetListener(186)::"pid[16633], moduleID[11]"
+09-17 19:18:12.141   953   953 W C02151/hiaiserver/AI_NPUCL: npu_graph_kernel_info_manager.cc CreateProcess(35)::"call rtProcessCreate for pid:16633"
+09-17 19:18:12.141   953   953 W C02160/hiaiserver/RUNTIME: ProcessCreate:526 process create, pid = 16633
+09-17 19:18:12.141   953   953 W C02160/hiaiserver/RUNTIME: AppProcess:99 create pid = 16633
+09-17 19:18:12.142 16633 16633 I C02154/com.shusen.lprdemo/AI_FMK: infra_itf.cpp HIAI_MR_GetVersion(91)::"get version 108.631.120.010"
+09-17 19:18:12.146 16633 16633 I C02154/com.shusen.lprdemo/AI_FMK: infra_itf.cpp HIAI_MR_GetVersion(91)::"get version 108.631.120.010"
+09-17 19:18:12.154 16633 16633 E C02160/com.shusen.lprdemo/NPUCL: DevmmManagerInit:231 systemHeapFd open failed
+09-17 19:18:12.154 16633 16633 E C02160/com.shusen.lprdemo/NPUCL: DevmmManagerInit:238 tinyHeapFd open failed
+09-17 19:18:12.154 16633 16633 E C02160/com.shusen.lprdemo/NPUCL: DevmmManagerInit:245 miscHeapFd open failed
+09-17 19:18:12.211 16633 16633 W C02151/com.shusen.lprdemo/AI_NPUCL: plugin.cc RegisterLibrary(53)::"PlugIn library :libai_npucore_ascendc.so can't dlopen. errorCode: Error loading shared library libai_npucore_ascendc.so: No such file or directory"
+09-17 19:18:12.236 16633 16633 E C02151/com.shusen.lprdemo/AI_NPUCL: reshape_check_support.cc ReshapeCheckFunc(41)::check reshape dimInfo fail
+09-17 19:18:12.236 16633 16633 W C02151/com.shusen.lprdemo/AI_NPUCL: fe_sub_stores_manager.cc CheckSupported(314)::"CheckSupported: the op name [/neck/encoder/svtr_block.0/mixer/Reshape] type [Reshape] is not supported in npucl store [elementary_lib]"
+09-17 19:18:12.236 16633 16633 E C02151/com.shusen.lprdemo/AI_NPUCL: permute_check_support.cc IsSupport(21)::realdimCnt > 4
+09-17 19:18:12.236 16633 16633 W C02151/com.shusen.lprdemo/AI_NPUCL: fe_sub_stores_manager.cc CheckSupported(314)::"CheckSupported: the op name [/neck/encoder/svtr_block.0/mixer/Transpose] type [Permute] is not supported in npucl store [elementary_lib]"
+09-17 19:18:12.236 16633 16633 E C02151/com.shusen.lprdemo/AI_NPUCL: reshape_check_support.cc ReshapeCheckFunc(41)::check reshape dimInfo fail
+09-17 19:18:12.236 16633 16633 W C02151/com.shusen.lprdemo/AI_NPUCL: fe_sub_stores_manager.cc CheckSupported(314)::"CheckSupported: the op name [/neck/encoder/svtr_block.1/mixer/Reshape] type [Reshape] is not supported in npucl store [elementary_lib]"

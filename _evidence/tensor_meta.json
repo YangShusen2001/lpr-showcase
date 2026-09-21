@@ -1,0 +1,50 @@
+{
+  "size": 320,
+  "images": [
+    {
+      "name": "hlpr-test.jpg",
+      "stem": "hlpr-test",
+      "srcW": 1920,
+      "srcH": 1080,
+      "r": 0.16666666666666666,
+      "left": 0,
+      "top": 70,
+      "lbShape": [
+        3,
+        320,
+        320
+      ],
+      "nchwBytes": 1228800
+    },
+    {
+      "name": "hlpr-1.jpg",
+      "stem": "hlpr-1",
+      "srcW": 320,
+      "srcH": 320,
+      "r": 1.0,
+      "left": 0,
+      "top": 0,
+      "lbShape": [
+        3,
+        320,
+        320
+      ],
+      "nchwBytes": 1228800
+    },
+    {
+      "name": "scene-2.jpg",
+      "stem": "scene-2",
+      "srcW": 1140,
+      "srcH": 456,
+      "r": 0.2807017543859649,
+      "left": 0,
+      "top": 96,
+      "lbShape": [
+        3,
+        320,
+        320
+      ],
+      "nchwBytes": 1228800
+    }
+  ]
+}

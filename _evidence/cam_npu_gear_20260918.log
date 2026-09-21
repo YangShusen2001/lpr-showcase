@@ -1,0 +1,26 @@
+09-18 16:31:10.898 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=660 fps=28.57 plate=（未检测到） split=1|0
+09-18 16:31:10.932 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=660 conv=2.0492 infer=18.7705 count=0 stages=-
+09-18 16:31:12.429 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=690 fps=34.48 plate=（未检测到） split=0|0
+09-18 16:31:12.477 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=690 conv=4.3647 infer=18.7264 count=0 stages=-
+09-18 16:31:14.065 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=720 fps=29.41 plate=（未检测到） split=1|0
+09-18 16:31:14.110 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=720 conv=1.9384 infer=28.5277 count=0 stages=-
+09-18 16:31:15.650 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=750 fps=28.57 plate=（未检测到） split=1|0
+09-18 16:31:15.708 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=750 conv=4.3677 infer=38.1280 count=0 stages=-
+09-18 16:31:17.574 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=780 fps=22.73 plate=（未检测到） split=1|0
+09-18 16:31:17.602 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=780 conv=2.1237 infer=22.1508 count=0 stages=-
+09-18 16:31:19.693 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=810 fps=21.28 plate=（未检测到） split=0|1
+09-18 16:31:19.740 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=810 conv=3.5028 infer=28.3141 count=0 stages=-
+09-18 16:31:21.237 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=840 fps=28.57 plate=（未检测到） split=1|1
+09-18 16:31:21.278 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=840 conv=2.2127 infer=25.8197 count=0 stages=-
+09-18 16:31:22.653 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=870 fps=31.25 plate=（未检测到） split=1|0
+09-18 16:31:22.688 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=870 conv=2.0134 infer=23.0147 count=0 stages=-
+09-18 16:31:24.669 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=900 fps=23.81 plate=（未检测到） split=0|0
+09-18 16:31:24.757 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=900 conv=6.4011 infer=45.1808 count=0 stages=-
+09-18 16:31:26.674 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=930 fps=21.74 plate=（未检测到） split=1|1
+09-18 16:31:26.752 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=930 conv=3.6108 infer=46.7150 count=0 stages=-
+09-18 16:31:28.906 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=960 fps=20.83 plate=（未检测到） split=1|0
+09-18 16:31:28.994 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=960 conv=8.5761 infer=31.8259 count=0 stages=-
+09-18 16:31:30.653 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=990 fps=27.78 plate=（未检测到） split=1|1
+09-18 16:31:30.685 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=990 conv=2.1239 infer=21.1159 count=0 stages=-
+09-18 16:31:32.515 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=1020 fps=23.81 plate=（未检测到） split=0|1
+09-18 16:31:32.578 35153 35153 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=1020 conv=2.9162 infer=39.3613 count=0 stages=-

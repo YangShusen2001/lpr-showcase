@@ -1,0 +1,440 @@
+{
+  "rows": [
+    {
+      "file": "crop-1-皖KD01833.jpg",
+      "plate_index": 0,
+      "layer": 0,
+      "marks_float": [
+        [
+          12.085268640518189,
+          10.260910701751708
+        ],
+        [
+          250.01089668273926,
+          5.109078502655029
+        ],
+        [
+          240.74370908737183,
+          59.86275997161865
+        ],
+        [
+          14.635956525802612,
+          67.85943255424499
+        ]
+      ],
+      "marks_int": [
+        [
+          12,
+          10
+        ],
+        [
+          250,
+          5
+        ],
+        [
+          240,
+          59
+        ],
+        [
+          14,
+          67
+        ]
+      ],
+      "crop_shape_int": [
+        57,
+        238
+      ],
+      "crop_shape_float": [
+        57,
+        237
+      ],
+      "crop_shape_mixed": [
+        57,
+        238
+      ],
+      "code_int": "宁KD01833",
+      "code_float": "宁KD01833",
+      "code_mixed": "宁KD01833",
+      "conf_int": 0.9886,
+      "conf_float": 0.9258,
+      "conf_mixed": 0.9279,
+      "shape_flip": true,
+      "code_flip": false,
+      "code_flip_mixed": false
+    },
+    {
+      "file": "hlpr-1.jpg",
+      "plate_index": 0,
+      "layer": 1,
+      "marks_float": [
+        [
+          154.47763061523438,
+          216.33985900878906
+        ],
+        [
+          176.27650451660156,
+          216.466064453125
+        ],
+        [
+          176.2332305908203,
+          229.04393005371094
+        ],
+        [
+          154.4550323486328,
+          228.9161376953125
+        ]
+      ],
+      "marks_int": [
+        [
+          154,
+          216
+        ],
+        [
+          176,
+          216
+        ],
+        [
+          176,
+          229
+        ],
+        [
+          154,
+          228
+        ]
+      ],
+      "crop_shape_int": [
+        13,
+        22
+      ],
+      "crop_shape_float": [
+        12,
+        21
+      ],
+      "crop_shape_mixed": [
+        13,
+        22
+      ],
+      "code_int": "MU4158",
+      "code_float": "H468",
+      "code_mixed": "M76158",
+      "conf_int": 0.7931,
+      "conf_float": 0.4979,
+      "conf_mixed": 0.4477,
+      "shape_flip": true,
+      "code_flip": true,
+      "code_flip_mixed": true
+    },
+    {
+      "file": "hlpr-test.jpg",
+      "plate_index": 0,
+      "layer": 0,
+      "marks_float": [
+        [
+          1755.642333984375,
+          777.9171752929688
+        ],
+        [
+          1875.4777221679688,
+          747.8389892578125
+        ],
+        [
+          1875.94775390625,
+          824.816162109375
+        ],
+        [
+          1756.239990234375,
+          855.1718444824219
+        ]
+      ],
+      "marks_int": [
+        [
+          1755,
+          777
+        ],
+        [
+          1875,
+          747
+        ],
+        [
+          1875,
+          824
+        ],
+        [
+          1756,
+          855
+        ]
+      ],
+      "crop_shape_int": [
+        78,
+        123
+      ],
+      "crop_shape_float": [
+        77,
+        123
+      ],
+      "crop_shape_mixed": [
+        78,
+        123
+      ],
+      "code_int": "苏ED5172",
+      "code_float": "苏ED5172",
+      "code_mixed": "苏ED5172",
+      "conf_int": 0.7312,
+      "conf_float": 0.8181,
+      "conf_mixed": 0.8311,
+      "shape_flip": true,
+      "code_flip": false,
+      "code_flip_mixed": false
+    },
+    {
+      "file": "plate-3.jpg",
+      "plate_index": 0,
+      "layer": 0,
+      "marks_float": [
+        [
+          109.0938720703125,
+          273.9610290527344
+        ],
+        [
+          588.203857421875,
+          250.61314392089844
+        ],
+        [
+          577.3052978515625,
+          362.06781005859375
+        ],
+        [
+          113.65249633789062,
+          386.09796142578125
+        ]
+      ],
+      "marks_int": [
+        [
+          109,
+          273
+        ],
+        [
+          588,
+          250
+        ],
+        [
+          577,
+          362
+        ],
+        [
+          113,
+          386
+        ]
+      ],
+      "crop_shape_int": [
+        113,
+        479
+      ],
+      "crop_shape_float": [
+        112,
+        479
+      ],
+      "crop_shape_mixed": [
+        113,
+        479
+      ],
+      "code_int": "京A3W501",
+      "code_float": "京A3W501",
+      "code_mixed": "京A3W501",
+      "conf_int": 0.9621,
+      "conf_float": 0.9606,
+      "conf_mixed": 0.9624,
+      "shape_flip": true,
+      "code_flip": false,
+      "code_flip_mixed": false
+    },
+    {
+      "file": "plate-yellow-320x48.jpg",
+      "plate_index": 0,
+      "layer": 0,
+      "marks_float": [
+        [
+          2.561443328857422,
+          8.546676635742188
+        ],
+        [
+          137.33596801757812,
+          6.7852783203125
+        ],
+        [
+          135.19781494140625,
+          48.42655944824219
+        ],
+        [
+          2.4512901306152344,
+          50.261871337890625
+        ]
+      ],
+      "marks_int": [
+        [
+          2,
+          8
+        ],
+        [
+          137,
+          6
+        ],
+        [
+          135,
+          48
+        ],
+        [
+          2,
+          50
+        ]
+      ],
+      "crop_shape_int": [
+        42,
+        135
+      ],
+      "crop_shape_float": [
+        41,
+        134
+      ],
+      "crop_shape_mixed": [
+        42,
+        135
+      ],
+      "code_int": "粤ZP560港",
+      "code_float": "粤ZP560港",
+      "code_mixed": "粤ZP560港",
+      "conf_int": 0.9682,
+      "conf_float": 0.9996,
+      "conf_mixed": 0.983,
+      "shape_flip": true,
+      "code_flip": false,
+      "code_flip_mixed": false
+    },
+    {
+      "file": "scene-2.jpg",
+      "plate_index": 0,
+      "layer": 0,
+      "marks_float": [
+        [
+          216.25031661987305,
+          156.40884017944336
+        ],
+        [
+          552.3287258148193,
+          207.98447513580322
+        ],
+        [
+          563.8604278564453,
+          329.4194869995117
+        ],
+        [
+          228.5306568145752,
+          274.5853843688965
+        ]
+      ],
+      "marks_int": [
+        [
+          216,
+          156
+        ],
+        [
+          552,
+          207
+        ],
+        [
+          563,
+          329
+        ],
+        [
+          228,
+          274
+        ]
+      ],
+      "crop_shape_int": [
+        122,
+        339
+      ],
+      "crop_shape_float": [
+        121,
+        340
+      ],
+      "crop_shape_mixed": [
+        122,
+        339
+      ],
+      "code_int": "藏DT5022",
+      "code_float": "藏DT5022",
+      "code_mixed": "藏DT5022",
+      "conf_int": 0.9584,
+      "conf_float": 0.9431,
+      "conf_mixed": 0.9582,
+      "shape_flip": true,
+      "code_flip": false,
+      "code_flip_mixed": false
+    }
+  ],
+  "flips": [
+    {
+      "file": "hlpr-1.jpg",
+      "plate_index": 0,
+      "layer": 1,
+      "marks_float": [
+        [
+          154.47763061523438,
+          216.33985900878906
+        ],
+        [
+          176.27650451660156,
+          216.466064453125
+        ],
+        [
+          176.2332305908203,
+          229.04393005371094
+        ],
+        [
+          154.4550323486328,
+          228.9161376953125
+        ]
+      ],
+      "marks_int": [
+        [
+          154,
+          216
+        ],
+        [
+          176,
+          216
+        ],
+        [
+          176,
+          229
+        ],
+        [
+          154,
+          228
+        ]
+      ],
+      "crop_shape_int": [
+        13,
+        22
+      ],
+      "crop_shape_float": [
+        12,
+        21
+      ],
+      "crop_shape_mixed": [
+        13,
+        22
+      ],
+      "code_int": "MU4158",
+      "code_float": "H468",
+      "code_mixed": "M76158",
+      "conf_int": 0.7931,
+      "conf_float": 0.4979,
+      "conf_mixed": 0.4477,
+      "shape_flip": true,
+      "code_flip": true,
+      "code_flip_mixed": true
+    }
+  ]
+}

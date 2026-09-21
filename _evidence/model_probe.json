@@ -1,0 +1,346 @@
+{
+  "yolo-v9-t-256-license-plates-end2end.onnx": {
+    "file": "yolo-v9-t-256-license-plates-end2end.onnx",
+    "size_mb": 7.39,
+    "inputs": [
+      {
+        "name": "images",
+        "shape": [
+          1,
+          3,
+          256,
+          256
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "output0",
+        "shape": [
+          "batch",
+          7
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "runs": [
+      {
+        "image": "plate-1.jpg",
+        "model": "yolo-v9-t-256-license-plates-end2end",
+        "input_size": 256,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            22.992828369140625,
+            94.81333923339844,
+            237.3570556640625,
+            163.17027282714844,
+            0.0,
+            0.8996824026107788
+          ]
+        ],
+        "num_dets_gt025": 1,
+        "dets": [
+          {
+            "box": [
+              22.992828369140625,
+              94.81333923339844,
+              237.3570556640625,
+              163.17027282714844
+            ],
+            "conf": 0.8996824026107788,
+            "cls": 0.0
+          }
+        ],
+        "annotated": "probe_plate-1_yolo-v9-t-256-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-2.jpg",
+        "model": "yolo-v9-t-256-license-plates-end2end",
+        "input_size": 256,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            23.290451049804688,
+            92.47882080078125,
+            235.44239807128906,
+            164.363525390625,
+            0.0,
+            0.9146920442581177
+          ]
+        ],
+        "num_dets_gt025": 1,
+        "dets": [
+          {
+            "box": [
+              23.290451049804688,
+              92.47882080078125,
+              235.44239807128906,
+              164.363525390625
+            ],
+            "conf": 0.9146920442581177,
+            "cls": 0.0
+          }
+        ],
+        "annotated": "probe_plate-2_yolo-v9-t-256-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-3.jpg",
+        "model": "yolo-v9-t-256-license-plates-end2end",
+        "input_size": 256,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            16.375686645507812,
+            91.1986312866211,
+            240.47544860839844,
+            166.31881713867188,
+            0.0,
+            0.9533386826515198
+          ]
+        ],
+        "num_dets_gt025": 1,
+        "dets": [
+          {
+            "box": [
+              16.375686645507812,
+              91.1986312866211,
+              240.47544860839844,
+              166.31881713867188
+            ],
+            "conf": 0.9533386826515198,
+            "cls": 0.0
+          }
+        ],
+        "annotated": "probe_plate-3_yolo-v9-t-256-license-plates-end2end.png"
+      }
+    ]
+  },
+  "yolo-v9-t-384-license-plates-end2end.onnx": {
+    "file": "yolo-v9-t-384-license-plates-end2end.onnx",
+    "size_mb": 7.41,
+    "inputs": [
+      {
+        "name": "images",
+        "shape": [
+          1,
+          3,
+          384,
+          384
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "output0",
+        "shape": [
+          "batch",
+          7
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "runs": [
+      {
+        "image": "plate-1.jpg",
+        "model": "yolo-v9-t-384-license-plates-end2end",
+        "input_size": 384,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            30.297149658203125,
+            134.57333374023438,
+            357.2719421386719,
+            248.98812866210938,
+            0.0,
+            0.10486680269241333
+          ]
+        ],
+        "num_dets_gt025": 0,
+        "dets": [],
+        "annotated": "probe_plate-1_yolo-v9-t-384-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-2.jpg",
+        "model": "yolo-v9-t-384-license-plates-end2end",
+        "input_size": 384,
+        "out_shapes": [
+          [
+            2,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            31.93890380859375,
+            135.5802001953125,
+            350.5989990234375,
+            249.23919677734375,
+            0.0,
+            0.8963800668716431,
+            0.0,
+            144.98196411132812,
+            342.52655029296875,
+            226.23953247070312,
+            366.78326416015625,
+            0.0,
+            0.0014055967330932617
+          ]
+        ],
+        "num_dets_gt025": 1,
+        "dets": [
+          {
+            "box": [
+              31.93890380859375,
+              135.5802001953125,
+              350.5989990234375,
+              249.23919677734375
+            ],
+            "conf": 0.8963800668716431,
+            "cls": 0.0
+          }
+        ],
+        "annotated": "probe_plate-2_yolo-v9-t-384-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-3.jpg",
+        "model": "yolo-v9-t-384-license-plates-end2end",
+        "input_size": 384,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            23.81494140625,
+            134.61856079101562,
+            360.64630126953125,
+            253.71383666992188,
+            0.0,
+            0.14926910400390625
+          ]
+        ],
+        "num_dets_gt025": 0,
+        "dets": [],
+        "annotated": "probe_plate-3_yolo-v9-t-384-license-plates-end2end.png"
+      }
+    ]
+  },
+  "yolo-v9-t-640-license-plates-end2end.onnx": {
+    "file": "yolo-v9-t-640-license-plates-end2end.onnx",
+    "size_mb": 7.47,
+    "inputs": [
+      {
+        "name": "images",
+        "shape": [
+          1,
+          3,
+          640,
+          640
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "output0",
+        "shape": [
+          "batch",
+          7
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "runs": [
+      {
+        "image": "plate-1.jpg",
+        "model": "yolo-v9-t-640-license-plates-end2end",
+        "input_size": 640,
+        "out_shapes": [
+          [
+            0,
+            7
+          ]
+        ],
+        "out_sample": [
+          []
+        ],
+        "num_dets_gt025": 0,
+        "dets": [],
+        "annotated": "probe_plate-1_yolo-v9-t-640-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-2.jpg",
+        "model": "yolo-v9-t-640-license-plates-end2end",
+        "input_size": 640,
+        "out_shapes": [
+          [
+            1,
+            7
+          ]
+        ],
+        "out_sample": [
+          [
+            0.0,
+            57.8272705078125,
+            241.29745483398438,
+            579.839111328125,
+            392.6772766113281,
+            0.0,
+            0.1742817759513855
+          ]
+        ],
+        "num_dets_gt025": 0,
+        "dets": [],
+        "annotated": "probe_plate-2_yolo-v9-t-640-license-plates-end2end.png"
+      },
+      {
+        "image": "plate-3.jpg",
+        "model": "yolo-v9-t-640-license-plates-end2end",
+        "input_size": 640,
+        "out_shapes": [
+          [
+            0,
+            7
+          ]
+        ],
+        "out_sample": [
+          []
+        ],
+        "num_dets_gt025": 0,
+        "dets": [],
+        "annotated": "probe_plate-3_yolo-v9-t-640-license-plates-end2end.png"
+      }
+    ]
+  }
+}

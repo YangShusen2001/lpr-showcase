@@ -1,0 +1,13 @@
+{
+  "pagePath": "/index.html",
+  "failures": [],
+  "ok": [],
+  "origin": {
+    "href": "http://127.0.0.1:8141/index.html",
+    "origin": "http://127.0.0.1:8141",
+    "isolated": true,
+    "sab": true,
+    "demoReady": true,
+    "demoSrc": []
+  }
+}

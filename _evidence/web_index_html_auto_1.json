@@ -1,0 +1,63 @@
+{
+  "url": "http://127.0.0.1:8123/index.html?auto=1",
+  "result": {
+    "done": true,
+    "ready": true,
+    "modelLoadMs": 1112,
+    "sampleCount": 6,
+    "results": [
+      {
+        "label": "整车 · 黄牌",
+        "plates": 1,
+        "code": "藏DT5022",
+        "ms": 417.4
+      }
+    ],
+    "errors": [],
+    "demoState": "藏DT5022 · 417 ms",
+    "plate": "藏DT5022",
+    "total": "412.1 ms",
+    "charBars": 7,
+    "clsBars": 3
+  },
+  "layout": {
+    "docHeight": 2382,
+    "viewport": 900,
+    "screens": 2.65,
+    "overflowX": false,
+    "sections": [
+      {
+        "tag": "header",
+        "top": 0,
+        "h": 63
+      },
+      {
+        "tag": "section",
+        "top": 63,
+        "h": 475
+      },
+      {
+        "tag": "pipeline",
+        "top": 538,
+        "h": 250
+      },
+      {
+        "tag": "demo",
+        "top": 788,
+        "h": 902
+      },
+      {
+        "tag": "results",
+        "top": 1691,
+        "h": 551
+      },
+      {
+        "tag": "footer",
+        "top": 2242,
+        "h": 141
+      }
+    ]
+  },
+  "consoleErrors": [],
+  "screenshot": "C:\\Users\\26671\\Desktop\\车牌识别\\_evidence\\web_index_html_auto_1.png"
+}

@@ -1,0 +1,19 @@
+09-18 16:44:57.404 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=960 fps=38.46 plate=（未检测到） split=1|0
+09-18 16:44:57.461 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=960 conv=5.6070 infer=8.8789 count=0 wh=480x640 rgbaSum=122081457 stages=-
+09-18 16:45:03.405 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: GEAR GPU ncnn rec_vulkan=1 cls_vulkan=1
+09-18 16:45:03.405 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: GEAR 2 LOADED det=CPU rec=CPU cls=CPU
+09-18 16:45:03.550 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=0 conv=2.5505 infer=87.9844 count=0 wh=480x640 rgbaSum=122324019 stages=-
+09-18 16:45:07.036 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=30 fps=12.50 plate=（未检测到） split=1|0
+09-18 16:45:07.130 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=30 conv=8.9241 infer=57.8920 count=0 wh=480x640 rgbaSum=117283693 stages=-
+09-18 16:45:11.156 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=60 fps=12.05 plate=6HF split=1|0
+09-18 16:45:11.280 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=60 conv=8.7355 infer=53.8555 count=0 wh=480x640 rgbaSum=102166637 stages=-
+09-18 16:45:15.035 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=90 fps=12.05 plate=（未检测到） split=1|0
+09-18 16:45:15.139 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=90 conv=8.8477 infer=63.5078 count=0 wh=480x640 rgbaSum=108770668 stages=-
+09-18 16:45:18.038 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=120 fps=12.50 plate=（未检测到） split=1|1
+09-18 16:45:18.134 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=120 conv=8.5722 infer=60.7242 count=0 wh=480x640 rgbaSum=109009180 stages=-
+09-18 16:45:21.019 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=150 fps=13.16 plate=（未检测到） split=1|0
+09-18 16:45:21.098 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=150 conv=6.2627 infer=46.3091 count=0 wh=480x640 rgbaSum=109865903 stages=-
+09-18 16:45:24.193 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=180 fps=13.33 plate=（未检测到） split=1|0
+09-18 16:45:24.296 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=180 conv=7.1791 infer=45.3469 count=0 wh=480x640 rgbaSum=86637575 stages=-
+09-18 16:45:26.996 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: FRAME n=210 fps=16.95 plate=（未检测到） split=1|0
+09-18 16:45:27.105 44106 44106 I A0D001/com.shusen.lprdemo/LprCamera: STAGE n=210 conv=6.9789 infer=52.9262 count=0 wh=480x640 rgbaSum=116163482 stages=-

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>车牌识别流水线 · 端侧实测</title>
+<style>
+  :root{
+    --ios-blue:#007AFF; --ios-green:#34C759; --ios-orange:#FF9500;
+    --ios-red:#FF3B30; --ios-purple:#AF52DE; --ios-teal:#5AC8FA;
+    --ios-indigo:#5856D6; --ios-pink:#FF2D55;
+    --bg:#F2F2F7; --card:#FFFFFF; --sep:rgba(60,60,67,.12);
+    --label:#000; --label2:rgba(60,60,67,.6); --label3:rgba(60,60,67,.3);
+    --fill:#F2F2F7; --fill2:#E9E9EB;
+  }
+  *{box-sizing:border-box;-webkit-font-smoothing:antialiased;}
+  html,body{margin:0;padding:0;background:var(--bg);}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",
+                "PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
+    color:var(--label);
+    padding:26px 0 34px 0;
+  }
+  .wrap{width:100%;max-width:1000px;margin:0;padding:0 4px;}
+
+  /* ---------- header ---------- */
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--ios-blue);margin:0 0 6px 2px;
+  }
+  h1{font-size:34px;line-height:1.15;font-weight:700;letter-spacing:-.5px;margin:0 0 8px 2px;}
+  .sub{font-size:15px;line-height:1.5;color:var(--label2);margin:0 0 16px 2px;max-width:760px;}
+  .pills{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 26px 2px;}
+  .pill{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:100px;
+    background:var(--card);color:var(--label2);
+    box-shadow:0 1px 2px rgba(0,0,0,.05);
+  }
+  .pill b{color:var(--label);font-weight:650;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--ios-green);flex:none;}
+
+  /* ---------- section ---------- */
+  .sec-h{
+    font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--label2);margin:0 0 9px 18px;
+  }
+  .card{
+    background:var(--card);border-radius:18px;
+    box-shadow:0 1px 3px rgba(0,0,0,.06),0 0 0 .5px rgba(0,0,0,.02);
+    overflow:hidden;margin-bottom:0;
+  }
+
+  /* ---------- flow stage ---------- */
+  .stage{padding:15px 17px 14px 17px;position:relative;}
+  .stage + .stage{border-top:.5px solid var(--sep);}
+  .srow{display:flex;align-items:flex-start;gap:11px;}
+  .ico{
+    width:32px;height:32px;border-radius:9px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;
+  }
+  .ico svg{width:17px;height:17px;display:block;}
+  .shead{flex:1;min-width:0;}
+  .stitle{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .num{
+    font-size:11px;font-weight:700;color:var(--label3);
+    font-variant-numeric:tabular-nums;letter-spacing:.3px;
+  }
+  .sname{font-size:16px;font-weight:650;letter-spacing:-.2px;}
+  .sdesc{font-size:13.5px;line-height:1.5;color:var(--label2);margin-top:3px;}
+  .time{
+    text-align:right;flex:none;padding-left:10px;min-width:88px;
+  }
+  .time .v{
+    font-size:17px;font-weight:700;letter-spacing:-.3px;
+    font-variant-numeric:tabular-nums;
+  }
+  .time .u{font-size:11px;font-weight:600;color:var(--label3);margin-left:2px;}
+  .time .n{font-size:11px;color:var(--label3);margin-top:1px;font-weight:500;}
+
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px;padding-left:43px;}
+  .chip{
+    font-size:11.5px;font-weight:600;padding:3.5px 9px;border-radius:7px;
+    background:var(--fill);color:var(--label2);
+    font-variant-numeric:tabular-nums;
+  }
+  .chip.on{background:rgba(0,122,255,.11);color:#0062CC;}
+  .chip.ok{background:rgba(52,199,89,.13);color:#1E8E3E;}
+  .chip.warn{background:rgba(255,149,0,.14);color:#B26A00;}
+  .chip.bad{background:rgba(255,59,48,.12);color:#C22A20;}
+
+  /* connectors */
+  .link{display:flex;flex-direction:column;align-items:center;padding:0 0 0 32px;height:22px;}
+  .link .ln{width:1.5px;flex:1;background:var(--sep);}
+  .link .ar{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;
+            border-top:5px solid rgba(60,60,67,.25);}
+
+  /* ---------- budget bar ---------- */
+  .budget{padding:16px 17px 18px;}
+  .bar{display:flex;height:38px;border-radius:10px;overflow:hidden;background:var(--fill);
+       box-shadow:inset 0 0 0 .5px var(--sep);}
+  .seg{position:relative;display:flex;align-items:center;justify-content:center;
+       font-size:11px;font-weight:700;color:#fff;letter-spacing:.2px;
+       font-variant-numeric:tabular-nums;min-width:0;}
+  .seg span{white-space:nowrap;overflow:hidden;text-overflow:clip;padding:0 4px;}
+  .idle{background:repeating-linear-gradient(45deg,#E9E9EB,#E9E9EB 6px,#F2F2F7 6px,#F2F2F7 12px);
+        color:var(--label3);}
+  .legend{display:flex;flex-wrap:wrap;gap:13px;margin-top:12px;}
+  .lg{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--label2);}
+  .sw{width:9px;height:9px;border-radius:3px;flex:none;}
+  .lg em{font-style:normal;color:var(--label);font-variant-numeric:tabular-nums;}
+
+  /* ---------- two col ---------- */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:820px){.grid{grid-template-columns:1fr;}}
+
+  /* ---------- table ---------- */
+  table{width:100%;border-collapse:collapse;}
+  th,td{text-align:left;padding:11px 17px;font-size:13.5px;}
+  thead th{
+    font-size:11.5px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;
+    color:var(--label3);padding-top:13px;padding-bottom:9px;
+  }
+  tbody tr + tr{border-top:.5px solid var(--sep);}
+  td.n{font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap;}
+  td.dim{color:var(--label2);font-size:13px;}
+  .b{display:inline-block;font-size:11px;font-weight:700;padding:2.5px 7px;border-radius:6px;}
+  .b.npu{background:rgba(52,199,89,.15);color:#1E8E3E;}
+  .b.cpu{background:rgba(255,149,0,.16);color:#B26A00;}
+  .b.gpu{background:rgba(175,82,222,.14);color:#8A3FBF;}
+
+  /* ---------- notes ---------- */
+  .note{
+    display:flex;gap:10px;padding:13px 17px;font-size:13.5px;line-height:1.55;
+    color:var(--label2);
+  }
+  .note + .note{border-top:.5px solid var(--sep);}
+  .note .tag{
+    flex:none;font-size:11px;font-weight:700;padding:3px 7px;border-radius:6px;height:fit-content;
+    margin-top:1px;
+  }
+  .tag.g{background:rgba(52,199,89,.15);color:#1E8E3E;}
+  .tag.o{background:rgba(255,149,0,.16);color:#B26A00;}
+  .tag.r{background:rgba(255,59,48,.12);color:#C22A20;}
+  .tag.b{background:rgba(0,122,255,.11);color:#0062CC;}
+  .note b{color:var(--label);font-weight:650;}
+  code{
+    font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    font-size:12.5px;background:var(--fill);padding:1.5px 5px;border-radius:5px;
+    color:#B8305A;
+  }
+  .plate{
+    font-family:-apple-system,"PingFang SC",sans-serif;font-weight:700;
+    letter-spacing:1.5px;color:var(--label);
+  }
+  footer{margin:24px 2px 0 2px;font-size:12px;color:var(--label3);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">End-to-End Pipeline</p>
+  <h1>车牌识别流水线</h1>
+  <p class="sub">
+    从相机取帧到输出车牌串的完整链路。数字全部来自 nova 14 Pro 真机实测（release 构建，
+    native <code>-O2</code>），不是估算值。
+  </p>
+  <div class="pills">
+    <span class="pill"><span class="dot"></span> nova 14 Pro · 麒麟 8020</span>
+    <span class="pill">HarmonyOS 6.1 · API 24</span>
+    <span class="pill">HyperLPR3 现成权重 · <b>不自训练</b></span>
+    <span class="pill">相机出帧 <b>20–27 fps</b>（基准档实测，随曝光）</span>
+  </div>
+
+  <p class="sec-h">主链路</p>
+
+  <div class="card">
+
+    <!-- 01 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-blue)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h1.2l1-1.6A1 1 0 0 1 8.6 4h6.8a1 1 0 0 1 .9.4l1 1.6h1.2A2.5 2.5 0 0 1 21 8.5v8A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/>
+            <circle cx="12" cy="12.5" r="3.4"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">01</span><span class="sname">相机采集</span>
+          </div>
+          <div class="sdesc">
+            Camera Kit <b>双路预览</b>：一路 <code>XComponent</code> 只负责显示，
+            另一路 <code>PreviewOutput</code> 挂 <code>ImageReceiver</code> 专门取帧分析。
+            设备只给 <code>YUV_420_SP</code>，实际交付 <b>NV21</b> 640×480。
+          </div>
+        </div>
+        <div class="time"><div class="v">50<span class="u">ms</span></div>
+          <div class="n">帧间隔</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip on">20.0 fps 实测到达率</span>
+        <span class="chip ok">丢帧 0</span>
+        <span class="chip">24 档预览无 JPEG</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 02 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-teal)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="3"/>
+            <path d="M8 15.5 15.5 8M8.2 8.2h5.4v5.4"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">02</span><span class="sname">帧转换 · NV21 → RGBA + 旋转</span>
+          </div>
+          <div class="sdesc">
+            整数 BT.601 定点转换，<b>写入时就按旋转角定位</b>，一趟做完不额外转一次。
+            这段原先在 ArkTS 层用 <code>createPixelMap</code> + <code>rotate()</code>，是最大的隐藏开销。
+          </div>
+        </div>
+        <div class="time"><div class="v">2–8<span class="u">ms</span></div>
+          <div class="n">native</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip ok">21–38 ms → 2–8 ms</span>
+        <span class="chip">LprNv21ToRgba()</span>
+        <span class="chip">cameraFrameAsync 合并入口</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 03 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-purple)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3.5 7V4.5H6M18 4.5h2.5V7M21 17v2.5h-2.5M6 19.5H3.5V17"/>
+            <rect x="8.5" y="8.5" width="7" height="7" rx="1.4"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">03</span><span class="sname">YOLO 检测</span>
+          </div>
+          <div class="sdesc">
+            YOLOv5 裸 head（<b>去掉 rank-5 尾部</b>，否则编译期被 NPU 拒）。
+            letterbox 缩放 → 320×320 推理 → 锚点解码 + NMS，输出车牌框与关键点。
+          </div>
+        </div>
+        <div class="time"><div class="v">12.67<span class="u">ms</span></div>
+          <div class="n">含车牌帧</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip on">裸 head NPU 5.23 ms（1.50×）</span>
+        <span class="chip">85 Conv · 利用率上限 70.6%</span>
+        <span class="chip">416 ONNX 节点</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 04 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-indigo)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V4h16v16z"/>
+            <path d="M4 9.5h16M9.5 9.5V20"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">04</span><span class="sname">ROI 截取 + 透视矫正</span>
+          </div>
+          <div class="sdesc">
+            按检测框裁出车牌区域，用关键点做<b>单应变换 + bicubic 重采样</b>把倾斜车牌拉正，
+            再归一到识别器输入尺寸。车牌歪一点，识别率掉得比想象中快。
+          </div>
+        </div>
+        <div class="time"><div class="v">0.58<span class="u">ms</span></div>
+          <div class="n">含车牌帧</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip">单应 + bicubic</span>
+        <span class="chip warn">残差由垂直缩放比决定</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 05 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-green)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 6.5h15M4.5 12h15M4.5 17.5h9"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">05</span><span class="sname">CRNN-CTC 识别</span>
+          </div>
+          <div class="sdesc">
+            rpv3 主干，输入 48×160，输出 <code>[1×20×78]</code> —— 20 个时间步 × 77 类字典
+            + 1 个 CTC blank，贪心解码成车牌字符串。
+          </div>
+        </div>
+        <div class="time"><div class="v">4.34<span class="u">ms</span></div>
+          <div class="n">含车牌帧</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip on">NPU 4.02 ms（2.27×）</span>
+        <span class="chip">252 ncnn 层 / 444 ONNX 节点</span>
+        <span class="chip ok">唯一真正吃到 NPU 收益的模型</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 06 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:var(--ios-orange)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5 20.5 8v8L12 20.5 3.5 16V8z"/>
+            <path d="M12 12v8.5M12 12l8.5-4M12 12 3.5 8"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">06</span><span class="sname">车牌分类器</span>
+          </div>
+          <div class="sdesc">
+            96×96 输入，判定<b>单层 / 双层</b>车牌，决定输出行数与后续排版。
+            结构对 NPU 最不友好 —— 52 个 Conv 里只有 10 个通道数是 16 的倍数。
+          </div>
+        </div>
+        <div class="time"><div class="v">2.32<span class="u">ms</span></div>
+          <div class="n">含车牌帧</div></div>
+      </div>
+      <div class="chips">
+        <span class="chip bad">NPU 1.05 ms（0.74× 反而更慢）</span>
+        <span class="chip warn">利用率上限仅 19.2%</span>
+        <span class="chip">fp16 变体静默回落 CPU</span>
+      </div>
+    </div>
+    <div class="link"><div class="ln"></div><div class="ar"></div></div>
+
+    <!-- 07 -->
+    <div class="stage">
+      <div class="srow">
+        <div class="ico" style="background:#1C1C1E">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.5 10 17.5 19 7"/>
+          </svg>
+        </div>
+        <div class="shead">
+          <div class="stitle">
+            <span class="num">07</span><span class="sname">输出车牌</span>
+          </div>
+          <div class="sdesc">
+            相机实时读到的真实车牌（对准车牌时输出，未对准显示「未检测到」）：
+          </div>
+        </div>
+        <div class="time"><div class="v">19.9<span class="u">ms</span></div>
+          <div class="n">infer 合计</div></div>
+      </div>
+      <div class="chips" style="padding-left:43px">
+        <span class="chip" style="background:#1C1C1E;color:#fff"><span class="plate">苏A1085K</span></span>
+        <span class="chip" style="background:#1C1C1E;color:#fff"><span class="plate">浙J3U1P3</span></span>
+        <span class="chip">静态基准<b>参照</b>串 <span class="plate">苏ED5172</span>（rpv3 自身输出，非真值）</span>
+        <span class="chip">该样本真值 <span class="plate">苏ED51712</span> · 8 位 <a href="adr/ADR-015-truth-string-retraction-and-landing-evidence.md">ADR-015</a></span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- budget -->
+  <p class="sec-h" style="margin-top:26px">一帧的时间预算 · 20 fps（暗）= 50 ms · 27 fps（亮）= 37 ms</p>
+  <div class="card">
+    <div class="budget">
+      <div class="bar">
+        <div class="seg" style="background:var(--ios-teal);flex:16"><span>转换 8</span></div>
+        <div class="seg" style="background:var(--ios-purple);flex:25.3"><span>检测 12.7</span></div>
+        <div class="seg" style="background:var(--ios-indigo);flex:1.2"><span>0.6</span></div>
+        <div class="seg" style="background:var(--ios-green);flex:8.7"><span>识别 4.3</span></div>
+        <div class="seg" style="background:var(--ios-orange);flex:4.6"><span>2.3</span></div>
+        <div class="seg idle" style="flex:44.2"><span>余量 22 ms</span></div>
+      </div>
+      <div class="legend">
+        <span class="lg"><span class="sw" style="background:var(--ios-teal)"></span>帧转换</span>
+        <span class="lg"><span class="sw" style="background:var(--ios-purple)"></span>YOLO 检测</span>
+        <span class="lg"><span class="sw" style="background:var(--ios-indigo)"></span>矫正</span>
+        <span class="lg"><span class="sw" style="background:var(--ios-green)"></span>CRNN 识别</span>
+        <span class="lg"><span class="sw" style="background:var(--ios-orange)"></span>分类</span>
+        <span class="lg"><span class="sw" style="background:var(--ios-blue)"></span><em>合计 ≈ 28 ms / 帧</em></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- backends -->
+  <p class="sec-h" style="margin-top:26px">三档后端 · 同一套代码切执行单元</p>
+  <div class="grid">
+    <div class="card">
+      <table>
+        <thead><tr><th>档位</th><th>执行单元</th><th class="n">落点</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>生产</b><div class="dim">默认</div></td>
+            <td class="dim">det CPU · rec NPU<br>cls CPU</td>
+            <td class="n"><span class="b cpu">混合</span></td>
+          </tr>
+          <tr>
+            <td><b>全 NPU</b></td>
+            <td class="dim">三个模型全上<br>NNRt / CANN</td>
+            <td class="n"><span class="b npu">NPU</span></td>
+          </tr>
+          <tr>
+            <td><b>全 GPU</b></td>
+            <td class="dim">ncnn-Vulkan<br>Maleoon 920C</td>
+            <td class="n"><span class="b gpu">GPU</span></td>
+          </tr>
+          <tr>
+            <td><b>基准</b><div class="dim">只取帧不推理</div></td>
+            <td class="dim">—</td>
+            <td class="n"><span class="b cpu">不推理</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="note">
+        <span class="tag g">关键</span>
+        <div>
+          <b>相机出帧率随曝光变化，不是固定值。</b>基准档只取帧不推理：<b>暗场景</b>到达=完成 19.92–20.06 fps、
+          丢帧 0；<b>明亮场景</b>同档 26.92–27.12 fps、丢帧 0 —— 暗光下自动曝光拉长曝光时间才掉到 20。
+          而全链路只要 ≈ 28 ms。<b>有车牌时到达 27 / 完成 13 = 推理真跟不上</b>，瓶颈在 <code>det=CPU 12.7 ms</code>。
+        </div>
+      </div>
+      <div class="note">
+        <span class="tag b">方法</span>
+        <div>
+          检测器落 CPU 不是性能选择，是<b>与基线一致性</b>要求：NPU 上 0.08% 的数值漂移经锚点放大后
+          会翻字符（<span class="plate">苏ED5172</span> → <span class="plate">苏E05172</span>）。
+          两个限定：① 两端都不是真值（真值 8 字符，见 ADR-015），这条结论是<b>差分</b>命题；
+          ② 漂移只在 <b>NPU-fp16</b> 下测过（<code>addNnrt()</code> 恒传 fp16=true），fp32 从未试。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- honesty -->
+  <p class="sec-h" style="margin-top:26px">验收边界</p>
+  <div class="card">
+    <div class="note">
+      <span class="tag g">已验</span>
+      <div>
+        功能：相机实时读到真实车牌。速度：全链路 p50 数字均为真机 release 构建实测。
+        移植保真：8/8 一致，分类逐位、识别符号级。
+      </div>
+    </div>
+    <div class="note">
+      <span class="tag o">部分已验</span>
+      <div>
+        <b>离线精度已建立基线，相机帧仍未验。</b>
+        识别器在 1000 张第三方真实人工标注裁剪图上 <b>906/1000 = 90.6%</b>
+        （对照 LPRNet 88.8%，McNemar p=0.1788 → 不换）—— 见
+        <code>_evidence/A16-real-dataset-accuracy-20260918.md</code>。
+        但<b>相机逐帧</b>读到的串与静态图基准不是同一张图，不能拿相机画面当精度证据。
+        速度已验（口径见下）、功能已验、离线精度已验、<b>相机帧精度未验</b>。
+      </div>
+    </div>
+
+    <div class="note">
+      <span class="tag r">已撤回</span>
+      <div>
+        A14 §4.2.2「相机自己只给 15 fps，推理侧已彻底不是瓶颈」<b>已撤回待复测</b>（ADR-015 §2）：
+        那档"零推理基准"仍付整帧 NV21→RGBA 转换，且与 A14 §4.1 同场景的
+        <code>arrive=19.92–20.06</code> 自相矛盾。本页
+        <code>34.5 / 23.8 / 12.8 fps</code> 一律是<b>服务时间理论值</b>，不得对外称 fps。
+      </div>
+    </div>
+    <div class="note">
+      <span class="tag r">口径</span>
+      <div>
+        历史 30× 基准数字全部在 <code>buildMode=debug</code>（native <code>-O0</code>）下测得，
+        与 release 数字<b>不能并列比较</b>；同档位跨时段存在热/负载波动。
+      </div>
+    </div>
+    <div class="note">
+      <span class="tag r">更正</span>
+      <div>
+        曾经报出的 <b>34.5 / 23.8 / 12.8 fps</b> 是 <code>1000 / p50(frameMs)</code> 算出的
+        <b>服务时间理论值，不是吞吐</b>。真实吞吐由基准档确定：<b>20 fps（暗）～ 27 fps（亮）</b>。
+        那些数字只能用于比较各档位的<b>相对开销</b>。
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    数据来源：<code>_evidence/A14-camera-realtime-e2e-20260918.md</code> ·
+    <code>_evidence/A15-expected-string-matrix-release-20260918.log</code> ·
+    <code>_evidence/A16-real-dataset-accuracy-20260918.md</code> ·
+    <code>bench30_matrix_20260918.log</code> ·
+    口径变更见 <code>adr/ADR-015-...</code> ·
+    设备 nova 14 Pro（MIA-AL00）· 麒麟 8020 · HarmonyOS 6.1
+  </footer>
+
+</div>
+</body>
+</html>

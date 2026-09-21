@@ -1,0 +1,264 @@
+/* ==========================================================================
+   Portrait demo shell — mobile.html
+   Loaded after site.css and re-uses its tokens (:root vars, .badge, .bar,
+   .sample, .cv-holder, .plate-text, .console-log). Nothing here redefines the
+   palette; the plate colours are the real plate colours, as on the desktop page.
+
+   Design brief: one-handed, thumb-reachable, dark instrument panel on a light
+   chrome. The plate itself is the hero — its frame is painted with the colour
+   the *classifier* actually predicted, not with a hard-coded guess.
+   ========================================================================== */
+
+:root {
+  --m-pad: 16px;
+  --m-bar-h: 66px;
+  --m-chrome: rgba(255, 255, 255, .9);
+}
+
+html { scroll-padding-top: 104px; }
+
+.m-page {
+  background: var(--bg-alt);
+  overscroll-behavior-y: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+.m-page a, .m-page button, .m-page summary, .m-page .sample, .m-page .drop {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------------------------------------------------------- app bar */
+.m-top {
+  position: sticky; top: 0; z-index: 60;
+  padding-top: env(safe-area-inset-top);
+  background: var(--m-chrome);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--line-2);
+}
+.m-top-in {
+  display: flex; align-items: center; gap: 9px;
+  height: 50px; padding: 0 var(--m-pad);
+}
+.m-top-in .brand { font-size: 15px; }
+.m-sub {
+  padding: 0 var(--m-pad) 8px;
+  font-family: var(--mono); font-size: 10px; color: var(--faint);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* status chip — mirrors #rtState, which demo.js writes to */
+.m-chip {
+  margin-left: auto; flex: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  max-width: 58vw; padding: 4px 10px;
+  font-family: var(--mono); font-size: 10.5px; color: var(--muted);
+  background: #fff; border: 1px solid var(--line); border-radius: 100px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.m-chip::before {
+  content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--faint);
+}
+.m-chip b { color: var(--accent); font-weight: 600; }
+.m-chip[data-state="running"]::before { background: var(--accent); animation: m-pulse 1s ease-in-out infinite; }
+.m-chip[data-state="ok"]::before { background: var(--ok); }
+.m-chip[data-state="error"]::before { background: #e5484d; }
+@keyframes m-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+
+/* ---------------------------------------------------------------- hero */
+.m-hero { padding: 18px var(--m-pad) 2px; }
+.m-hero h1 { font-size: 21px; }
+.m-hero p { margin-top: 7px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ---------------------------------------------------------------- layout */
+.m-main {
+  padding: 12px var(--m-pad) 0;
+  padding-bottom: calc(var(--m-bar-h) + 26px + env(safe-area-inset-bottom));
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+/* demo.js's lazy-load observer watches .demo-shell; it is only an anchor here,
+   so strip the desktop console chrome off it. */
+.demo-shell.m-shell {
+  background: transparent; border: 0; border-radius: 0;
+  box-shadow: none; overflow: visible;
+}
+
+.m-card {
+  background: var(--console); border: 1px solid var(--console-line);
+  border-radius: var(--r-lg); padding: 14px; box-shadow: var(--shadow);
+}
+.m-card-h {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: #a9b4c0;
+}
+.m-card-h .m-n {
+  background: var(--console-3); border: 1px solid var(--console-line);
+  color: var(--console-accent); border-radius: 4px; padding: 1px 6px;
+  letter-spacing: .02em;
+}
+.ms { margin-left: auto; font-family: var(--mono); font-size: 10.5px; color: #6e7681; }
+
+/* ---------------------------------------------------------------- input */
+.m-card .drop {
+  margin-bottom: 12px; padding: 16px 14px;
+  background: var(--console-2); border-color: var(--console-line);
+}
+.m-card .drop .m-ic {
+  font-size: 19px; line-height: 1; color: var(--console-accent); margin-bottom: 7px;
+}
+
+.m-page .samples {
+  display: flex; gap: 8px; overflow-x: auto;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+}
+.m-page .samples::-webkit-scrollbar { display: none; }
+.m-page .samples .sample { flex: 0 0 94px; width: 94px; scroll-snap-align: start; }
+
+/* ---------------------------------------------------------------- camera */
+.m-cam[hidden] { display: none; }
+.cam-holder {
+  display: flex; align-items: center; justify-content: center;
+  background: #000; border-radius: var(--r-sm); overflow: hidden; min-height: 176px;
+}
+.cam-holder video {
+  display: block; width: 100%; max-height: 44vh;
+  object-fit: contain; background: #000;
+}
+.cam-ctl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.cam-ctl .m-btn { height: 42px; font-size: 13.5px; }
+
+/* ---------------------------------------------------------------- result */
+.plate-frame {
+  --pc: var(--console-2);
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 84px; padding: 14px 12px;
+  background: var(--pc);
+  border: 1px solid var(--console-line); border-radius: 10px;
+  transition: background .3s ease, border-color .3s ease;
+}
+/* real plates carry a thin white rim — show it only once a colour is known */
+.plate-frame::after {
+  content: ""; position: absolute; inset: 5px; border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  opacity: 0; transition: opacity .3s ease; pointer-events: none;
+}
+.plate-frame[data-plate]::after { opacity: 1; }
+.plate-frame[data-plate="blue"] { --pc: var(--plate-blue); border-color: rgba(255, 255, 255, .3); }
+.plate-frame[data-plate="green"] { --pc: var(--plate-green); border-color: rgba(255, 255, 255, .3); }
+.plate-frame[data-plate="yellow"] { --pc: var(--plate-yellow); border-color: rgba(255, 255, 255, .3); }
+
+.plate-frame .plate-text {
+  font-size: clamp(25px, 9.2vw, 40px); letter-spacing: .07em;
+  color: #fff; text-align: center; word-break: break-all;
+}
+.plate-frame[data-plate="yellow"] .plate-text { color: #16181c; }
+
+.m-page .plate-meta {
+  margin-top: 11px; line-height: 1.9;
+  font-family: var(--mono); font-size: 10.5px;
+}
+.m-page .plate-meta .badge { padding: 2px 7px; }
+
+.m-total {
+  margin-top: 12px; padding: 11px 13px;
+  background: var(--console-2); border: 1px solid var(--console-line); border-radius: 10px;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.m-total span {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .09em;
+  text-transform: uppercase; color: #6e7681;
+}
+.m-total b {
+  margin-left: auto; font-family: var(--mono); font-size: 25px; font-weight: 640;
+  letter-spacing: -.02em; color: var(--console-accent); font-variant-numeric: tabular-nums;
+}
+
+.m-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+.m-st {
+  min-width: 0; padding: 8px 5px; text-align: center;
+  background: var(--console-2); border: 1px solid var(--console-line); border-radius: 8px;
+}
+.m-st b {
+  display: block; font-family: var(--mono); font-size: 12px; color: var(--console-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.m-st span { display: block; margin-top: 3px; font-size: 9.5px; color: #6e7681; }
+
+/* ---------------------------------------------------------------- canvases */
+.m-card .cv-holder { min-height: 0; }
+.m-card .cv-holder canvas { display: block; max-width: 100%; max-height: none; height: auto; }
+
+/* ---------------------------------------------------------------- folds */
+.m-fold {
+  background: var(--console); border: 1px solid var(--console-line);
+  border-radius: var(--r-lg); overflow: hidden;
+}
+.m-fold > summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px; user-select: none;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: #a9b4c0;
+}
+.m-fold > summary::-webkit-details-marker { display: none; }
+.m-fold > summary::before {
+  content: "\203A"; flex: none; font-size: 16px; line-height: 1;
+  color: var(--console-accent); transition: transform .18s ease;
+}
+.m-fold[open] > summary::before { transform: rotate(90deg); }
+.m-fold > summary .ms { letter-spacing: 0; }
+.m-fold .m-body { padding: 0 14px 14px; }
+
+.m-page .bar { grid-template-columns: 62px 1fr 46px; gap: 8px; font-size: 10.5px; }
+.m-page .console-log { max-height: 152px; font-size: 10.5px; padding: 10px 12px; }
+
+/* ---------------------------------------------------------------- foot */
+.m-foot {
+  padding: 20px var(--m-pad) 6px;
+  color: var(--faint); font-size: 11.5px; line-height: 1.65;
+}
+.m-foot b { color: var(--muted); font-weight: 600; }
+
+/* ---------------------------------------------------------------- action bar */
+.m-actions {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+  padding: 9px var(--m-pad) calc(9px + env(safe-area-inset-bottom));
+  background: var(--m-chrome);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-top: 1px solid var(--line);
+}
+.m-btn {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  height: 46px; border-radius: 12px; cursor: pointer;
+  font-family: var(--sans); font-size: 14px; font-weight: 560;
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  transition: transform .12s ease, background .12s ease;
+}
+.m-btn:active { transform: scale(.97); }
+.m-btn.primary { background: var(--ink); border-color: var(--ink); color: #fff; }
+.m-btn.on { background: var(--ok); border-color: var(--ok); color: #fff; }
+.m-btn .g { font-size: 15px; line-height: 1; }
+
+/* ---------------------------------------------------------------- embed mode
+   The HarmonyOS shell renders this page inside its own frame, so the page's own
+   chrome is redundant there. Set by an inline head script (no flash). */
+/* .m-top stays: it carries the live status chip, which the shell does not draw. */
+html.m-embed .m-hero,
+html.m-embed .m-foot { display: none; }
+html.m-embed .m-main { padding-top: 10px; }
+
+/* ---------------------------------------------------------------- wide-ish */
+@media (min-width: 620px) {
+  .m-main, .m-hero, .m-foot, .m-top-in, .m-sub, .m-actions { padding-left: 24px; padding-right: 24px; }
+  .m-main { max-width: 560px; margin: 0 auto; }
+  .m-hero, .m-foot { max-width: 560px; margin: 0 auto; }
+  .m-page .samples .sample { flex-basis: 112px; width: 112px; }
+}

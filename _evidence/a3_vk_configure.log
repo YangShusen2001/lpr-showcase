@@ -1,0 +1,7 @@
+-- CMAKE_TOOLCHAIN_FILE = D:/IDE/DevEco_Studio/sdk/default/openharmony/native/build/cmake/ohos.toolchain.cmake
+-- CMAKE_INSTALL_PREFIX = C:/Users/26671/lpr-harmony/third_party/ncnn_build_ohos_vk/install
+-- NCNN_VERSION_STRING = 1.0.20260917
+-- Target arch: arm 64bit
+-- Configuring done (1.2s)
+-- Generating done (0.5s)
+-- Build files have been written to: C:/Users/26671/lpr-harmony/third_party/ncnn_build_ohos_vk
