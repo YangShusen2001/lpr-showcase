@@ -18,5 +18,11 @@ desktop.ini
 _fetch_tmp/
 *.tmp
 
+# 环境变量 / 凭据 —— 永不入库
+.env
+.env.*
+*.key
+*.pem
+
 # 注意：本仓库是「证据与数据集索引」层，_evidence/ _dataset/ _archive/ assets/
 # 全部**故意入库** —— 它们是不可重建的原始证据。仅排除可重生成的 .venv。
