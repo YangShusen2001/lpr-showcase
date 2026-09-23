@@ -1,6 +1,6 @@
-> 📦 **本仓库已归档（只读）**。结论与后续工作已汇入主仓库
-> [lpr-kirin8020](https://github.com/YangShusen2001/lpr-kirin8020)；
-> 本仓库保留作为原始数据与过程留痕，不再更新。
+> 🧾 **本仓库是前期证据层**：1000 张真值集、三路探针原始日志、纯前端 WASM 演示。
+> 主项目（方法学、论文与最新结论）见 [lpr-kirin8020](https://github.com/YangShusen2001/lpr-kirin8020)；
+> 两处口径不一致时，**以主仓库为准**。
 
 
 # 基于 HyperLPR3 的端到端车牌识别 · 跨语言移植保真验证与麒麟 8020 异构后端实测
@@ -58,23 +58,24 @@ python tools/build_paper.py
 ## 3. 目录结构
 
 ```
-车牌识别/
-├─ README.md            ← 你在这里（项目总入口）
-├─ IDEA.md              原始需求（三条目标，调研结论见 docs/research/）
-├─ index.html  demo.html  mobile.html
-├─ assets/              页面资产（约定与「不能改回去」的文件名 → assets/README.md）
+lpr-showcase/
+├─ README.md            ← 你在这里（本证据层总入口）
+├─ IDEA.md              原始需求（三条目标）
+├─ index.html  demo.html  mobile.html    纯前端演示三入口
+├─ assets/              页面资产（models / ort / samples / js / css / img；约定见 assets/README.md）
 ├─ docs/
 │   ├─ INDEX.md         文档地图 + ADR 索引
 │   ├─ adr/             ADR-001 ~ ADR-015，全部决策与踩坑记录
-│   ─ research/        可行性调研（外部资料检索结论）
+│   └─ research/        可行性调研（外部资料检索结论）
 ├─ paper/
 │   ├─ ieee-lpr-paper.md    IEEE 格式论文（Markdown 主稿）
 │   ├─ latex-en/  latex-zh/ 两份**手工誊写的独立稿**（main.tex / main.pdf，非生成物）
-│   └─ figures/             7 张图的 pdf + png
+│   └─ figures/             图的 pdf + png
 ├─ resume/resume-bullets.md 简历条目（每个数字都可当场复现）
-├─ tools/               74 个脚本 + README.md（按 docstring 整理的清单，需手工维护）
+├─ tools/               脚本集 + README.md（按 docstring 整理的清单，需手工维护）
+├─ _dataset/real/crops/ 精度基准：1000 张真值裁剪图（文件名即人工真值）
 ├─ _evidence/           原始证据（日志 / 张量比对 / 探针输出）+ INDEX.md
-└─ _archive/2026-09-18/ 归档的历史备份与实验产物（可整目录删除）
+└─ _archive/2026-09-18/ 历史备份与实验产物（可整目录删除）
 ```
 
 ## 4. 核心数字速查
@@ -217,8 +218,7 @@ python tools/build_paper.py
 - **`kMaxSessions=20` 已被 16 组合矩阵用满**：往 `E2E_BACKENDS` 里加一档就会静默
   `BUILD-FAIL`（会话键 = `模型文件|后端`，id 永不回收）。扩档前先做"跑完即卸 + 每候选重启进程"。
 - **手机端已是纯原生**（2026-09-18）：`lpr-harmony` 的 `Index.ets` 不含 WebView，
-  两个标签页 = 原生演示 + 探针控制台。旧 ArkWeb 实现存
-  `C:\Users\26671\lpr-harmony\reference\Index.arkweb-era.ets`（工程外，不编译）。
+  两个标签页 = 原生演示 + 探针控制台。旧 ArkWeb 实现不入库（仅本地留档，不编译）。
 - **ArkTS 侧一律用 `lpr.*Async`**：同步版本会阻塞 UI 线程，连续占用 >3 s/>6 s 会被
   系统 watchdog 判 `THREAD_BLOCK` 并 SIGKILL（实测 `uvLoopTask 8887 ms`）。
   会话名**必须传模型文件路径**（原生侧按 (文件,后端) 去重，传角色标签会去重失效）。
@@ -243,7 +243,7 @@ python tools/build_paper.py
   McNemar p=0.1788。**必须同时声明的边界**：该集 1000 张**全为 7 字符，新能源 8 位牌 0 张**，
   且是 LPRNet 自己的主场分布；不做任何"实际路况准确率"的外推。
 
-## 9. 归档说明
+## 9. 历史备份（`_archive/`）说明
 
 `_archive/2026-09-18/` 收纳了历史备份、LaTeX 探针、断链资产（jsep.wasm 26 MB、YOLOv9-t 模型 26 MB）、
 中间张量 dump（33 MB）等 —— **项目有效内容从 144 MB 降到 38.8 MB**。
